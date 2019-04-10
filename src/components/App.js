@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../assets/images/mito-logo.svg';
+import './styles/index.scss';
+import './styles/App.scss';
 
 class App extends Component {
   render() {
