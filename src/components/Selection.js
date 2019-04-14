@@ -2,6 +2,8 @@ import React from "react";
 
 import logo from "../assets/images/mito-logo.svg";
 import arrows from "../assets/images/arrows.svg";
+import plane from "../assets/images/plane.svg";
+
 import "./styles/Selection.scss";
 
 const Selection = () => {
@@ -16,8 +18,14 @@ const Selection = () => {
         <img className="header__arrows" src={arrows} alt="From - to" />
         <p className="header__route">Destination</p>
       </header>
-      <div>
-        <p>Hello</p>
+      <div className="main">
+        <h1 className="main__title">
+          <img className="main__airplane" src={plane} alt="Airplane" />
+          Select Flight
+        </h1>
+        <div className="main__cart">Flights</div>
+        <div className="main__timetable main__timetable--out">Outbound</div>
+        <div className="main__timetable main__timetable--in">Inbound</div>
       </div>
     </>
   );

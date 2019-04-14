@@ -36,3 +36,30 @@
       margin: auto 0;
     }
 }
+
+.main {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". header"
+    "cart outbound"
+    "cart inbound";
+
+  .main__title {
+    grid-area: header;
+  }
+  .main__cart {
+    grid-area: cart;
+  }
+  .main__timetable {
+
+  }
+  .main__timetable--out {
+    grid-area: outbound;
+  }
+  .main__timetable--in {
+    grid-area: inbound;
+  }
+}
