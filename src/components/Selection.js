@@ -1,5 +1,6 @@
 import React from "react";
 import Cart from "./Cart";
+import Timetable from "./Timetable";
 
 import logo from "../assets/images/mito-logo.svg";
 import arrows from "../assets/images/arrows.svg";
@@ -25,8 +26,8 @@ const Selection = () => {
           Select Flight
         </h1>
         <Cart className="main__cart" />
-        <div className="main__timetable main__timetable--out">Outbound</div>
-        <div className="main__timetable main__timetable--in">Inbound</div>
+        <Timetable className="main__timetable main__timetable--out" />
+        <Timetable className="main__timetable main__timetable--in" />
       </div>
     </>
   );

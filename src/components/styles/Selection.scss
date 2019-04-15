@@ -46,22 +46,33 @@
     ". header"
     "cart outbound"
     "cart inbound";
-  gap: 20px;
+}
 
+.main__title {
+  grid-area: header;
+  display: flex;
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #0A008B;
+  margin: 38px 0 38px 20px;
 
-  .main__title {
-    grid-area: header;
+  img {
+    margin: auto 24px auto 0;
   }
-  .main__cart {
-    grid-area: cart;
-  }
-  .main__timetable {
+}
 
-  }
-  .main__timetable--out {
-    grid-area: outbound;
-  }
-  .main__timetable--in {
-    grid-area: inbound;
-  }
+.main__cart {
+  grid-area: cart;
+}
+.main__timetable {
+  margin: 0 20px 20px 20px;
+
+}
+.main__timetable--out {
+  grid-area: outbound;
+}
+.main__timetable--in {
+  margin-top: 20px;
+  grid-area: inbound;
 }

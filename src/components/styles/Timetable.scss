@@ -1,0 +1,156 @@
+.timetable {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.timetable__header {
+  height: 58px;
+  background: #f2f2f2;
+  display: flex;
+
+  h2 {
+    font-weight: 500;
+    font-size: 18px;
+    margin: auto 20px;
+    text-transform: uppercase;
+    color: #919191;
+  }
+
+}
+
+.timetable__route {
+  margin-left: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #06038D;
+  display: inline-flex;
+  text-transform: capitalize;
+
+  img {
+    width: 30px;
+    margin: auto 20px;
+  }
+}
+
+.timetable__date {
+  background: #fff;
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 18px;
+    color: #343434;
+    font-weight: normal;
+  }
+}
+
+.timetable__step {
+  border: 0;
+  background: #fff;
+  display: flex;
+  margin: auto 12px;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #919191;
+
+  img {
+    width: 18px;
+    margin-right: 8px;
+  }
+
+  span {
+    margin: auto 0;
+  }
+}
+
+.timetable__step--next {
+  flex-direction: row-reverse;
+
+  img {
+    margin-left: 8px;
+    margin-right: 0;
+    transform: rotate(180deg)
+  }
+}
+
+.table {
+  background: #FFF;
+  width: 100%;
+  position: relative;
+  border: 0;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.table__row {
+  width: 100%;
+  border-top: 1px solid #E5E5E5;
+  display: flex;
+
+  th, td {
+    flex-basis: 30%;
+    margin: auto 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  th:first-child, td:first-child {
+    flex-basis: 20%;
+  }
+
+  td:nth-child(3) {
+    background: #F2F2F2;
+  }
+}
+
+.table__row--header {
+  border: 0;
+  position: absolute;
+  height: 21px;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  th {
+    padding: 0 16px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+}
+
+.table__time {
+  width: 100%;
+  font-weight: 300;
+  font-size: 15px;
+  color: #343434;
+
+  img {
+    width: 16px;
+    margin: auto 6px;
+  }
+}
+
+.table__btn {
+  padding: 0;
+  width: 160px;
+  height: 48px;
+  background: #FFF;
+  border: 2px solid #C6007E;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+}
+
+.table__btn--active {
+  background: #C6007E;
+  color: #FFF;
+}
