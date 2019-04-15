@@ -1,0 +1,125 @@
+.cart {
+  width: 230px;
+  color: #343434;
+}
+
+.cart__details {
+  background: #FFF;
+  border-top: 1px solid #c1c1c1;
+}
+.cart__header {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  h2:last-child {
+    color: #06038D;
+  }
+}
+
+
+.cart__flight {
+  position: relative;
+  display: flex;
+  padding: 15px;
+  background: #fff;
+}
+
+.cart__flight--separated {
+  border-top: 1px dotted #C1C1C1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-top: 10px solid white;
+    border-left: 10px solid #ffffff;
+    transform: rotate(45deg);
+    box-shadow: 1px 1px #c1c1c1;
+    width: 0;
+  }
+}
+
+.cart__date {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #E1E1E1;
+  border-radius: 3px;
+
+  p {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 21px;
+  }
+
+  p:first-child {
+    background: #F2F2F2;
+  }
+}
+.cart__airport {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+
+  span:first-child:after {
+    content: " –"
+  }
+  span:last-child {
+    font-size: 10px;
+  }
+}
+
+.cart__total {
+  font-family: "Source Sans Pro";
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background: #06038D;
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #FFF;
+  }
+}
+
+
+.cart__btn {
+  background: #C6007E;
+  border-radius: 3px;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  color: #fff;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.cart__btn--disabled {
+  background: #c1c1c1;
+}

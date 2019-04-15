@@ -1,4 +1,5 @@
 import React from "react";
+import Cart from "./Cart";
 
 import logo from "../assets/images/mito-logo.svg";
 import arrows from "../assets/images/arrows.svg";
@@ -23,7 +24,7 @@ const Selection = () => {
           <img className="main__airplane" src={plane} alt="Airplane" />
           Select Flight
         </h1>
-        <div className="main__cart">Flights</div>
+        <Cart className="main__cart" />
         <div className="main__timetable main__timetable--out">Outbound</div>
         <div className="main__timetable main__timetable--in">Inbound</div>
       </div>

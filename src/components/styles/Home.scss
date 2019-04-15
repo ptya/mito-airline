@@ -10,85 +10,85 @@
   margin: auto;
   height: 365px;
   width: 570px;
+}
 
-  .search__header {
-    background: #06038D;
-    border-radius: 2px 2px 0 0;
+.search__header {
+  background: #06038D;
+  border-radius: 2px 2px 0 0;
+  height: 50px;
+  line-height: 50px;
+}
+
+.search__logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 15px;
+}
+
+.search__title {
+  color: #FFF;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.search__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px 20px;
+  padding: 25px;
+
+  fieldset {
+    display: contents;
+  }
+}
+
+.search__input {
+  position: relative;
+
+  input {
+    border: 1px solid #919191;
+    border-radius: 3px;
+    display: block;
+    font-size: 1rem;
+    margin: auto;
+    padding: 10px;
+    width: 250px;
     height: 50px;
-    line-height: 50px;
-
-    .search__logo {
-      display: inline-block;
-      vertical-align: middle;
-      padding: 0 15px;
-    }
-
-    .search__title {
-      color: #FFF;
-      display: inline-block;
-      font-size: 17px;
-      font-weight: 500;
-      margin: 0;
-      padding: 0;
-      text-transform: uppercase;
-    }
   }
 
-  .search__form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px 20px;
-    padding: 25px;
-
-    fieldset {
-      display: contents;
-    }
-
-    .search__input {
-      position: relative;
-
-      input {
-        border: 1px solid #919191;
-        border-radius: 3px;
-        display: block;
-        font-size: 1rem;
-        margin: auto;
-        padding: 10px;
-        width: 250px;
-        height: 50px;
-      }
-
-      i {
-        position: absolute;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        right: 15px;
-        pointer-events: none;
-      }
-    }
-
-    .search__ico {
-      display: inline-block;
-      background-image: url(../../assets/images/calendar.svg);
-      background-repeat: no-repeat;
-      width: 24px;
-      height: 24px;
-    }
-
-    .search__btn {
-      background: #3434E0;
-      border: 0;
-      border-radius: 3px;
-      box-shadow: 2px 2px 2px #e4e4e4;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 500;
-      grid-column: 1 / 3;
-      justify-self: center;
-      text-transform: uppercase;
-      height: 50px;
-      width: 230px;
-    }
+  i {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    pointer-events: none;
   }
+}
+
+.search__ico {
+  display: inline-block;
+  background-image: url(../../assets/images/calendar.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.search__btn {
+  background: #3434E0;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #e4e4e4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  grid-column: 1 / 3;
+  justify-self: center;
+  text-transform: uppercase;
+  height: 50px;
+  width: 230px;
 }
