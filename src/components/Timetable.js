@@ -9,7 +9,7 @@ import "./styles/Timetable.scss";
 
 const Timetable = props => {
   const { className } = props;
-  const blockClass = `${className} timetable`;
+  const blockClass = `${className} timetable`.trim();
   return (
     <div className={blockClass}>
       <div className="timetable__header">
@@ -96,7 +96,7 @@ Timetable.propTypes = {
 };
 
 Timetable.defaultProps = {
-  className: null
+  className: ""
 };
 
 export default Timetable;
