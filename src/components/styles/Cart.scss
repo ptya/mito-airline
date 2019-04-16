@@ -11,28 +11,17 @@
   padding: 15px 15px 0 15px;
   display: flex;
   justify-content: space-between;
-
-  h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-
-  h2:last-child {
-    color: #06038D;
-  }
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-
-.cart__flight {
-  position: relative;
-  display: flex;
-  padding: 15px;
-  background: #fff;
+.cart__header--price {
+  color: #06038D;
 }
 
-.cart__flight--separated {
+.cart__separator {
   border-top: 1px dotted #C1C1C1;
 
   &:before {
@@ -50,59 +39,17 @@
   }
 }
 
-.cart__date {
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 40px;
-  height: 46px;
-  border: 2px solid #E1E1E1;
-  border-radius: 3px;
-
-  p {
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0;
-    line-height: 21px;
-  }
-
-  p:first-child {
-    background: #F2F2F2;
-  }
-}
-.cart__airport {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: bold;
-
-  span:first-child:after {
-    content: " –"
-  }
-  span:last-child {
-    font-size: 10px;
-  }
-}
-
 .cart__total {
   font-family: "Source Sans Pro";
   padding: 15px;
   display: flex;
   justify-content: space-between;
   background: #06038D;
-
-  h2 {
-    margin: 0;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    color: #FFF;
-  }
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #FFF;
 }
 
 
@@ -122,4 +69,54 @@
 
 .cart__btn--disabled {
   background: #c1c1c1;
+}
+
+.pay-view {
+  min-width: 465px;
+}
+.pay-view__header {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #06038D;
+  background: #F2F2F2;
+  margin: 0;
+  padding: 15px 30px;
+}
+.pay-view__flights {
+  display: flex;
+  padding: 15px 15px 0 15px;
+  justify-content: space-between;
+}
+.pay-view__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.pay-view__total {
+  padding: 15px 30px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #343434;
+}
+
+.pay-view__total--amount {
+  font-weight: bold;
+  color: #06038D;
+}
+
+.pay-view__cancel {
+  background: #FFF;
+  border: 0;
+  padding: 5px 15px;
+  margin: 10px 15px;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: #C6007E;
+  cursor: pointer;
 }

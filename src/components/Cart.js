@@ -1,49 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Modal from "./Modal";
+import Flight from "./Flight";
+
+import { convertDate } from "../utils/convertDate";
 
 import "./styles/Cart.scss";
 
 const Cart = props => {
+  const [payToggle, setPayToggle] = useState(false);
+
   const { className } = props;
-  const blockClass = `${className} cart`;
+  const blockClass = `${className} cart`.trim();
+
+  convertDate();
+
   return (
-    <div className={blockClass}>
-      <div className="cart__details">
-        <div className="cart__header">
-          <h2>Flights</h2>
-          <h2>$29.98</h2>
+    <>
+      <div className={blockClass}>
+        <div className="cart__details">
+          <h2 className="cart__header">
+            Flights <span className="cart__header--price">$29.98</span>
+          </h2>
+          <Flight date={{ month: "apr", day: 16 }} />
+          <Flight
+            className="cart__separator"
+            date={{ month: "apr", day: 17 }}
+          />
+          <h2 className="cart__total">
+            Total <span>$29.98</span>
+          </h2>
         </div>
-        <div className="cart__flight">
-          <div className="cart__date">
-            <p>Nov</p>
-            <p>3</p>
-          </div>
-          <p className="cart__airport">
-            <span>Budapest</span>
-            <span>Barcelona El Prat</span>
-            <span>Wed 06:02 – 07:35</span>
-          </p>
-        </div>
-        <div className="cart__flight  cart__flight--separated">
-          <div className="cart__date">
-            <p>Nov</p>
-            <p>4</p>
-          </div>
-          <p className="cart__airport">
-            <span>Barcelona El Prat</span>
-            <span>Budapest</span>
-            <span>Wed 06:02 – 07:35</span>
-          </p>
-        </div>
-        <div className="cart__total">
-          <h2>Total</h2>
-          <h2>$29.98</h2>
-        </div>
+        <button
+          type="button"
+          className="cart__btn"
+          onClick={() => setPayToggle(true)}
+        >
+          Pay Now
+        </button>
       </div>
-      <button type="button" className="cart__btn">
-        Pay Now
-      </button>
-    </div>
+      {payToggle && (
+        <Modal setToggle={setPayToggle}>
+          <div className="pay-view">
+            <h1 className="pay-view__header">
+              Thanks for buying your tickets at mito airlines
+            </h1>
+            <div className="pay-view__flights">
+              <Flight date={{ month: "apr", day: 16 }} />
+              <Flight date={{ month: "apr", day: 16 }} />
+            </div>
+            <div className="pay-view__footer">
+              <h2 className="pay-view__total">
+                TOTAL: <span className="pay-view__total--amount">$9.99</span>
+              </h2>
+              <button
+                className="pay-view__cancel"
+                type="button"
+                onClick={() => setPayToggle(false)}
+              >
+                No, thanks (reset)
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };
 
@@ -52,7 +73,7 @@ Cart.propTypes = {
 };
 
 Cart.defaultProps = {
-  className: null
+  className: ""
 };
 
 export default Cart;
