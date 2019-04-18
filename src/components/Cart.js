@@ -1,26 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { CartContext } from "./CartProvider";
 import Modal from "./Modal";
 import Flight from "./Flight";
 
 import { convertDate } from "../utils/convertDate";
+import { formatMoney } from "../utils/formatMoney";
 
 import "./styles/Cart.scss";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
+  const { cart } = useContext(CartContext);
+
+  console.table(cart);
 
   const { className } = props;
   const blockClass = `${className} cart`.trim();
 
   convertDate();
+  const total = formatMoney(cart.total);
 
   return (
     <>
       <div className={blockClass}>
         <div className="cart__details">
           <h2 className="cart__header">
-            Flights <span className="cart__header--price">$29.98</span>
+            Flights <span className="cart__header--price">{total}</span>
           </h2>
           <Flight date={{ month: "apr", day: 16 }} />
           <Flight
@@ -28,7 +34,7 @@ const Cart = props => {
             date={{ month: "apr", day: 17 }}
           />
           <h2 className="cart__total">
-            Total <span>$29.98</span>
+            Total <span>{total}</span>
           </h2>
         </div>
         <button

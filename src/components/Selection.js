@@ -1,4 +1,5 @@
 import React from "react";
+import CartProvider from "./CartProvider";
 import Cart from "./Cart";
 import Timetable from "./Timetable";
 
@@ -20,15 +21,23 @@ const Selection = () => {
         <img className="header__arrows" src={arrows} alt="From - to" />
         <p className="header__route">Destination</p>
       </header>
-      <div className="main">
-        <h1 className="main__title">
-          <img className="main__airplane" src={plane} alt="Airplane" />
-          Select Flight
-        </h1>
-        <Cart className="main__cart" />
-        <Timetable className="main__timetable main__timetable--out" />
-        <Timetable className="main__timetable main__timetable--in" />
-      </div>
+      <CartProvider>
+        <div className="main">
+          <h1 className="main__title">
+            <img className="main__airplane" src={plane} alt="Airplane" />
+            Select Flight
+          </h1>
+          <Cart className="main__cart" />
+          <Timetable
+            className="main__timetable main__timetable--out"
+            type="setOutbound"
+          />
+          <Timetable
+            className="main__timetable main__timetable--in"
+            type="setInbound"
+          />
+        </div>
+      </CartProvider>
     </>
   );
 };

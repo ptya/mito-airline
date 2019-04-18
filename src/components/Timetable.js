@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import { CartContext } from "./CartProvider";
 
 import smallArrow from "../assets/images/arrow-small.svg";
 import mediumArrow from "../assets/images/arrow-medium.svg";
@@ -8,8 +9,12 @@ import chevron from "../assets/images/chevron.svg";
 import "./styles/Timetable.scss";
 
 const Timetable = props => {
-  const { className } = props;
+  const { cartDispatch } = useContext(CartContext);
+
+  const { className, type } = props;
+
   const blockClass = `${className} timetable`.trim();
+
   return (
     <div className={blockClass}>
       <div className="timetable__header">
@@ -49,17 +54,29 @@ const Timetable = props => {
                 06:02 <img src={smallArrow} alt="to" /> 07:35
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 999 })}
+                >
                   $9.99
                 </button>
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 1999 })}
+                >
                   $19.99
                 </button>
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 2999 })}
+                >
                   $29.99
                 </button>
               </td>
@@ -69,17 +86,29 @@ const Timetable = props => {
                 06:02 <img src={smallArrow} alt="to" /> 07:35
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 999 })}
+                >
                   $9.99
                 </button>
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 1999 })}
+                >
                   $19.99
                 </button>
               </td>
               <td>
-                <button className="table__btn" type="button">
+                <button
+                  className="table__btn"
+                  type="button"
+                  onClick={() => cartDispatch({ type, price: 2999 })}
+                >
                   $29.99
                 </button>
               </td>
@@ -92,7 +121,8 @@ const Timetable = props => {
 };
 
 Timetable.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.string.isRequired
 };
 
 Timetable.defaultProps = {
