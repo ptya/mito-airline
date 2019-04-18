@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 const StationsContext = createContext();
 
 const StationsProvider = props => {
-  const [stations, setStations] = useState({});
-  console.log(stations);
+  const [stations, setStations] = useState();
+  const [origin, setOrigin] = useState();
+  const [destination, setDestination] = useState();
+  const [departureDate, setDepartureDate] = useState();
+  const [returnDate, setReturnDate] = useState();
 
   const fetchStations = async () => {
     const res = await fetch("https://mock-air.herokuapp.com/asset/stations");
@@ -20,10 +23,18 @@ const StationsProvider = props => {
   return (
     <StationsContext.Provider
       value={{
-        stations
+        stations,
+        origin,
+        destination,
+        departureDate,
+        returnDate,
+        setOrigin,
+        setDestination,
+        setDepartureDate,
+        setReturnDate
       }}
     >
-      {props.children}
+      {stations ? props.children : null}
     </StationsContext.Provider>
   );
 };
