@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import SelectStation from "./SelectStation";
+import CustomDatePicker from "./CustomDatePicker";
+import { StationsContext } from "./StationsProvider";
 
 import logo from "../assets/images/mito-logo.svg";
 import "./styles/Home.scss";
 
 const Home = () => {
+  const { origin, destination, departureDate, returnDate } = useContext(
+    StationsContext
+  );
+
+  const onSubmit = event => {
+    event.preventDefault();
+    console.log(origin, destination, departureDate, returnDate);
+  };
+
   return (
     <div className="background">
       <main className="search">
@@ -11,20 +23,20 @@ const Home = () => {
           <img className="search__logo" src={logo} alt="Mito Airline" />
           <h1 className="search__title">Mito Airline</h1>
         </header>
-        <form className="search__form">
+        <form className="search__form" onSubmit={onSubmit}>
           <fieldset>
             <div className="search__input">
-              <input type="text" placeholder="Origin" />
+              <SelectStation id="origin" placeholder="Origin" />
             </div>
             <div className="search__input">
-              <input type="text" placeholder="Destination" />
+              <SelectStation id="dest" placeholder="Destination" />
             </div>
             <div className="search__input">
-              <input type="date" name="dep" placeholder="Departure" />
+              <CustomDatePicker placeholder="Departure" type="departure" />
               <i className="search__ico" />
             </div>
             <div className="search__input">
-              <input type="date" name="ret" placeholder="Return" />
+              <CustomDatePicker placeholder="Return" type="return" />
               <i className="search__ico" />
             </div>
             <input className="search__btn" type="submit" value="search" />
