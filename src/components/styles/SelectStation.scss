@@ -1,0 +1,57 @@
+.react-autosuggest__container {
+
+}
+.react-autosuggest__container--open {
+
+}
+.react-autosuggest__input {
+
+}
+.react-autosuggest__input--open {
+
+}
+.react-autosuggest__input--focused {
+
+}
+.react-autosuggest__suggestions-container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1;
+  background: #FFF;
+  width: 90%;
+  border-radius: 3px;
+}
+.react-autosuggest__suggestions-container--open {
+  border: 1px solid #919191;
+  box-shadow: 1px 1px 2px #c4c4c4;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.react-autosuggest__suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.react-autosuggest__suggestion {
+  padding: 10px;
+  height: 40px;
+}
+.react-autosuggest__suggestion--first {
+
+}
+.react-autosuggest__suggestion--highlighted {
+  background: #C6007E;
+  color: #fff;
+}
+.react-autosuggest__section-container {
+
+}
+.react-autosuggest__section-container--first {
+
+}
+.react-autosuggest__section-title {
+
+}
