@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import Home from "./Home";
 import Selection from "./Selection";
+import StationsProvider from "./StationsProvider";
 
 import "./styles/index.scss";
 import "./styles/App.scss";
 
 class App extends Component {
   render() {
-    // return <Home />;
-    return <Selection />;
+    // return (
+    //   <StationsProvider>
+    //     <Selection />
+    //   </StationsProvider>
+    // );
+    return (
+      <StationsProvider>
+        <Home />
+      </StationsProvider>
+    );
   }
 }
 
