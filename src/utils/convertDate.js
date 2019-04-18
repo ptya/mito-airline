@@ -1,25 +1,14 @@
-const months = {
-  0: "jan",
-  1: "feb",
-  2: "mar",
-  3: "apr",
-  4: "may",
-  5: "jun",
-  6: "jul",
-  7: "aug",
-  8: "sep",
-  9: "oct",
-  10: "nov",
-  11: "dec"
-};
-
 function convertDate(dateString) {
-  const dateObj = new Date(dateString);
-  const monthId = dateObj.getMonth();
-  const day = dateObj.getDate();
-  const month = months[monthId];
+  const date = new Date(dateString);
 
-  return { day: day, month: month };
+  return {
+    day: date.getDate(),
+    fullMonth: date.toLocaleString("en-us", { month: "long" }),
+    month: date.toLocaleString("en-us", { month: "short" }),
+    fullWeekday: date.toLocaleString("en-us", { weekday: "long" }),
+    weekday: date.toLocaleString("en-us", { weekday: "short" }),
+    year: date.getFullYear()
+  };
 }
 
 export { convertDate };
