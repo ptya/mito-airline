@@ -21,11 +21,11 @@ const Home = () => {
             </div>
             <div className="search__input">
               <input type="date" name="dep" placeholder="Departure" />
-              <i class="search__ico" />
+              <i className="search__ico" />
             </div>
             <div className="search__input">
               <input type="date" name="ret" placeholder="Return" />
-              <i class="search__ico" />
+              <i className="search__ico" />
             </div>
             <input className="search__btn" type="submit" value="search" />
           </fieldset>
