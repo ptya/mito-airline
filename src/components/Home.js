@@ -1,7 +1,11 @@
 import React, { useContext } from "react";
 import SelectStation from "./SelectStation";
 import CustomDatePicker from "./CustomDatePicker";
-import { StationsContext } from "./StationsProvider";
+import {
+  StationsContext,
+  originSession,
+  destSession
+} from "./StationsProvider";
 
 import logo from "../assets/images/mito-logo.svg";
 import "./styles/Home.scss";
@@ -13,6 +17,8 @@ const Home = () => {
 
   const onSubmit = event => {
     event.preventDefault();
+    sessionStorage.setItem(originSession, JSON.stringify(origin));
+    sessionStorage.setItem(destSession, JSON.stringify(destination));
     console.log(origin, destination, departureDate, returnDate);
   };
 
@@ -26,10 +32,14 @@ const Home = () => {
         <form className="search__form" onSubmit={onSubmit}>
           <fieldset>
             <div className="search__input">
-              <SelectStation id="origin" placeholder="Origin" />
+              <SelectStation id="origin" placeholder="Origin" stored={origin} />
             </div>
             <div className="search__input">
-              <SelectStation id="dest" placeholder="Destination" />
+              <SelectStation
+                id="dest"
+                placeholder="Destination"
+                stored={destination}
+              />
             </div>
             <div className="search__input">
               <CustomDatePicker placeholder="Departure" type="departure" />

@@ -3,10 +3,17 @@ import PropTypes from "prop-types";
 
 const StationsContext = createContext();
 
+const originSession = "mito-origin";
+const destSession = "mito-destination";
+
 const StationsProvider = props => {
   const [stations, setStations] = useState();
-  const [origin, setOrigin] = useState();
-  const [destination, setDestination] = useState();
+  const [origin, setOrigin] = useState(
+    JSON.parse(sessionStorage.getItem(originSession)) || null
+  );
+  const [destination, setDestination] = useState(
+    JSON.parse(sessionStorage.getItem(destSession)) || null
+  );
   const [departureDate, setDepartureDate] = useState();
   const [returnDate, setReturnDate] = useState();
 
@@ -44,4 +51,4 @@ StationsProvider.propTypes = {
 };
 
 export default StationsProvider;
-export { StationsContext };
+export { StationsContext, originSession, destSession };

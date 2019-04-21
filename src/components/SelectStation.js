@@ -6,10 +6,10 @@ import { StationsContext } from "./StationsProvider";
 import "./styles/SelectStation.scss";
 
 const SelectStation = props => {
-  const [value, setValue] = useState("");
-  const [isSet, setIsSet] = useState(false);
+  const { placeholder, id, stored } = props;
+  const [value, setValue] = useState(stored ? stored.shortName : "");
+  const [isSet, setIsSet] = useState(stored ? true : false);
   const [suggestions, setSuggestions] = useState([]);
-  const { placeholder, id } = props;
 
   const {
     stations,
@@ -41,7 +41,7 @@ const SelectStation = props => {
     setValue(newValue);
     if (isSet) {
       setIsSet(false);
-      id === "origin" ? setOrigin() : setDestination();
+      id === "origin" ? setOrigin(null) : setDestination(null);
     }
   };
 
