@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { withRouter } from "react-router-dom";
 import CartProvider from "./CartProvider";
 import Cart from "./Cart";
 import Timetable from "./Timetable";
+import { StationsContext } from "./StationsProvider";
 
 import logo from "../assets/images/mito-logo.svg";
 import arrows from "../assets/images/arrows.svg";
@@ -9,7 +11,11 @@ import plane from "../assets/images/plane.svg";
 
 import "./styles/Selection.scss";
 
-const Selection = () => {
+const Selection = props => {
+  const { history } = props;
+  const { origin, destination } = useContext(StationsContext);
+  if (!origin || !destination) history.push("/");
+
   return (
     <>
       <header className="header">
@@ -42,4 +48,4 @@ const Selection = () => {
   );
 };
 
-export default Selection;
+export default withRouter(Selection);

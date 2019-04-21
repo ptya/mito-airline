@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { withRouter } from "react-router-dom";
 import SelectStation from "./SelectStation";
 import CustomDatePicker from "./CustomDatePicker";
 import {
@@ -10,7 +11,8 @@ import {
 import logo from "../assets/images/mito-logo.svg";
 import "./styles/Home.scss";
 
-const Home = () => {
+const Home = props => {
+  const { history } = props;
   const { origin, destination, departureDate, returnDate } = useContext(
     StationsContext
   );
@@ -19,7 +21,7 @@ const Home = () => {
     event.preventDefault();
     sessionStorage.setItem(originSession, JSON.stringify(origin));
     sessionStorage.setItem(destSession, JSON.stringify(destination));
-    console.log(origin, destination, departureDate, returnDate);
+    history.push("/selection");
   };
 
   return (
@@ -57,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
