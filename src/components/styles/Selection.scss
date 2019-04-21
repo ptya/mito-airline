@@ -1,6 +1,7 @@
 .header {
   background: #06038D;
   color: #FFF;
+  z-index: 1;
 
   position: fixed;
   height: 60px;
@@ -13,9 +14,15 @@
     .header__logo {
       display: inline-block;
       vertical-align: middle;
-      height: 29px;
-      width: 28px;
+      border: 0;
+      background: #06038D;
       margin: auto 80px auto 20px;
+
+      img {
+        height: 29px;
+        width: 28px;
+        margin: 0;
+      }
     }
     .header__route {
       display: flex;

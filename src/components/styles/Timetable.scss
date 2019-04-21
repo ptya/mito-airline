@@ -48,15 +48,17 @@
 }
 
 .timetable__step {
-  border: 0;
-  background: #fff;
-  display: flex;
+  flex-basis: 25%;
   margin: auto 12px;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: normal;
-  text-transform: uppercase;
-  color: #919191;
+  button {
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    color: #919191;
+    text-transform: uppercase;
+    border: 0;
+    background: #fff;
+  }
 
   img {
     width: 18px;
@@ -68,8 +70,21 @@
   }
 }
 
+.timetable__no-flights {
+  font-size: 12px;
+  text-align: center;
+  background: #FFF;
+  margin: 0;
+  padding: 10px;
+}
+
 .timetable__step--next {
-  flex-direction: row-reverse;
+
+  button {
+    flex-direction: row-reverse;
+    align-content: flex-start;
+    margin-left: auto;
+  }
 
   img {
     margin-left: 8px;
@@ -126,6 +141,21 @@
   }
 }
 
+.table__row--disabled {
+  background: #C4C4C4;
+
+  td:nth-child(3) {
+    background: #C4C4C4;
+  }
+
+  .table__btn {
+    background: #C4C4C4;
+    cursor: default;
+    color: #919191;
+    border-color: #919191;
+  }
+}
+
 .table__time {
   width: 100%;
   font-weight: 300;
@@ -148,9 +178,13 @@
   font-weight: bold;
   font-size: 20px;
   color: #000000;
+  cursor: pointer;
 }
 
 .table__btn--active {
   background: #C6007E;
   color: #FFF;
 }
+
+
+
