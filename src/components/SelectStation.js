@@ -1,14 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import Autosuggest from "react-autosuggest";
 import { StationsContext } from "./StationsProvider";
+import { useFloat } from "./hooks/useFloat";
 
 import "./styles/SelectStation.scss";
+import "./styles/floatingLabel.scss";
 
 const SelectStation = props => {
   const { placeholder, id, stored } = props;
   const [value, setValue] = useState(stored ? stored.shortName : "");
   const [isSet, setIsSet] = useState(stored ? true : false);
+  const [isActive, setIsActive] = useState(value ? true : false);
   const [suggestions, setSuggestions] = useState([]);
 
   const {
@@ -95,11 +98,33 @@ const SelectStation = props => {
     return origin || destination || val.trim().length > 0 ? true : false;
   };
 
-  const inputProps = {
-    placeholder,
-    value,
-    onChange
+  const onBlur = () => {
+    if (!value) {
+      setIsActive(false);
+    }
   };
+
+  const inputProps = {
+    value,
+    onChange,
+    onBlur
+  };
+
+  useFloat(id, () => setIsActive(true));
+
+  const renderInputComponent = inputProps => (
+    <div className="float__container">
+      <label
+        htmlFor={id}
+        className={
+          isActive ? "float__label float__label--active" : "float__label"
+        }
+      >
+        {placeholder}
+      </label>
+      <input id={id} {...inputProps} />
+    </div>
+  );
 
   return (
     <Autosuggest
@@ -113,6 +138,7 @@ const SelectStation = props => {
       onSuggestionSelected={onSuggestionSelected}
       highlightFirstSuggestion={true}
       shouldRenderSuggestions={shouldRenderSuggestions}
+      renderInputComponent={renderInputComponent}
     />
   );
 };
