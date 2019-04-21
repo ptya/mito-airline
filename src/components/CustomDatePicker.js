@@ -2,10 +2,12 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 
+import { useFloat } from "./hooks/useFloat";
 import { StationsContext } from "./StationsProvider";
 import { convertDate } from "../utils/convertDate";
 
 import "react-datepicker/dist/react-datepicker.css";
+import "./styles/floatingLabel.scss";
 
 const CustomDatePicker = props => {
   const {
@@ -16,7 +18,10 @@ const CustomDatePicker = props => {
   } = useContext(StationsContext);
 
   const [startDate, setStartDate] = useState();
+  const [isActive, setIsActive] = useState(false);
   const { placeholder, type } = props;
+
+  useFloat(type, () => setIsActive(true));
 
   const handleChange = date => {
     setStartDate(date);
@@ -66,14 +71,33 @@ const CustomDatePicker = props => {
   };
   const limits = getLimits();
 
+  const onBlur = () => {
+    if (!startDate) {
+      setIsActive(false);
+    }
+  };
+
   return (
-    <DatePicker
-      selected={startDate}
-      onChange={handleChange}
-      placeholderText={placeholder}
-      minDate={limits.minDate}
-      maxDate={limits.maxDate}
-    />
+    <div className="float__container">
+      <label
+        htmlFor={type}
+        className={
+          isActive ? "float__label float__label--active" : "float__label"
+        }
+      >
+        {placeholder}
+      </label>
+      <DatePicker
+        selected={startDate}
+        onChange={handleChange}
+        minDate={limits.minDate}
+        maxDate={limits.maxDate}
+        onBlur={onBlur}
+        className="float__input"
+        dateFormat={`EEE d. MMM. yyyy`}
+        id={type}
+      />
+    </div>
   );
 };
 
