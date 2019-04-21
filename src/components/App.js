@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Selection from "./Selection";
-import AutoSuggest from "./SelectStation";
 import StationsProvider from "./StationsProvider";
 
 import "./styles/index.scss";
@@ -15,9 +15,12 @@ class App extends Component {
     //   </StationsProvider>
     // );
     return (
-      <StationsProvider>
-        <Home />
-      </StationsProvider>
+      <Router>
+        <StationsProvider>
+          <Route path="/" exact component={Home} />
+          <Route path="/selection/" component={Selection} />
+        </StationsProvider>
+      </Router>
     );
   }
 }
