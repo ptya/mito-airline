@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 
 import { StationsContext } from "./StationsProvider";
+import { convertDate } from "../utils/convertDate";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -21,9 +22,9 @@ const CustomDatePicker = props => {
     setStartDate(date);
     switch (type) {
       case "departure":
-        return setDepartureDate(date);
+        return setDepartureDate(convertDate(date));
       case "return":
-        return setReturnDate(date);
+        return setReturnDate(convertDate(date));
       default:
         return;
     }
@@ -35,7 +36,7 @@ const CustomDatePicker = props => {
       case "departure": {
         let maxDate;
         if (returnDate) {
-          maxDate = new Date(returnDate);
+          maxDate = new Date(returnDate.date);
           maxDate.setDate(maxDate.getDate() - 1);
         } else {
           maxDate = null;
@@ -48,7 +49,7 @@ const CustomDatePicker = props => {
       case "return": {
         let minDate;
         if (departureDate) {
-          minDate = new Date(departureDate);
+          minDate = new Date(departureDate.date);
           minDate.setDate(minDate.getDate() + 1);
         } else {
           minDate = new Date();

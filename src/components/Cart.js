@@ -1,8 +1,10 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import { CartContext } from "./CartProvider";
 import Modal from "./Modal";
 import Flight from "./Flight";
+import { CartContext } from "./CartProvider";
+import { StationsContext } from "./StationsProvider";
+import { useSticky } from "./hooks/useSticky";
 
 import { convertDate } from "../utils/convertDate";
 import { formatMoney } from "../utils/formatMoney";
@@ -11,15 +13,25 @@ import "./styles/Cart.scss";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
-  const { cart } = useContext(CartContext);
+  const { cart, cartDispatch } = useContext(CartContext);
+  const { origin, destination } = useContext(StationsContext);
 
-  console.table(cart);
+  const handleReset = () => {
+    setPayToggle(false);
+    cartDispatch({
+      type: "purge"
+    });
+  };
 
   const { className } = props;
-  const blockClass = `${className} cart`.trim();
 
-  convertDate();
   const total = formatMoney(cart.total);
+
+  const isSticky = useSticky(100);
+
+  const blockClass = isSticky
+    ? `${className} cart cart--fixed`.trim()
+    : `${className} cart`.trim();
 
   return (
     <>
@@ -28,11 +40,20 @@ const Cart = props => {
           <h2 className="cart__header">
             Flights <span className="cart__header--price">{total}</span>
           </h2>
-          <Flight date={{ month: "apr", day: 16 }} />
-          <Flight
-            className="cart__separator"
-            date={{ month: "apr", day: 17 }}
-          />
+          {!cart.outbound && (
+            <p className="cart__info">Choose an outbound flight</p>
+          )}
+          {cart.outbound && (
+            <Flight flight={cart.outbound} from={origin} to={destination} />
+          )}
+          {cart.inbound && (
+            <Flight
+              className={cart.outbound ? "cart__separator" : ""}
+              flight={cart.inbound}
+              from={destination}
+              to={origin}
+            />
+          )}
           <h2 className="cart__total">
             Total <span>{total}</span>
           </h2>
@@ -52,17 +73,17 @@ const Cart = props => {
               Thanks for buying your tickets at mito airlines
             </h1>
             <div className="pay-view__flights">
-              <Flight date={{ month: "apr", day: 16 }} />
-              <Flight date={{ month: "apr", day: 16 }} />
+              <Flight flight={cart.outbound} from={origin} to={destination} />
+              <Flight flight={cart.inbound} from={destination} to={origin} />
             </div>
             <div className="pay-view__footer">
               <h2 className="pay-view__total">
-                TOTAL: <span className="pay-view__total--amount">$9.99</span>
+                TOTAL: <span className="pay-view__total--amount">{total}</span>
               </h2>
               <button
                 className="pay-view__cancel"
                 type="button"
-                onClick={() => setPayToggle(false)}
+                onClick={() => handleReset()}
               >
                 No, thanks (reset)
               </button>

@@ -3,6 +3,11 @@
   color: #343434;
 }
 
+.cart--fixed {
+  position: fixed;
+  top: 85px;
+}
+
 .cart__details {
   background: #FFF;
   border-top: 1px solid #c1c1c1;
@@ -19,6 +24,16 @@
 
 .cart__header--price {
   color: #06038D;
+}
+
+.cart__info {
+  padding: 15px;
+  background: #FFF;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  font-size: 16px;
+  color: #919191;
+  margin: 0;
 }
 
 .cart__separator {

@@ -3,6 +3,16 @@ import PropTypes from "prop-types";
 
 const CartContext = createContext();
 
+const initialCart = {
+  inbound: null,
+  inboundPrice: 0,
+  inboundFare: "",
+  outbound: null,
+  outboundPrice: 0,
+  outboundFare: "",
+  total: 0
+};
+
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "setInbound":
@@ -10,6 +20,7 @@ const cartReducer = (state, action) => {
         ...state,
         inbound: action.flight,
         inboundPrice: action.price,
+        inboundFare: action.fare,
         total: state.outboundPrice + action.price
       };
     case "setOutbound":
@@ -17,33 +28,14 @@ const cartReducer = (state, action) => {
         ...state,
         outbound: action.flight,
         outboundPrice: action.price,
+        outboundFare: action.fare,
         total: state.inboundPrice + action.price
       };
-    case "purgeInbound":
-      return {
-        ...state,
-        inbound: null,
-        inboundPrice: 0,
-        total: state.outboundPrice
-      };
-    case "purgeOutbound":
-      return {
-        ...state,
-        outbound: null,
-        outboundPrice: 0,
-        total: state.inboundPrice
-      };
+    case "purge":
+      return initialCart;
     default:
       return state;
   }
-};
-
-const initialCart = {
-  inbound: null,
-  inboundPrice: 0,
-  outbound: null,
-  outboundPrice: 0,
-  total: 0
 };
 
 const CartProvider = props => {
