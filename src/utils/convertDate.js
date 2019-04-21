@@ -2,12 +2,20 @@ function convertDate(dateString) {
   const date = new Date(dateString);
 
   return {
+    date: date,
     day: date.getDate(),
-    fullMonth: date.toLocaleString("en-us", { month: "long" }),
-    month: date.toLocaleString("en-us", { month: "short" }),
-    fullWeekday: date.toLocaleString("en-us", { weekday: "long" }),
-    weekday: date.toLocaleString("en-us", { weekday: "short" }),
-    year: date.getFullYear()
+    month: date.getMonth(),
+    fullMonth: date.toLocaleString("en-gb", { month: "long" }),
+    shortMonth: date.toLocaleString("en-gb", { month: "short" }),
+    fullWeekday: date.toLocaleString("en-gb", { weekday: "long" }),
+    weekday: date.toLocaleString("en-gb", { weekday: "short" }),
+    year: date.getFullYear(),
+    time: date.toLocaleTimeString("en-gb", {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit"
+    }),
+    isoDate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
   };
 }
 
