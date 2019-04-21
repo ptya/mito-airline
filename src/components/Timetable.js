@@ -29,7 +29,6 @@ const Timetable = props => {
   const [day, setDay] = useState(
     type === "outbound" ? departureDate : returnDate
   );
-  console.table(day);
   const [prevDay, setPrevDay] = useState(
     convertDate(new Date(new Date(day.date).setDate(day.day - 1)))
   );
@@ -46,13 +45,8 @@ const Timetable = props => {
         day.isoDate
       }`
     );
-    console.log(
-      `https://mock-air.herokuapp.com/search?departureStation=${dep}&arrivalStation=${arr}&date=${
-        day.isoDate
-      }`
-    );
+
     const data = await res.json();
-    console.table(data);
     setFlights(data);
   };
 
