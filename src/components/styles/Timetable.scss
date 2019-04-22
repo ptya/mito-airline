@@ -52,6 +52,8 @@
 .timetable__step {
   flex-basis: 25%;
   margin: auto 12px;
+  cursor: pointer;
+
   button {
     font-weight: bold;
     font-size: 13px;
@@ -60,15 +62,18 @@
     text-transform: uppercase;
     border: 0;
     background: $white;
+    cursor: pointer;
   }
 
   img {
     width: 18px;
     margin-right: 8px;
+    cursor: pointer;
   }
 
   span {
     margin: auto 0;
+    cursor: pointer;
   }
 }
 
