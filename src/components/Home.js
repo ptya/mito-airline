@@ -1,4 +1,4 @@
-import React, { useContext, useState, useLayoutEffect, useRef } from "react";
+import React, { useContext, useState, useLayoutEffect } from "react";
 import { withRouter } from "react-router-dom";
 
 import SelectStation from "./SelectStation";
