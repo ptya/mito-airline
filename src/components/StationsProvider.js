@@ -16,6 +16,7 @@ const StationsProvider = props => {
   );
   const [departureDate, setDepartureDate] = useState();
   const [returnDate, setReturnDate] = useState();
+  const [secondaryReturnDate, setSecondaryReturnDate] = useState();
 
   const fetchStations = async () => {
     const res = await fetch("https://mock-air.herokuapp.com/asset/stations");
@@ -35,10 +36,12 @@ const StationsProvider = props => {
         destination,
         departureDate,
         returnDate,
+        secondaryReturnDate,
         setOrigin,
         setDestination,
         setDepartureDate,
-        setReturnDate
+        setReturnDate,
+        setSecondaryReturnDate
       }}
     >
       {stations ? props.children : null}
