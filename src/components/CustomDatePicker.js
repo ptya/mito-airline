@@ -14,7 +14,8 @@ const CustomDatePicker = props => {
     departureDate,
     returnDate,
     setDepartureDate,
-    setReturnDate
+    setReturnDate,
+    setSecondaryReturnDate
   } = useContext(StationsContext);
 
   const [startDate, setStartDate] = useState();
@@ -30,6 +31,8 @@ const CustomDatePicker = props => {
         return setDepartureDate(convertDate(date));
       case "return":
         return setReturnDate(convertDate(date));
+      case "secondaryReturn":
+        return setSecondaryReturnDate(convertDate(date));
       default:
         return;
     }
@@ -51,7 +54,8 @@ const CustomDatePicker = props => {
           maxDate
         };
       }
-      case "return": {
+      case "return":
+      case "secondaryReturn": {
         let minDate;
         if (departureDate) {
           minDate = new Date(departureDate.date);
@@ -80,6 +84,10 @@ const CustomDatePicker = props => {
           break;
         }
         case "return": {
+          setReturnDate();
+          break;
+        }
+        case "secondaryReturn": {
           setReturnDate();
           break;
         }
