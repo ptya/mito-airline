@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+
 import CustomDatePicker from "./CustomDatePicker";
+
 import { StationsContext } from "./StationsProvider";
 
 import mediumArrow from "../assets/images/arrow-medium.svg";
-
-import "./styles/TimetableSelect.scss";
 
 const Timetable = props => {
   const {

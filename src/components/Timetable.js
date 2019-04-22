@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+
 import { CartContext } from "./CartProvider";
 import { StationsContext } from "./StationsProvider";
+
 import { convertDate } from "../utils/convertDate";
 import { formatMoney } from "../utils/formatMoney";
 
 import smallArrow from "../assets/images/arrow-small.svg";
 import mediumArrow from "../assets/images/arrow-medium.svg";
 import chevron from "../assets/images/chevron.svg";
-
-import "./styles/Timetable.scss";
 
 const Timetable = props => {
   const { cartDispatch, cart } = useContext(CartContext);
@@ -124,9 +124,10 @@ const Timetable = props => {
       </div>
       <div className="timetable__times">
         <>
+          {!flights && <p className="timetable__loading">Loading...</p>}
           {flights && flights.length === 0 && (
             <p className="timetable__no-flights">
-              A kiválasztott napon nincs elérhető járat.
+              There are no available flights this day.
             </p>
           )}
           {flights && flights.length > 0 && (

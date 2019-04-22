@@ -1,15 +1,13 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+
 import Modal from "./Modal";
 import Flight from "./Flight";
 import { CartContext } from "./CartProvider";
 import { StationsContext } from "./StationsProvider";
+
 import { useSticky } from "./hooks/useSticky";
-
-import { convertDate } from "../utils/convertDate";
 import { formatMoney } from "../utils/formatMoney";
-
-import "./styles/Cart.scss";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
@@ -60,7 +58,10 @@ const Cart = props => {
         </div>
         <button
           type="button"
-          className="cart__btn"
+          className={
+            cart.outbound ? "cart__btn" : "cart__btn cart__btn--disabled"
+          }
+          disabled={cart.outbound ? false : true}
           onClick={() => setPayToggle(true)}
         >
           Pay Now
@@ -74,7 +75,9 @@ const Cart = props => {
             </h1>
             <div className="pay-view__flights">
               <Flight flight={cart.outbound} from={origin} to={destination} />
-              <Flight flight={cart.inbound} from={destination} to={origin} />
+              {cart.inbound && (
+                <Flight flight={cart.inbound} from={destination} to={origin} />
+              )}
             </div>
             <div className="pay-view__footer">
               <h2 className="pay-view__total">

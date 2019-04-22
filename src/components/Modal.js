@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
+
 import Portal from "./Portal";
+
 import { useOnClickOutside } from "./hooks/useOnClickOutside";
 import { useLockBodyScroll } from "./hooks/useLockBodyScroll";
-
-import "./styles/Modal.scss";
 
 const Modal = props => {
   const { children, setToggle } = props;

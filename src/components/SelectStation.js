@@ -1,11 +1,9 @@
-import React, { useContext, useState, useLayoutEffect } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import Autosuggest from "react-autosuggest";
+
 import { StationsContext } from "./StationsProvider";
 import { useFloat } from "./hooks/useFloat";
-
-import "./styles/SelectStation.scss";
-import "./styles/floatingLabel.scss";
 
 const SelectStation = props => {
   const { placeholder, id, stored } = props;

@@ -1,16 +1,16 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { withRouter } from "react-router-dom";
+
 import CartProvider from "./CartProvider";
 import Cart from "./Cart";
 import Timetable from "./Timetable";
 import TimetableSelect from "./TimetableSelect";
+
 import { StationsContext } from "./StationsProvider";
 
 import logo from "../assets/images/mito-logo.svg";
 import arrows from "../assets/images/arrows.svg";
 import plane from "../assets/images/plane.svg";
-
-import "./styles/Selection.scss";
 
 const Selection = props => {
   const { history } = props;
@@ -22,6 +22,7 @@ const Selection = props => {
     setDepartureDate,
     setReturnDate
   } = useContext(StationsContext);
+
   if (!origin || !destination || !departureDate) {
     history.push("/");
     return null;

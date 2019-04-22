@@ -6,8 +6,7 @@ import { useFloat } from "./hooks/useFloat";
 import { StationsContext } from "./StationsProvider";
 import { convertDate } from "../utils/convertDate";
 
-import "react-datepicker/dist/react-datepicker.css";
-import "./styles/floatingLabel.scss";
+// import "react-datepicker/dist/react-datepicker.css";
 
 const CustomDatePicker = props => {
   const {

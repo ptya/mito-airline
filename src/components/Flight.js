@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import { convertDate } from "../utils/convertDate";
 
-import "./styles/Flight.scss";
-
 const Flight = props => {
   const { from, to, flight, className } = props;
   let { departure, arrival } = flight;

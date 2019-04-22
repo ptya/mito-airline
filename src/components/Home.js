@@ -1,7 +1,9 @@
 import React, { useContext, useState, useLayoutEffect, useRef } from "react";
 import { withRouter } from "react-router-dom";
+
 import SelectStation from "./SelectStation";
 import CustomDatePicker from "./CustomDatePicker";
+
 import {
   StationsContext,
   originSession,
@@ -10,7 +12,6 @@ import {
 
 import logo from "../assets/images/mito-logo.svg";
 import warning from "../assets/images/error.svg";
-import "./styles/Home.scss";
 
 const Home = props => {
   const { history } = props;
