@@ -74,6 +74,18 @@ const CustomDatePicker = props => {
   const onBlur = () => {
     if (!startDate) {
       setIsActive(false);
+      switch (type) {
+        case "departure": {
+          setDepartureDate();
+          break;
+        }
+        case "return": {
+          setReturnDate();
+          break;
+        }
+        default:
+          return;
+      }
     }
   };
 
@@ -96,6 +108,7 @@ const CustomDatePicker = props => {
         className="float__input"
         dateFormat={`EEE d. MMM. yyyy`}
         id={type}
+        autocomplete="off"
       />
     </div>
   );

@@ -68,6 +68,31 @@
   }
 }
 
+.search__input--error {
+  input {
+    background: #FFF2FA;
+    border: 2px solid #C6007E;
+    box-shadow: 0 0 10px #c6007e59
+  }
+}
+
+.search__error {
+  position: absolute;
+  bottom: -32px;
+  font-size: 13px;
+  line-height: 13px;
+  color: #C6007E;
+  display: flex;
+
+  img {
+    width: 17px;
+    height: 17px;
+  }
+  span {
+    margin: auto 10px;
+  }
+}
+
 .search__ico {
   display: inline-block;
   background-image: url(../../assets/images/calendar.svg);
@@ -89,4 +114,5 @@
   text-transform: uppercase;
   height: 50px;
   width: 230px;
+  cursor: pointer;
 }
