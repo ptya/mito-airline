@@ -1,11 +1,7 @@
-.background {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
+@import "variables";
 
 .search {
-  background: #FFF;
+  background: $white;
   box-shadow: 2px 2px 2px #e4e4e4;
   margin: auto;
   height: 365px;
@@ -13,7 +9,7 @@
 }
 
 .search__header {
-  background: #06038D;
+  background: $blue-3;
   border-radius: 2px 2px 0 0;
   height: 50px;
   line-height: 50px;
@@ -26,7 +22,7 @@
 }
 
 .search__title {
-  color: #FFF;
+  color: $white;
   display: inline-block;
   font-size: 17px;
   font-weight: 500;
@@ -48,7 +44,7 @@
 
 .search__form--selection {
   display: flex;
-  background: #FFF;
+  background: $white;
   justify-content: center;
   padding: 33px 0 53px;
   fieldset {
@@ -60,7 +56,7 @@
   position: relative;
 
   input {
-    border: 1px solid #919191;
+    border: 1px solid $grey-4;
     border-radius: 3px;
     display: block;
     font-size: 1rem;
@@ -84,9 +80,9 @@
 
 .search__input--error {
   input {
-    background: #FFF2FA;
-    border: 2px solid #C6007E;
-    box-shadow: 0 0 10px #c6007e59
+    background: $grey-1;
+    border: 2px solid $pink;
+    box-shadow: 0 0 10px $pink-opacity
   }
 }
 
@@ -95,7 +91,7 @@
   bottom: -32px;
   font-size: 13px;
   line-height: 13px;
-  color: #C6007E;
+  color: $pink;
   display: flex;
 
   img {
@@ -116,12 +112,12 @@
 }
 
 .search__btn {
-  background: #3434E0;
+  background: $blue-1;
   border: 0;
   border-radius: 3px;
   box-shadow: 2px 2px 2px #e4e4e4;
   font-family: Roboto;
-  color: #fff;
+  color: $white;
   font-size: 18px;
   font-weight: 500;
   grid-column: 1 / 3;

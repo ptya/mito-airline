@@ -1,0 +1,55 @@
+@import "variables";
+
+.pay-view {
+  min-width: 465px;
+}
+
+.pay-view__header {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: $blue-3;
+  background: $grey-2;
+  margin: 0;
+  padding: 15px 30px;
+}
+
+.pay-view__flights {
+  display: flex;
+  padding: 15px 15px 0 15px;
+  justify-content: space-between;
+}
+
+.pay-view__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pay-view__total {
+  padding: 15px 30px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $grey-5;
+}
+
+.pay-view__total--amount {
+  font-weight: bold;
+  color: $blue-3;
+}
+
+.pay-view__cancel {
+  background: $white;
+  border: 0;
+  padding: 5px 15px;
+  margin: 10px 15px;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: $pink;
+  cursor: pointer;
+}

@@ -1,8 +1,10 @@
+@import "variables";
+
 .flight {
   position: relative;
   display: flex;
   padding: 15px;
-  background: #fff;
+  background: $white;
 }
 
 .flight__calendar {
@@ -21,7 +23,7 @@
 }
 
 .calendar__month {
-  background: #F2F2F2;
+  background: $grey-2;
 }
 
 .flight__airport {

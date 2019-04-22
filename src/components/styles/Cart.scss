@@ -1,6 +1,8 @@
+@import "variables";
+
 .cart {
   width: 230px;
-  color: #343434;
+  color: $grey-5;
 }
 
 .cart--fixed {
@@ -9,8 +11,8 @@
 }
 
 .cart__details {
-  background: #FFF;
-  border-top: 1px solid #c1c1c1;
+  background: $white;
+  border-top: 1px solid $grey-3;
 }
 .cart__header {
   padding: 15px 15px 0 15px;
@@ -23,21 +25,21 @@
 }
 
 .cart__header--price {
-  color: #06038D;
+  color: $blue-3;
 }
 
 .cart__info {
   padding: 15px;
-  background: #FFF;
+  background: $white;
   font-family: Source Sans Pro;
   font-weight: bold;
   font-size: 16px;
-  color: #919191;
+  color: $grey-4;
   margin: 0;
 }
 
 .cart__separator {
-  border-top: 1px dotted #C1C1C1;
+  border-top: 1px dotted $grey-3;
 
   &:before {
     content: "";
@@ -47,9 +49,9 @@
     left: 0;
     margin: auto;
     border-top: 10px solid white;
-    border-left: 10px solid #ffffff;
+    border-left: 10px solid $white;
     transform: rotate(45deg);
-    box-shadow: 1px 1px #c1c1c1;
+    box-shadow: 1px 1px $grey-3;
     width: 0;
   }
 }
@@ -59,79 +61,32 @@
   padding: 15px;
   display: flex;
   justify-content: space-between;
-  background: #06038D;
+  background: $blue-3;
   margin: 0;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
-  color: #FFF;
+  color: $white;
 }
 
 
 .cart__btn {
-  background: #C6007E;
+  background: $pink;
   border-radius: 3px;
   margin: 20px auto;
   width: 100%;
   height: 50px;
   border: 0;
-  color: #fff;
+  color: $white;
   font-family: "Roboto";
   font-weight: 900;
   font-size: 16px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .cart__btn--disabled {
-  background: #c1c1c1;
+  background: $grey-3;
+  cursor: initial;
 }
 
-.pay-view {
-  min-width: 465px;
-}
-.pay-view__header {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: normal;
-  text-transform: uppercase;
-  color: #06038D;
-  background: #F2F2F2;
-  margin: 0;
-  padding: 15px 30px;
-}
-.pay-view__flights {
-  display: flex;
-  padding: 15px 15px 0 15px;
-  justify-content: space-between;
-}
-.pay-view__footer {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.pay-view__total {
-  padding: 15px 30px;
-  margin: 0;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #343434;
-}
-
-.pay-view__total--amount {
-  font-weight: bold;
-  color: #06038D;
-}
-
-.pay-view__cancel {
-  background: #FFF;
-  border: 0;
-  padding: 5px 15px;
-  margin: 10px 15px;
-  font-weight: bold;
-  font-size: 12px;
-  text-decoration-line: underline;
-  text-transform: uppercase;
-  color: #C6007E;
-  cursor: pointer;
-}

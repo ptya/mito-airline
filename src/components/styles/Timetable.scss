@@ -1,3 +1,5 @@
+@import "variables";
+
 .timetable {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
 
 .timetable__header {
   height: 58px;
-  background: #f2f2f2;
+  background: $grey-2;
   display: flex;
 
   h2 {
@@ -15,7 +17,7 @@
     font-size: 18px;
     margin: auto 20px;
     text-transform: uppercase;
-    color: #919191;
+    color: $grey-4;
   }
 
 }
@@ -24,7 +26,7 @@
   margin-left: 40px;
   font-size: 22px;
   font-weight: bold;
-  color: #06038D;
+  color: $blue-3;
   display: inline-flex;
   text-transform: capitalize;
 
@@ -35,14 +37,14 @@
 }
 
 .timetable__date {
-  background: #fff;
+  background: $white;
   height: 58px;
   display: flex;
   justify-content: space-between;
 
   h3 {
     font-size: 18px;
-    color: #343434;
+    color: $grey-5;
     font-weight: normal;
   }
 }
@@ -54,10 +56,10 @@
     font-weight: bold;
     font-size: 13px;
     display: flex;
-    color: #919191;
+    color: $grey-4;
     text-transform: uppercase;
     border: 0;
-    background: #fff;
+    background: $white;
   }
 
   img {
@@ -73,7 +75,15 @@
 .timetable__no-flights {
   font-size: 12px;
   text-align: center;
-  background: #FFF;
+  background: $white;
+  margin: 0;
+  padding: 10px;
+}
+
+.timetable__loading {
+  font-size: 12px;
+  text-align: center;
+  background: $white;
   margin: 0;
   padding: 10px;
 }
@@ -92,99 +102,3 @@
     transform: rotate(180deg)
   }
 }
-
-.table {
-  background: #FFF;
-  width: 100%;
-  position: relative;
-  border: 0;
-  border-spacing: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.table__row {
-  width: 100%;
-  border-top: 1px solid #E5E5E5;
-  display: flex;
-
-  th, td {
-    flex-basis: 30%;
-    margin: auto 0;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  th:first-child, td:first-child {
-    flex-basis: 20%;
-  }
-
-  td:nth-child(3) {
-    background: #F2F2F2;
-  }
-}
-
-.table__row--header {
-  border: 0;
-  position: absolute;
-  height: 21px;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  th {
-    padding: 0 16px;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #000000;
-  }
-}
-
-.table__row--disabled {
-  background: #C4C4C4;
-
-  td:nth-child(3) {
-    background: #C4C4C4;
-  }
-
-  .table__btn {
-    background: #C4C4C4;
-    cursor: default;
-    color: #919191;
-    border-color: #919191;
-  }
-}
-
-.table__time {
-  width: 100%;
-  font-weight: 300;
-  font-size: 15px;
-  color: #343434;
-
-  img {
-    width: 16px;
-    margin: auto 6px;
-  }
-}
-
-.table__btn {
-  padding: 0;
-  width: 160px;
-  height: 48px;
-  background: #FFF;
-  border: 2px solid #C6007E;
-  border-radius: 2px;
-  font-weight: bold;
-  font-size: 20px;
-  color: #000000;
-  cursor: pointer;
-}
-
-.table__btn--active {
-  background: #C6007E;
-  color: #FFF;
-}
-
-
-
