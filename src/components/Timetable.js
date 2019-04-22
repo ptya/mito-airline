@@ -18,7 +18,6 @@ const Timetable = props => {
     destination,
     departureDate,
     returnDate,
-    setDestination,
     setDepartureDate,
     setReturnDate
   } = useContext(StationsContext);

@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import CartProvider from "./CartProvider";
 import Cart from "./Cart";
 import Timetable from "./Timetable";
+import TimetableSelect from "./TimetableSelect";
 import { StationsContext } from "./StationsProvider";
 
 import logo from "../assets/images/mito-logo.svg";
@@ -17,6 +18,7 @@ const Selection = props => {
     origin,
     destination,
     departureDate,
+    returnDate,
     setDepartureDate,
     setReturnDate
   } = useContext(StationsContext);
@@ -59,10 +61,15 @@ const Selection = props => {
             className="main__timetable main__timetable--out"
             type="outbound"
           />
-          <Timetable
-            className="main__timetable main__timetable--in"
-            type="inbound"
-          />
+          {returnDate && (
+            <Timetable
+              className="main__timetable main__timetable--in"
+              type="inbound"
+            />
+          )}
+          {!returnDate && (
+            <TimetableSelect className="main__timetable main__timetable--in" />
+          )}
         </div>
       </CartProvider>
     </>

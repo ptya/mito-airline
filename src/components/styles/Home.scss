@@ -46,6 +46,16 @@
   }
 }
 
+.search__form--selection {
+  display: flex;
+  background: #FFF;
+  justify-content: center;
+  padding: 33px 0 53px;
+  fieldset {
+    display: contents;
+  }
+}
+
 .search__input {
   position: relative;
 
@@ -66,6 +76,10 @@
     right: 15px;
     pointer-events: none;
   }
+}
+
+.search__input--selection {
+  margin: 7px;
 }
 
 .search__input--error {
@@ -106,6 +120,7 @@
   border: 0;
   border-radius: 3px;
   box-shadow: 2px 2px 2px #e4e4e4;
+  font-family: Roboto;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -115,4 +130,10 @@
   height: 50px;
   width: 230px;
   cursor: pointer;
+}
+
+.search__btn--selection {
+  margin: 7px;
+  width: initial;
+  padding: 0 25px;
 }
