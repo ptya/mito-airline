@@ -111,7 +111,9 @@ const Home = props => {
               <CustomDatePicker placeholder="Return" type="return" />
               <i className="search__ico" />
             </div>
-            <input className="search__btn" type="submit" value="search" />
+            <button className="search__btn" type="submit">
+              Search
+            </button>
           </fieldset>
         </form>
       </main>
