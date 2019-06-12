@@ -1,8 +1,14 @@
-import React, { useContext, useState, useLayoutEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useLayoutEffect,
+  useCallback
+} from "react";
 import { withRouter } from "react-router-dom";
 
 import SelectStation from "./SelectStation";
 import CustomDatePicker from "./CustomDatePicker";
+import Header from "./Header";
 
 import {
   StationsContext,
@@ -10,7 +16,6 @@ import {
   destSession
 } from "./StationsProvider";
 
-import logo from "../assets/images/mito-logo.svg";
 import warning from "../assets/images/error.svg";
 
 const Home = props => {
@@ -19,14 +24,14 @@ const Home = props => {
   const [error, setError] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const validate = () => {
+  const validate = useCallback(() => {
     const e = {};
     if (!origin) e.origin = "Please select origin";
     if (!destination) e.destination = "Please select destination";
     if (!departureDate) e.departure = "Please select departure";
     setError(e);
     return e.origin || e.destination || e.departure ? true : false;
-  };
+  }, [origin, destination, departureDate]);
 
   useLayoutEffect(() => {
     // skip validation until first submit
@@ -34,7 +39,7 @@ const Home = props => {
       return;
     }
     validate();
-  }, [origin, destination, departureDate]);
+  }, [origin, destination, departureDate, isSubmitted, validate]);
 
   const onSubmit = async event => {
     event.preventDefault();
@@ -52,10 +57,7 @@ const Home = props => {
   return (
     <div className="background">
       <main className="search">
-        <header className="search__header">
-          <img className="search__logo" src={logo} alt="Mito Airline" />
-          <h1 className="search__title">Mito Airline</h1>
-        </header>
+        <Header home />
         <form className="search__form" autoComplete="off" onSubmit={onSubmit}>
           <fieldset>
             <div
