@@ -4,11 +4,11 @@ import React, {
   useLayoutEffect,
   useCallback
 } from "react";
+import { animated, useSpring } from "react-spring";
 import { withRouter } from "react-router-dom";
 
 import SelectStation from "./SelectStation";
 import CustomDatePicker from "./CustomDatePicker";
-import Header from "./Header";
 
 import {
   StationsContext,
@@ -17,6 +17,7 @@ import {
 } from "./StationsProvider";
 
 import warning from "../assets/images/error.svg";
+import logo from "../assets/images/mito-logo.svg";
 
 const Home = props => {
   const { history } = props;
@@ -54,10 +55,20 @@ const Home = props => {
     history.push("/selection");
   };
 
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
+
   return (
-    <div className="background">
+    <animated.div className="background" style={fade}>
       <main className="search">
-        <Header home />
+        <header className="search__header">
+          <img className="search__logo" src={logo} alt="Mito Airline" />
+          <h1 className="search__title">Mito Airline</h1>
+        </header>
         <form className="search__form" autoComplete="off" onSubmit={onSubmit}>
           <fieldset>
             <div
@@ -120,7 +131,7 @@ const Home = props => {
           </fieldset>
         </form>
       </main>
-    </div>
+    </animated.div>
   );
 };
 

@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
+import Spinner from "./elements/Spinner";
+
 const StationsContext = createContext();
 
 const originSession = "mito-origin";
@@ -44,7 +46,7 @@ const StationsProvider = props => {
         setSecondaryReturnDate
       }}
     >
-      {stations ? props.children : null}
+      {stations ? props.children : <Spinner />}
     </StationsContext.Provider>
   );
 };

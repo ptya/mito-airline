@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { withRouter } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
-import Header from "./Header";
 import CartProvider from "./CartProvider";
 import Cart from "./Cart";
 import Timetable from "./Timetable";
@@ -9,22 +8,39 @@ import TimetableSelect from "./TimetableSelect";
 
 import { StationsContext } from "./StationsProvider";
 
+import logo from "../assets/images/mito-logo.svg";
+import arrows from "../assets/images/arrows.svg";
 import plane from "../assets/images/plane.svg";
 
-const Selection = props => {
-  const { history } = props;
-  const { origin, destination, departureDate, returnDate } = useContext(
-    StationsContext
-  );
+const Selection = () => {
+  const {
+    origin,
+    destination,
+    departureDate,
+    returnDate,
+    setDepartureDate,
+    setReturnDate
+  } = useContext(StationsContext);
 
-  if (!origin || !destination || !departureDate) {
-    history.push("/");
-    return null;
-  }
+  const handleReturn = () => {
+    setDepartureDate();
+    setReturnDate();
+  };
 
   return (
     <>
-      <Header />
+      {(!origin || !destination || !departureDate) && <Redirect to="/" />}
+      <header className="header">
+        <Link to="/" className="header__logo" onClick={() => handleReturn()}>
+          <img className="header__logo" src={logo} alt="Mito Airline" />
+        </Link>
+        <p className="header__route">
+          <span className="header__info">Leaving from</span>
+          {origin.shortName}
+        </p>
+        <img className="header__arrows" src={arrows} alt="From - to" />
+        <p className="header__route">{destination.shortName}</p>
+      </header>
       <CartProvider>
         <div className="main">
           <h1 className="main__title">
@@ -51,4 +67,4 @@ const Selection = props => {
   );
 };
 
-export default withRouter(Selection);
+export default Selection;
