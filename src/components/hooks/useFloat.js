@@ -15,7 +15,7 @@ function useFloat(id, handler) {
     return () => {
       floatField.removeEventListener("focus", listener);
     };
-  }, []); // Empty array ensures effect is only run on mount and unmount
+  }, [handler, id]); // Empty array ensures effect is only run on mount and unmount
 }
 
 export { useFloat };

@@ -36,22 +36,18 @@ const Timetable = props => {
   );
   const [flights, setFlights] = useState();
 
-  const fetchFlights = async () => {
-    const dep = type === "outbound" ? origin.iata : destination.iata;
-    const arr = type === "outbound" ? destination.iata : origin.iata;
-    const res = await fetch(
-      `https://mock-air.herokuapp.com/search?departureStation=${dep}&arrivalStation=${arr}&date=${
-        day.isoDate
-      }`
-    );
-
-    const data = await res.json();
-    setFlights(data);
-  };
-
   useEffect(() => {
+    async function fetchFlights() {
+      const dep = type === "outbound" ? origin.iata : destination.iata;
+      const arr = type === "outbound" ? destination.iata : origin.iata;
+      const res = await fetch(
+        `https://mock-air.herokuapp.com/search?departureStation=${dep}&arrivalStation=${arr}&date=${day.isoDate}`
+      );
+      const data = await res.json();
+      setFlights(data);
+    }
     fetchFlights();
-  }, [day]); // only fetch again if day changes
+  }, [day, destination.iata, origin.iata, type]); // only fetch again if day changes
 
   const handleDayChange = date => {
     setFlights();
@@ -104,9 +100,7 @@ const Timetable = props => {
           {isPrevAvailable && (
             <button type="button" onClick={() => handleDayChange(prevDay)}>
               <img src={chevron} alt="Previous day" />
-              <span>{`${prevDay.shortMonth} ${prevDay.day} ${
-                prevDay.fullMonth
-              }`}</span>
+              <span>{`${prevDay.shortMonth} ${prevDay.day} ${prevDay.fullMonth}`}</span>
             </button>
           )}
         </div>
@@ -115,9 +109,7 @@ const Timetable = props => {
           {isNextAvailable && (
             <button type="button" onClick={() => handleDayChange(nextDay)}>
               <img src={chevron} alt="Next day" />
-              <span>{`${nextDay.shortMonth} ${nextDay.day} ${
-                nextDay.fullMonth
-              }`}</span>
+              <span>{`${nextDay.shortMonth} ${nextDay.day} ${nextDay.fullMonth}`}</span>
             </button>
           )}
         </div>

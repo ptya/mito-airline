@@ -48,10 +48,12 @@ const Selection = () => {
             Select Flight
           </h1>
           <Cart className="main__cart" />
-          <Timetable
-            className="main__timetable main__timetable--out"
-            type="outbound"
-          />
+          {departureDate && (
+            <Timetable
+              className="main__timetable main__timetable--out"
+              type="outbound"
+            />
+          )}
           {returnDate && (
             <Timetable
               className="main__timetable main__timetable--in"

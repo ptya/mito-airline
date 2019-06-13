@@ -19,7 +19,7 @@ function useSticky(scroll) {
     return () => {
       window.removeEventListener("scroll", listener);
     };
-  }, [isSticky]);
+  }, [isSticky, scroll]);
 
   return isSticky;
 }
