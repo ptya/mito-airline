@@ -24,21 +24,31 @@ const AnimatedRoutes = () => {
     from: {
       opacity: 0,
       position: "absolute",
-      width: "100vw",
+      width: "100%",
       transform: "translate3d(100%, 0, 0)"
     },
     enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
     leave: { opacity: 0, transform: "translate3d(-50%, 0, 0)" }
   });
 
-  return transitions.map(({ item, props: transitionStyle, key }) => (
-    <animated.div key={key} style={transitionStyle}>
-      <Switch location={item}>
-        <Route path="/" exact component={Home} />
-        <Route path="/selection/" exact component={Selection} />
-      </Switch>
-    </animated.div>
-  ));
+  return (
+    <div
+      style={{
+        position: "relative",
+        overflowX: "hidden",
+        height: "100vh"
+      }}
+    >
+      {transitions.map(({ item, props: transitionStyle, key }) => (
+        <animated.div key={key} style={transitionStyle}>
+          <Switch location={item}>
+            <Route path="/" exact component={Home} />
+            <Route path="/selection/" exact component={Selection} />
+          </Switch>
+        </animated.div>
+      ))}
+    </div>
+  );
 };
 
 export default Routes;
