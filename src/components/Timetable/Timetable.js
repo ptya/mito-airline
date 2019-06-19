@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { useSpring, animated } from "react-spring";
 
-import { useMeasure } from "../hooks/useMeasure";
 import { CartContext } from "../CartProvider";
 import { StationsContext } from "../StationsProvider";
 import { Spinner } from "../elements/Spinner";
