@@ -16,12 +16,21 @@ import {
   destSession
 } from "../StationsProvider";
 
-import Error from "./elements/Error";
+// global elements
 import InputField from "../elements/InputField";
 import CalendarIco from "../elements/CalendarIco";
 
+// local elements
+import Wrapper from "./elements/Wrapper";
+import Main from "./elements/Main";
+import Header from "./elements/Header";
+import Error from "./elements/Error";
+
+// assets
 import warning from "../../assets/images/error.svg";
 import logo from "../../assets/images/mito-logo.svg";
+
+const AnimatedMain = animated(Main);
 
 const Home = props => {
   const { history } = props;
@@ -67,12 +76,12 @@ const Home = props => {
   });
 
   return (
-    <div className="background">
-      <animated.main className="search" style={fade}>
-        <header className="search__header">
-          <img className="search__logo" src={logo} alt="Mito Airline" />
-          <h1 className="search__title">Mito Airline</h1>
-        </header>
+    <Wrapper>
+      <AnimatedMain className="search" style={fade}>
+        <Header>
+          <img src={logo} alt="Mito Airline" />
+          <h1>Mito Airline</h1>
+        </Header>
         <form className="search__form" autoComplete="off" onSubmit={onSubmit}>
           <fieldset>
             <InputField isError={error && error.origin}>
@@ -116,8 +125,8 @@ const Home = props => {
             </button>
           </fieldset>
         </form>
-      </animated.main>
-    </div>
+      </AnimatedMain>
+    </Wrapper>
   );
 };
 
