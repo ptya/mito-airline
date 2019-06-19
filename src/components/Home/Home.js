@@ -7,17 +7,21 @@ import React, {
 import { animated, useSpring } from "react-spring";
 import { withRouter } from "react-router-dom";
 
-import SelectStation from "./SelectStation";
-import CustomDatePicker from "./CustomDatePicker";
+import SelectStation from "../SelectStation";
+import CustomDatePicker from "../CustomDatePicker";
 
 import {
   StationsContext,
   originSession,
   destSession
-} from "./StationsProvider";
+} from "../StationsProvider";
 
-import warning from "../assets/images/error.svg";
-import logo from "../assets/images/mito-logo.svg";
+import Error from "./styles/Error";
+import InputField from "../styles/InputField";
+import CalendarIco from "../elements/CalendarIco";
+
+import warning from "../../assets/images/error.svg";
+import logo from "../../assets/images/mito-logo.svg";
 
 const Home = props => {
   const { history } = props;
@@ -63,75 +67,57 @@ const Home = props => {
   });
 
   return (
-    <animated.div className="background" style={fade}>
-      <main className="search">
+    <div className="background">
+      <animated.main className="search" style={fade}>
         <header className="search__header">
           <img className="search__logo" src={logo} alt="Mito Airline" />
           <h1 className="search__title">Mito Airline</h1>
         </header>
         <form className="search__form" autoComplete="off" onSubmit={onSubmit}>
           <fieldset>
-            <div
-              className={
-                error && error.origin
-                  ? "search__input search__input--error"
-                  : "search__input"
-              }
-            >
+            <InputField isError={error && error.origin}>
               <SelectStation id="origin" placeholder="Origin" stored={origin} />
               {error && error.origin && (
-                <div className="search__error">
+                <Error>
                   <img src={warning} alt="error" />
                   <span>{error.origin}</span>
-                </div>
+                </Error>
               )}
-            </div>
-            <div
-              className={
-                error && error.destination
-                  ? "search__input search__input--error"
-                  : "search__input"
-              }
-            >
+            </InputField>
+            <InputField isError={error && error.destination}>
               <SelectStation
                 id="dest"
                 placeholder="Destination"
                 stored={destination}
               />
               {error && error.destination && (
-                <div className="search__error">
+                <Error>
                   <img src={warning} alt="error" />
                   <span>{error.destination}</span>
-                </div>
+                </Error>
               )}
-            </div>
-            <div
-              className={
-                error && error.departure
-                  ? "search__input search__input--error"
-                  : "search__input"
-              }
-            >
+            </InputField>
+            <InputField isError={error && error.departure}>
               <CustomDatePicker placeholder="Departure" type="departure" />
-              <i className="search__ico" />
+              <CalendarIco />
               {error && error.departure && (
-                <div className="search__error">
+                <Error>
                   <img src={warning} alt="error" />
                   <span>{error.departure}</span>
-                </div>
+                </Error>
               )}
-            </div>
-            <div className="search__input">
+            </InputField>
+            <InputField>
               <CustomDatePicker placeholder="Return" type="return" />
-              <i className="search__ico" />
-            </div>
+              <CalendarIco />
+            </InputField>
             <button className="search__btn" type="submit">
               Search
             </button>
           </fieldset>
         </form>
-      </main>
-    </animated.div>
+      </animated.main>
+    </div>
   );
 };
 

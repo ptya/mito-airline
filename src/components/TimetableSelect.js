@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import CustomDatePicker from "./CustomDatePicker";
 
 import { StationsContext } from "./StationsProvider";
+import CalendarIco from "./elements/CalendarIco";
+import InputField from "./styles/InputField";
 
 import mediumArrow from "../assets/images/arrow-medium.svg";
 
@@ -43,10 +45,10 @@ const Timetable = props => {
         onSubmit={onSubmit}
       >
         <fieldset>
-          <div className="search__input search__input--selection">
+          <InputField>
             <CustomDatePicker placeholder="Return" type="secondaryReturn" />
-            <i className="search__ico" />
-          </div>
+            <CalendarIco />
+          </InputField>
           <button type="submit" className="search__btn search__btn--selection">
             Search
           </button>

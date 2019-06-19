@@ -4,7 +4,7 @@ import { animated, useTransition } from "react-spring";
 
 import useRouter from "./hooks/useRouter";
 import StationsProvider from "./StationsProvider";
-import Home from "./Home";
+import Home from "./Home/Home";
 import Selection from "./Selection";
 
 const Routes = () => {
