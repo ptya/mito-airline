@@ -5,7 +5,7 @@ import CustomDatePicker from "./CustomDatePicker";
 
 import { StationsContext } from "./StationsProvider";
 import CalendarIco from "./elements/CalendarIco";
-import InputField from "./styles/InputField";
+import InputField from "./elements/InputField";
 
 import mediumArrow from "../assets/images/arrow-medium.svg";
 

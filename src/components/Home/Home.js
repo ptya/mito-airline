@@ -16,8 +16,8 @@ import {
   destSession
 } from "../StationsProvider";
 
-import Error from "./styles/Error";
-import InputField from "../styles/InputField";
+import Error from "./elements/Error";
+import InputField from "../elements/InputField";
 import CalendarIco from "../elements/CalendarIco";
 
 import warning from "../../assets/images/error.svg";

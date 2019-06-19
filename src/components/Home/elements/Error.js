@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { colors } from "../../styles/variables";
-import { buzz } from "../../styles/InputField";
+import { buzz } from "../../elements/InputField";
 
 const Error = styled.div`
   position: absolute;

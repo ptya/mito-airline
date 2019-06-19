@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 
-import { colors } from "./variables";
+import { colors } from "../styles/variables";
 
 const buzz = keyframes`
   0% {

@@ -12,10 +12,10 @@ import smallArrow from "../../assets/images/arrow-small.svg";
 import mediumArrow from "../../assets/images/arrow-medium.svg";
 import chevron from "../../assets/images/chevron.svg";
 
-import TableWrapper from "./styles/TableWrapper";
-import TableHeader from "./styles/TableHeader";
-import TableRow from "./styles/TableRow";
-import TableButton from "./styles/TableButton";
+import TableWrapper from "./elements/TableWrapper";
+import TableHeader from "./elements/TableHeader";
+import TableRow from "./elements/TableRow";
+import TableButton from "./elements/TableButton";
 
 const Timetable = props => {
   const { cartDispatch, cart } = useContext(CartContext);
