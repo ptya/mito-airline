@@ -11,13 +11,13 @@ const Routes = () => {
   return (
     <Router>
       <StationsProvider>
-        <Main />
+        <AnimatedRoutes />
       </StationsProvider>
     </Router>
   );
 };
 
-const Main = () => {
+const AnimatedRoutes = () => {
   const { location } = useRouter();
 
   const transitions = useTransition(location, location => location.pathname, {
