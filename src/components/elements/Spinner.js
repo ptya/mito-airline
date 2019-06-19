@@ -32,9 +32,9 @@ const GlowingLogo = styled.svg`
   animation: ${glow} 2s 1s infinite;
 `;
 
-const AnimatedLogo = animated(GlowingLogo);
+const AnimatedSpinner = animated(GlowingLogo);
 
-const Spinner = () => {
+const Spinner = props => {
   const fadeIn = useSpring({
     from: {
       transform: "scale(0) rotate(-90deg)"
@@ -43,19 +43,24 @@ const Spinner = () => {
   });
 
   return (
-    <Wrapper>
-      <AnimatedLogo
-        style={fadeIn}
-        width="75"
-        height="76"
-        viewBox="0 0 28 29"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M27.9283 12.8135H16.1097V0.0852737L11.8888 4.49773V12.8135H0.0702209V17.0562H11.8888V28.9358H16.1097V17.0562H27.9283V12.8135Z" />
-      </AnimatedLogo>
-    </Wrapper>
+    <AnimatedSpinner
+      style={fadeIn}
+      width={props.width ? `${props.width}px` : "75px"}
+      height={props.width ? `${props.width + 1}px` : "76px"}
+      viewBox="0 0 28 29"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M27.9283 12.8135H16.1097V0.0852737L11.8888 4.49773V12.8135H0.0702209V17.0562H11.8888V28.9358H16.1097V17.0562H27.9283V12.8135Z" />
+    </AnimatedSpinner>
   );
 };
 
-export default Spinner;
+const MainSpinner = () => (
+  <Wrapper>
+    <Spinner />
+  </Wrapper>
+);
+
+export default MainSpinner;
+export { Spinner };
