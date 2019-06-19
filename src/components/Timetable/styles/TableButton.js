@@ -24,6 +24,17 @@ const TableButton = styled.button`
       ? colors.white
       : colors.black};
   cursor: ${props => (props.disabled ? "default" : "pointer")};
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: ${props =>
+      props.disabled
+        ? colors.grey4
+        : props.isActive
+        ? colors.pink
+        : colors.pinkOpacity};
+  }
 `;
 
 export default TableButton;
