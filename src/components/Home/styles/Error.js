@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { colors } from "../../styles/variables";
+import { buzz } from "../../styles/InputField";
 
 const Error = styled.div`
   position: absolute;
@@ -9,6 +10,7 @@ const Error = styled.div`
   line-height: 13px;
   color: ${colors.pink};
   display: flex;
+  animation: ${buzz} 0.3s ease-in-out;
 
   img {
     width: 17px;

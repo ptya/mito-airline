@@ -1,6 +1,24 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 import { colors } from "./variables";
+
+const buzz = keyframes`
+  0% {
+    transform: translateX(0)
+  }
+  25% {
+    transform: translateX(5px)
+  }
+  50% {
+    transform: translateX(-5px)
+  }
+  75% {
+    transform: translateX(5px)
+  }
+  100% {
+    transform: translateX(0)
+  }
+`;
 
 const InputField = styled.div`
   position: relative;
@@ -10,8 +28,6 @@ const InputField = styled.div`
     border: ${props =>
       props.isError ? `2px solid ${colors.pink}` : `1px solid ${colors.grey4}`};
     border-radius: 3px;
-    box-shadow: ${props =>
-      props.isError ? `0 0 10px ${colors.pinkOpacity}` : ""};
     display: block;
     font-size: 1rem;
     width: 250px;
@@ -27,9 +43,18 @@ const InputField = styled.div`
     pointer-events: none;
   }
 
+  /* ERROR STYLES */
+  ${props =>
+    props.isError &&
+    css`
+      box-shadow: 0 0 10px ${colors.pinkOpacity};
+      animation: ${buzz} 0.3s ease-in-out;
+    `};
+
   /* .search__input--selection {
     margin: 7px;
   } */
 `;
 
 export default InputField;
+export { buzz };
