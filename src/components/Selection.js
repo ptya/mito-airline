@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 
 import CartProvider from "./CartProvider";
 import Cart from "./Cart";
-import Timetable from "./Timetable";
+import Timetable from "./Timetable/Timetable";
 import TimetableSelect from "./TimetableSelect";
 
 import { StationsContext } from "./StationsProvider";
@@ -27,9 +27,10 @@ const Selection = () => {
     setReturnDate();
   };
 
+  if (!origin || !destination) return <Redirect to="/" />;
+
   return (
     <>
-      {(!origin || !destination || !departureDate) && <Redirect to="/" />}
       <header className="header">
         <Link to="/" className="header__logo" onClick={() => handleReturn()}>
           <img className="header__logo" src={logo} alt="Mito Airline" />
@@ -54,6 +55,7 @@ const Selection = () => {
               type="outbound"
             />
           )}
+          {!departureDate && <Redirect to="/" />}
           {returnDate && (
             <Timetable
               className="main__timetable main__timetable--in"
