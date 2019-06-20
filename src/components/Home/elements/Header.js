@@ -1,8 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
 import { colors } from "../../styles/variables";
 
-const Header = styled.header`
+import logo from "../../../assets/images/mito-logo.svg";
+
+const StyledHeader = styled.header`
   background: ${colors.blue3};
   border-radius: 2px 2px 0 0;
   height: 50px;
@@ -24,5 +27,12 @@ const Header = styled.header`
     text-transform: uppercase;
   }
 `;
+
+const Header = () => (
+  <StyledHeader>
+    <img src={logo} alt="Mito Airline" />
+    <h1>Mito Airline</h1>
+  </StyledHeader>
+);
 
 export default Header;

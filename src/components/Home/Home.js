@@ -4,7 +4,6 @@ import React, {
   useLayoutEffect,
   useCallback
 } from "react";
-import { animated, useSpring } from "react-spring";
 import { withRouter } from "react-router-dom";
 
 import SelectStation from "../SelectStation";
@@ -25,12 +24,8 @@ import Wrapper from "./elements/Wrapper";
 import Main from "./elements/Main";
 import Header from "./elements/Header";
 import Error from "./elements/Error";
-
-// assets
-import warning from "../../assets/images/error.svg";
-import logo from "../../assets/images/mito-logo.svg";
-
-const AnimatedMain = animated(Main);
+import Form from "./elements/Form";
+import Button from "./elements/Button";
 
 const Home = props => {
   const { history } = props;
@@ -68,30 +63,15 @@ const Home = props => {
     history.push("/selection");
   };
 
-  const fade = useSpring({
-    from: {
-      opacity: 0
-    },
-    opacity: 1
-  });
-
   return (
     <Wrapper>
-      <AnimatedMain className="search" style={fade}>
-        <Header>
-          <img src={logo} alt="Mito Airline" />
-          <h1>Mito Airline</h1>
-        </Header>
-        <form className="search__form" autoComplete="off" onSubmit={onSubmit}>
+      <Main style={{}}>
+        <Header />
+        <Form autoComplete="off" onSubmit={onSubmit}>
           <fieldset>
             <InputField isError={error && error.origin}>
               <SelectStation id="origin" placeholder="Origin" stored={origin} />
-              {error && error.origin && (
-                <Error>
-                  <img src={warning} alt="error" />
-                  <span>{error.origin}</span>
-                </Error>
-              )}
+              {error && error.origin && <Error message={error.origin} />}
             </InputField>
             <InputField isError={error && error.destination}>
               <SelectStation
@@ -100,32 +80,22 @@ const Home = props => {
                 stored={destination}
               />
               {error && error.destination && (
-                <Error>
-                  <img src={warning} alt="error" />
-                  <span>{error.destination}</span>
-                </Error>
+                <Error message={error.destination} />
               )}
             </InputField>
             <InputField isError={error && error.departure}>
               <CustomDatePicker placeholder="Departure" type="departure" />
               <CalendarIco />
-              {error && error.departure && (
-                <Error>
-                  <img src={warning} alt="error" />
-                  <span>{error.departure}</span>
-                </Error>
-              )}
+              {error && error.departure && <Error message={error.departure} />}
             </InputField>
             <InputField>
               <CustomDatePicker placeholder="Return" type="return" />
               <CalendarIco />
             </InputField>
-            <button className="search__btn" type="submit">
-              Search
-            </button>
+            <Button type="submit">Search</Button>
           </fieldset>
-        </form>
-      </AnimatedMain>
+        </Form>
+      </Main>
     </Wrapper>
   );
 };

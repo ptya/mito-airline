@@ -1,9 +1,13 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { colors } from "../../styles/variables";
 import { buzz } from "../../elements/InputField";
 
-const Error = styled.div`
+import warning from "../../../assets/images/error.svg";
+
+const StyledError = styled.div`
   position: absolute;
   bottom: -32px;
   font-size: 13px;
@@ -20,5 +24,16 @@ const Error = styled.div`
     margin: auto 10px;
   }
 `;
+
+const Error = props => (
+  <StyledError>
+    <img src={warning} alt="error" />
+    <span>{props.message}</span>
+  </StyledError>
+);
+
+Error.propTypes = {
+  message: PropTypes.string.isRequired
+};
 
 export default Error;
