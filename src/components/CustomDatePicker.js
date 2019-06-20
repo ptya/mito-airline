@@ -2,11 +2,17 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 
+// hooks
 import { useFloat } from "./hooks/useFloat";
+
+// context
 import { StationsContext } from "./StationsProvider";
+
+// utils
 import { convertDate } from "../utils/convertDate";
 
-// import "react-datepicker/dist/react-datepicker.css";
+// global elements
+import FloatingLabel from "./elements/FloatingLabel";
 
 const CustomDatePicker = props => {
   const {
@@ -97,27 +103,19 @@ const CustomDatePicker = props => {
   };
 
   return (
-    <div className="float__container">
-      <label
-        htmlFor={type}
-        className={
-          isActive ? "float__label float__label--active" : "float__label"
-        }
-      >
-        {placeholder}
-      </label>
+    <FloatingLabel labelId={type} placeholder={placeholder} isActive={isActive}>
       <DatePicker
         selected={startDate}
         onChange={handleChange}
         minDate={limits.minDate}
         maxDate={limits.maxDate}
         onBlur={onBlur}
-        className="float__input"
+        className="datepicker"
         dateFormat={`EEE d. MMM. yyyy`}
         id={type}
         autocomplete="off"
       />
-    </div>
+    </FloatingLabel>
   );
 };
 
