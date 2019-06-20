@@ -4,11 +4,15 @@ import React, {
   useLayoutEffect,
   useCallback
 } from "react";
-import { withRouter } from "react-router-dom";
 
+// components
 import SelectStation from "../SelectStation";
 import CustomDatePicker from "../CustomDatePicker";
 
+// hooks
+import { useRouter } from "../hooks/useRouter";
+
+// context
 import {
   StationsContext,
   originSession,
@@ -27,8 +31,8 @@ import Error from "./elements/Error";
 import Form from "./elements/Form";
 import Button from "./elements/Button";
 
-const Home = props => {
-  const { history } = props;
+const Home = () => {
+  const { history } = useRouter();
   const { origin, destination, departureDate } = useContext(StationsContext);
   const [error, setError] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -100,4 +104,4 @@ const Home = props => {
   );
 };
 
-export default withRouter(Home);
+export default Home;
