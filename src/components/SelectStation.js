@@ -2,8 +2,14 @@ import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import Autosuggest from "react-autosuggest";
 
-import { StationsContext } from "./StationsProvider";
+// hooks
 import { useFloat } from "./hooks/useFloat";
+
+// context
+import { StationsContext } from "./StationsProvider";
+
+// global elements
+import FloatingLabel from "./elements/FloatingLabel";
 
 const SelectStation = props => {
   const { placeholder, id, stored } = props;
@@ -111,17 +117,9 @@ const SelectStation = props => {
   useFloat(id, () => setIsActive(true));
 
   const renderInputComponent = inputProps => (
-    <div className="float__container">
-      <label
-        htmlFor={id}
-        className={
-          isActive ? "float__label float__label--active" : "float__label"
-        }
-      >
-        {placeholder}
-      </label>
+    <FloatingLabel labelId={id} placeholder={placeholder} isActive={isActive}>
       <input id={id} {...inputProps} />
-    </div>
+    </FloatingLabel>
   );
 
   return (
