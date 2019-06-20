@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
 
-import useRouter from "./hooks/useRouter";
+import { useRouter } from "./hooks/useRouter";
 import StationsProvider from "./StationsProvider";
 import Home from "./Home/Home";
 import Selection from "./Selection";
