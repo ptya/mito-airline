@@ -1,21 +1,27 @@
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
+// context
 import { CartContext } from "../CartProvider";
 import { StationsContext } from "../StationsProvider";
-import { Spinner } from "../elements/Spinner";
 
+// utils
 import { convertDate } from "../../utils/convertDate";
 import { formatMoney } from "../../utils/formatMoney";
 
-import smallArrow from "../../assets/images/arrow-small.svg";
-import mediumArrow from "../../assets/images/arrow-medium.svg";
-import chevron from "../../assets/images/chevron.svg";
+// global elements
+import { Spinner } from "../elements/Spinner";
 
+// local elements
 import TableWrapper from "./elements/TableWrapper";
 import TableHeader from "./elements/TableHeader";
 import TableRow from "./elements/TableRow";
 import TableButton from "./elements/TableButton";
+
+// assets
+import smallArrow from "../../assets/images/arrow-small.svg";
+import mediumArrow from "../../assets/images/arrow-medium.svg";
+import chevron from "../../assets/images/chevron.svg";
 
 const Timetable = props => {
   const { cartDispatch, cart } = useContext(CartContext);
