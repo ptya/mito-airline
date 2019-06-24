@@ -15,6 +15,12 @@ const StyledHeader = styled.header`
     display: inline-block;
     vertical-align: middle;
     padding: 0 15px;
+    transform: rotateX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  img:hover {
+    transform: rotate(360deg);
   }
 
   h1 {

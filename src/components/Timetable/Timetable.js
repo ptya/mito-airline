@@ -9,10 +9,15 @@ import { StationsContext } from "../StationsProvider";
 import { convertDate } from "../../utils/convertDate";
 import { formatMoney } from "../../utils/formatMoney";
 
-// global elements
-import { Spinner } from "../elements/Spinner";
-
 // local elements
+import MainWrapper from "./elements/MainWrapper";
+import Header from "./elements/Header";
+import NavigationWrapper from "./elements/NavigationWrapper";
+import Previous from "./elements/Previous";
+import Day from "./elements/Day";
+import Next from "./elements/Next";
+import Loading from "./elements/Loading";
+import GeneralWrapper from "./elements/GeneralWrapper";
 import TableWrapper from "./elements/TableWrapper";
 import TableHeader from "./elements/TableHeader";
 import TableRow from "./elements/TableRow";
@@ -96,51 +101,43 @@ const Timetable = props => {
   const to = type === "outbound" ? destination.shortName : origin.shortName;
 
   return (
-    <div className={blockClass}>
-      <div className="timetable__header">
-        <h2>
-          {status}
-          <span className="timetable__route">
-            {from}
-            <img src={mediumArrow} alt="to" />
-            {to}
-          </span>
-        </h2>
-      </div>
-      <div className="timetable__date">
-        <div className="timetable__step">
+    <MainWrapper>
+      <Header>
+        <h2>{status}</h2>
+        <p>
+          {from}
+          <img src={mediumArrow} alt="to" />
+          {to}
+        </p>
+      </Header>
+      <NavigationWrapper>
+        <Previous>
           {isPrevAvailable && (
             <button type="button" onClick={() => handleDayChange(prevDay)}>
               <img src={chevron} alt="Previous day" />
               <span>{`${prevDay.shortMonth} ${prevDay.day} ${prevDay.fullMonth}`}</span>
             </button>
           )}
-        </div>
-        <h3>{`${day.fullWeekday}, ${day.day} ${day.fullMonth} ${day.year}`}</h3>
-        <div className="timetable__step timetable__step--next">
+        </Previous>
+        <Day>{`${day.fullWeekday}, ${day.day} ${day.fullMonth} ${day.year}`}</Day>
+        <Next>
           {isNextAvailable && (
             <button type="button" onClick={() => handleDayChange(nextDay)}>
               <img src={chevron} alt="Next day" />
               <span>{`${nextDay.shortMonth} ${nextDay.day} ${nextDay.fullMonth}`}</span>
             </button>
           )}
-        </div>
-      </div>
-      {/* <div className="timetable__times"> */}
+        </Next>
+      </NavigationWrapper>
       <TableWrapper>
         <>
-          {!flights && (
-            <p className="timetable__loading">
-              <Spinner width={50} />
-            </p>
-          )}
+          {!flights && <Loading />}
           {flights && flights.length === 0 && (
-            <p className="timetable__no-flights">
+            <GeneralWrapper>
               There are no available flights this day.
-            </p>
+            </GeneralWrapper>
           )}
           {flights && flights.length > 0 && (
-            // <TableWrapper>
             <>
               <TableHeader>
                 <span className="basic">Basic</span>
@@ -215,12 +212,10 @@ const Timetable = props => {
                 );
               })}
             </>
-            /* </TableWrapper> */
           )}
         </>
-        {/* </div> */}
       </TableWrapper>
-    </div>
+    </MainWrapper>
   );
 };
 
