@@ -17,6 +17,16 @@ const Button = styled.button`
   height: 50px;
   width: 230px;
   cursor: pointer;
+
+  :hover {
+    background: ${colors.blue4};
+  }
+
+  :active {
+    background: ${colors.blue2};
+    transform: translate3d(1px, 1px, 0);
+    box-shadow: initial;
+  }
 `;
 
 export default Button;
