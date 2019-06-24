@@ -78,7 +78,6 @@ const Timetable = props => {
     type === "outbound" ? setDepartureDate(date) : setReturnDate(date);
   };
 
-  const blockClass = `${className} timetable`.trim();
   const today = new Date();
 
   const isToday =
