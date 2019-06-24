@@ -9,8 +9,10 @@ import { StationsContext } from "../StationsProvider";
 import { convertDate } from "../../utils/convertDate";
 import { formatMoney } from "../../utils/formatMoney";
 
+// global elements
+import ArticleWrapper from "../elements/ArticleWrapper";
+
 // local elements
-import MainWrapper from "./elements/MainWrapper";
 import Header from "./elements/Header";
 import NavigationWrapper from "./elements/NavigationWrapper";
 import Previous from "./elements/Previous";
@@ -100,7 +102,7 @@ const Timetable = props => {
   const to = type === "outbound" ? destination.shortName : origin.shortName;
 
   return (
-    <MainWrapper>
+    <ArticleWrapper>
       <Header>
         <h2>{status}</h2>
         <p>
@@ -214,17 +216,12 @@ const Timetable = props => {
           )}
         </>
       </TableWrapper>
-    </MainWrapper>
+    </ArticleWrapper>
   );
 };
 
 Timetable.propTypes = {
-  className: PropTypes.string,
   type: PropTypes.string.isRequired
-};
-
-Timetable.defaultProps = {
-  className: ""
 };
 
 export default Timetable;
