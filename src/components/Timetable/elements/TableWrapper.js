@@ -19,6 +19,8 @@ const TableWrapper = props => {
     height: height
   });
 
+  console.log("height: ", height);
+
   return (
     <animated.div style={animation}>
       <Wrapper {...bind}>{props.children}</Wrapper>
