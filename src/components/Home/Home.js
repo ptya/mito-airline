@@ -20,6 +20,7 @@ import {
 } from "../StationsProvider";
 
 // global elements
+import Button from "../elements/Button";
 import InputField from "../elements/InputField";
 import CalendarIco from "../elements/CalendarIco";
 
@@ -29,7 +30,6 @@ import Main from "./elements/Main";
 import Header from "./elements/Header";
 import Error from "./elements/Error";
 import Form from "./elements/Form";
-import Button from "./elements/Button";
 
 const Home = () => {
   const { history } = useRouter();
