@@ -4,17 +4,30 @@ import PropTypes from "prop-types";
 // components
 import TimetableHeader from "./Header/TimetableHeader";
 import TimetableSelect from "./Select/TimetableSelect";
+import TimetableForm from "./Form/TimetableForm";
 
-// global elements
-import ArticleWrapper from "../elements/ArticleWrapper";
+// context
+import { StationsContext } from "../StationsProvider";
+
+// local elements
+import ArticleWrapper from "./elements/ArticleWrapper";
+import AnimatedWrapper from "./elements/AnimatedWrapper";
 
 const Timetable = props => {
+  const { returnDate } = useContext(StationsContext);
+
   const { type } = props;
+
+  // only set to false, if inbound and there's no returnDate
+  const isChosen = (type === "inbound" && returnDate) || type === "outbound";
 
   return (
     <ArticleWrapper>
       <TimetableHeader type={type} />
-      <TimetableSelect type={type} />
+      <AnimatedWrapper isChosen={isChosen}>
+        {isChosen && <TimetableSelect type={type} />}
+        {!isChosen && <TimetableForm />}
+      </AnimatedWrapper>
     </ArticleWrapper>
   );
 };

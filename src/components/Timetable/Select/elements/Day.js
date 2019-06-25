@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colors } from "../../styles/variables";
+import { colors } from "components/styles/variables";
 
 const Day = styled.h3`
   font-size: 18px;

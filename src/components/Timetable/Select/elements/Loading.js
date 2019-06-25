@@ -1,7 +1,7 @@
 import React from "react";
 
 // global elements
-import { Spinner } from "../../elements/Spinner";
+import { Spinner } from "components/elements/Spinner";
 
 // local elements
 import GeneralWrapper from "./GeneralWrapper";

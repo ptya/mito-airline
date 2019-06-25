@@ -10,16 +10,16 @@ import { convertDate } from "utils/convertDate";
 import { formatMoney } from "utils/formatMoney";
 
 // local elements
-import NavigationWrapper from "../elements/NavigationWrapper";
-import Previous from "../elements/Previous";
-import Day from "../elements/Day";
-import Next from "../elements/Next";
-import Loading from "../elements/Loading";
-import GeneralWrapper from "../elements/GeneralWrapper";
-import TableWrapper from "../elements/TableWrapper";
-import TableHeader from "../elements/TableHeader";
-import TableRow from "../elements/TableRow";
-import TableButton from "../elements/TableButton";
+import NavigationWrapper from "./elements/NavigationWrapper";
+import Previous from "./elements/Previous";
+import Day from "./elements/Day";
+import Next from "./elements/Next";
+import Loading from "./elements/Loading";
+import GeneralWrapper from "./elements/GeneralWrapper";
+import TableWrapper from "./elements/TableWrapper";
+import TableHeader from "./elements/TableHeader";
+import TableRow from "./elements/TableRow";
+import TableButton from "./elements/TableButton";
 
 // assets
 import smallArrow from "assets/images/arrow-small.svg";
@@ -113,92 +113,87 @@ const Timetable = props => {
           )}
         </Next>
       </NavigationWrapper>
-      <TableWrapper>
-        <>
-          {!flights && <Loading />}
-          {flights && flights.length === 0 && (
-            <GeneralWrapper>
-              There are no available flights this day.
-            </GeneralWrapper>
-          )}
-          {flights && flights.length > 0 && (
-            <>
-              <TableHeader>
-                <span className="basic">Basic</span>
-                <span className="standard">Standard</span>
-                <span className="plus">Plus</span>
-              </TableHeader>
-              {flights.map(flight => {
-                if (flight.remainingTicket === 0) return null;
-                const depTime = convertDate(flight.departure);
-                const isDisabled =
-                  isToday && Date.now() > depTime.date.getTime();
-                const arrTime = convertDate(flight.arrival);
-                return (
-                  <TableRow isDisabled={isDisabled} key={flight.flightNumber}>
-                    <div className="time">
-                      <span>{depTime.time}</span>
-                      <img src={smallArrow} alt="to" />
-                      <span>{arrTime.time}</span>
-                    </div>
-                    <div className="basic">
-                      <TableButton
-                        isActive={selectedFare === flight.fares[0].fareSellKey}
-                        type="button"
-                        disabled={isDisabled}
-                        onClick={() =>
-                          cartDispatch({
-                            type: actionType,
-                            price: flight.fares[0].price * 100,
-                            flight,
-                            fare: flight.fares[0].fareSellKey
-                          })
-                        }
-                      >
-                        {formatMoney(flight.fares[0].price * 100)}
-                      </TableButton>
-                    </div>
-                    <div className="standard">
-                      <TableButton
-                        isActive={selectedFare === flight.fares[1].fareSellKey}
-                        type="button"
-                        disabled={isDisabled}
-                        onClick={() =>
-                          cartDispatch({
-                            type: actionType,
-                            price: flight.fares[1].price * 100,
-                            flight,
-                            fare: flight.fares[1].fareSellKey
-                          })
-                        }
-                      >
-                        {formatMoney(flight.fares[1].price * 100)}
-                      </TableButton>
-                    </div>
-                    <div className="plus">
-                      <TableButton
-                        isActive={selectedFare === flight.fares[2].fareSellKey}
-                        type="button"
-                        disabled={isDisabled}
-                        onClick={() =>
-                          cartDispatch({
-                            type: actionType,
-                            price: flight.fares[2].price * 100,
-                            flight,
-                            fare: flight.fares[2].fareSellKey
-                          })
-                        }
-                      >
-                        {formatMoney(flight.fares[2].price * 100)}
-                      </TableButton>
-                    </div>
-                  </TableRow>
-                );
-              })}
-            </>
-          )}
-        </>
-      </TableWrapper>
+      {!flights && <Loading />}
+      {flights && flights.length === 0 && (
+        <GeneralWrapper>
+          There are no available flights this day.
+        </GeneralWrapper>
+      )}
+      {flights && flights.length > 0 && (
+        <TableWrapper>
+          <TableHeader>
+            <span className="basic">Basic</span>
+            <span className="standard">Standard</span>
+            <span className="plus">Plus</span>
+          </TableHeader>
+          {flights.map(flight => {
+            if (flight.remainingTicket === 0) return null;
+            const depTime = convertDate(flight.departure);
+            const isDisabled = isToday && Date.now() > depTime.date.getTime();
+            const arrTime = convertDate(flight.arrival);
+            return (
+              <TableRow isDisabled={isDisabled} key={flight.flightNumber}>
+                <div className="time">
+                  <span>{depTime.time}</span>
+                  <img src={smallArrow} alt="to" />
+                  <span>{arrTime.time}</span>
+                </div>
+                <div className="basic">
+                  <TableButton
+                    isActive={selectedFare === flight.fares[0].fareSellKey}
+                    type="button"
+                    disabled={isDisabled}
+                    onClick={() =>
+                      cartDispatch({
+                        type: actionType,
+                        price: flight.fares[0].price * 100,
+                        flight,
+                        fare: flight.fares[0].fareSellKey
+                      })
+                    }
+                  >
+                    {formatMoney(flight.fares[0].price * 100)}
+                  </TableButton>
+                </div>
+                <div className="standard">
+                  <TableButton
+                    isActive={selectedFare === flight.fares[1].fareSellKey}
+                    type="button"
+                    disabled={isDisabled}
+                    onClick={() =>
+                      cartDispatch({
+                        type: actionType,
+                        price: flight.fares[1].price * 100,
+                        flight,
+                        fare: flight.fares[1].fareSellKey
+                      })
+                    }
+                  >
+                    {formatMoney(flight.fares[1].price * 100)}
+                  </TableButton>
+                </div>
+                <div className="plus">
+                  <TableButton
+                    isActive={selectedFare === flight.fares[2].fareSellKey}
+                    type="button"
+                    disabled={isDisabled}
+                    onClick={() =>
+                      cartDispatch({
+                        type: actionType,
+                        price: flight.fares[2].price * 100,
+                        flight,
+                        fare: flight.fares[2].fareSellKey
+                      })
+                    }
+                  >
+                    {formatMoney(flight.fares[2].price * 100)}
+                  </TableButton>
+                </div>
+              </TableRow>
+            );
+          })}
+        </TableWrapper>
+      )}
     </>
   );
 };
