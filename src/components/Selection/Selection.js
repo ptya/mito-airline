@@ -9,6 +9,9 @@ import { StationsContext } from "../StationsProvider";
 import Cart from "../Cart";
 import Timetable from "../Timetable/Timetable";
 
+// global elements
+import RelativeWrapper from "components/elements/RelativeWrapper";
+
 // local elements
 import Inbound from "./elements/Inbound";
 import Outbound from "./elements/Outbound";
@@ -35,7 +38,7 @@ const Selection = () => {
   if (!origin || !destination) return <Redirect to="/" />;
 
   return (
-    <>
+    <RelativeWrapper>
       <header className="header">
         <Link to="/" className="header__logo" onClick={() => handleReturn()}>
           <img className="header__logo" src={logo} alt="Mito Airline" />
@@ -65,7 +68,7 @@ const Selection = () => {
           </Inbound>
         </div>
       </CartProvider>
-    </>
+    </RelativeWrapper>
   );
 };
 

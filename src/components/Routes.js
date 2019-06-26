@@ -1,11 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { animated, useTransition } from "react-spring";
+import { animated, useTransition, config } from "react-spring";
 
 import { useRouter } from "./hooks/useRouter";
 import StationsProvider from "./StationsProvider";
 import Home from "./Home/Home";
 import Selection from "./Selection/Selection";
+
+// global elements
+import RelativeWrapper from "components/elements/RelativeWrapper";
 
 const Routes = () => {
   return (
@@ -24,21 +27,15 @@ const AnimatedRoutes = () => {
     from: {
       opacity: 0,
       position: "absolute",
-      width: "100%",
-      transform: "translate3d(100%, 0, 0)"
+      width: "100%"
     },
-    enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
-    leave: { opacity: 0, transform: "translate3d(-50%, 0, 0)" }
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: config.slow
   });
 
   return (
-    <div
-      style={{
-        position: "relative",
-        overflowX: "hidden",
-        height: "100vh"
-      }}
-    >
+    <RelativeWrapper>
       {transitions.map(({ item, props: transitionStyle, key }) => (
         <animated.div key={key} style={transitionStyle}>
           <Switch location={item}>
@@ -47,7 +44,7 @@ const AnimatedRoutes = () => {
           </Switch>
         </animated.div>
       ))}
-    </div>
+    </RelativeWrapper>
   );
 };
 

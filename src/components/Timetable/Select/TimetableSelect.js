@@ -9,6 +9,9 @@ import { StationsContext } from "components/StationsProvider";
 import { convertDate } from "utils/convertDate";
 import { formatMoney } from "utils/formatMoney";
 
+// global elements
+import RelativeWrapper from "components/elements/RelativeWrapper";
+
 // local elements
 import NavigationWrapper from "./elements/NavigationWrapper";
 import Previous from "./elements/Previous";
@@ -16,7 +19,6 @@ import Day from "./elements/Day";
 import Next from "./elements/Next";
 import Loading from "./elements/Loading";
 import GeneralWrapper from "./elements/GeneralWrapper";
-import TableWrapper from "./elements/TableWrapper";
 import TableHeader from "./elements/TableHeader";
 import TableRow from "./elements/TableRow";
 import TableButton from "./elements/TableButton";
@@ -120,7 +122,7 @@ const Timetable = props => {
         </GeneralWrapper>
       )}
       {flights && flights.length > 0 && (
-        <TableWrapper>
+        <RelativeWrapper>
           <TableHeader>
             <span className="basic">Basic</span>
             <span className="standard">Standard</span>
@@ -192,7 +194,7 @@ const Timetable = props => {
               </TableRow>
             );
           })}
-        </TableWrapper>
+        </RelativeWrapper>
       )}
     </>
   );
