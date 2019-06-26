@@ -19,8 +19,7 @@ const Timetable = props => {
   const { type } = props;
 
   // only set to false, if inbound and there's no returnDate
-  const isChosen = (type === "inbound" && returnDate) || type === "outbound";
-
+  const isChosen = (returnDate && type === "inbound") || type === "outbound";
   return (
     <ArticleWrapper>
       <TimetableHeader type={type} />
