@@ -35,6 +35,10 @@ const TableButton = styled.button`
         ? colors.pink
         : colors.pinkOpacity};
   }
+
+  :active {
+    transform: translate3d(1px, 1px, 0);
+  }
 `;
 
 export default TableButton;
