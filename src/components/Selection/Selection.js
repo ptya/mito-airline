@@ -6,8 +6,8 @@ import CartProvider from "../CartProvider";
 import { StationsContext } from "../StationsProvider";
 
 // components
-import Cart from "../Cart";
-import Timetable from "../Timetable/Timetable";
+import Cart from "components/Cart/Cart";
+import Timetable from "components/Timetable/Timetable";
 
 // global elements
 import RelativeWrapper from "components/elements/RelativeWrapper";
@@ -17,9 +17,9 @@ import Inbound from "./elements/Inbound";
 import Outbound from "./elements/Outbound";
 
 // assets
-import logo from "../../assets/images/mito-logo.svg";
-import arrows from "../../assets/images/arrows.svg";
-import plane from "../../assets/images/plane.svg";
+import logo from "assets/images/mito-logo.svg";
+import arrows from "assets/images/arrows.svg";
+import plane from "assets/images/plane.svg";
 
 const Selection = () => {
   const {

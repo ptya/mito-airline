@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 
-import Modal from "./Modal";
-import Flight from "./Flight";
-import { CartContext } from "./CartProvider";
-import { StationsContext } from "./StationsProvider";
+import Modal from "components/Modal";
+import Flight from "components/Flight";
+import { CartContext } from "components/CartProvider";
+import { StationsContext } from "components/StationsProvider";
 
-import { useSticky } from "./hooks/useSticky";
-import { formatMoney } from "../utils/formatMoney";
+import { useSticky } from "components/hooks/useSticky";
+import { formatMoney } from "utils/formatMoney";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
