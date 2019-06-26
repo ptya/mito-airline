@@ -9,6 +9,12 @@ import { StationsContext } from "components/StationsProvider";
 import { useSticky } from "components/hooks/useSticky";
 import { formatMoney } from "utils/formatMoney";
 
+import Price from "./elements/Price";
+
+// local elements
+import Header from "./elements/Header";
+import Total from "./elements/Total";
+
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
   const { cart, cartDispatch } = useContext(CartContext);
@@ -23,7 +29,8 @@ const Cart = props => {
 
   const { className } = props;
 
-  const total = formatMoney(cart.total);
+  // const total = formatMoney(cart.total);
+  const { total } = cart;
 
   const isSticky = useSticky(100);
 
@@ -35,9 +42,9 @@ const Cart = props => {
     <>
       <div className={blockClass}>
         <div className="cart__details">
-          <h2 className="cart__header">
-            Flights <span className="cart__header--price">{total}</span>
-          </h2>
+          <Header>
+            Flights <Price price={total} />
+          </Header>
           {!cart.outbound && (
             <p className="cart__info">Choose an outbound flight</p>
           )}
@@ -52,9 +59,9 @@ const Cart = props => {
               to={origin}
             />
           )}
-          <h2 className="cart__total">
-            Total <span>{total}</span>
-          </h2>
+          <Total>
+            Total <Price price={total} />
+          </Total>
         </div>
         <button
           type="button"
