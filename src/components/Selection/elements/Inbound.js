@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-const Inbound = styled.div`
+import Timetable from "components/Timetable/Timetable";
+
+const Inbound = styled(Timetable)`
   margin: 20px;
   grid-area: inbound;
 `;

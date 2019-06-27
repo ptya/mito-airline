@@ -13,9 +13,12 @@ import Timetable from "components/Timetable/Timetable";
 import RelativeWrapper from "components/elements/RelativeWrapper";
 
 // local elements
-import Cart from "./elements/Cart";
+import GridContainer from "./elements/GridContainer";
+import GridItem from "./elements/GridItem";
+// import Cart from "./elements/Cart";
 import Inbound from "./elements/Inbound";
 import Outbound from "./elements/Outbound";
+import Title from "./elements/Title";
 
 // assets
 import logo from "assets/images/mito-logo.svg";
@@ -52,22 +55,16 @@ const Selection = () => {
         <p className="header__route">{destination.shortName}</p>
       </header>
       <CartProvider>
-        <div className="main">
-          <h1 className="main__title">
-            <img className="main__airplane" src={plane} alt="Airplane" />
+        <GridContainer>
+          <Title>
+            <img src={plane} alt="Airplane" />
             Select Flight
-          </h1>
-          <Cart className="main__cart" />
-          {departureDate && (
-            <Outbound>
-              <Timetable type="outbound" />
-            </Outbound>
-          )}
+          </Title>
+          <Cart area="cart" className="main__cart" />
+          {departureDate && <Timetable type="outbound" />}
           {!departureDate && <Redirect to="/" />}
-          <Inbound>
-            <Timetable type="inbound" />
-          </Inbound>
-        </div>
+          <Timetable type="inbound" />
+        </GridContainer>
       </CartProvider>
     </RelativeWrapper>
   );

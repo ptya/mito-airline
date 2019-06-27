@@ -29,7 +29,7 @@ const Cart = props => {
     });
   };
 
-  const { className } = props;
+  const { className, area } = props;
 
   // const total = formatMoney(cart.total);
   const { total } = cart;
@@ -44,7 +44,7 @@ const Cart = props => {
     <>
       {/* <div className={blockClass}>
         <div className="cart__details"> */}
-      <CartWrapper>
+      <CartWrapper area={area}>
         <Header>
           Flights <Price price={total} />
         </Header>
@@ -114,11 +114,13 @@ const Cart = props => {
 };
 
 Cart.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  area: PropTypes.string
 };
 
 Cart.defaultProps = {
-  className: ""
+  className: "",
+  area: null
 };
 
 export default Cart;

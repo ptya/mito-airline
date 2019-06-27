@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { colors } from "components/styles/variables";
 
 const Header = styled.h2`
+  background: ${colors.white};
   padding: 15px 15px 0 15px;
   display: flex;
   justify-content: space-between;
