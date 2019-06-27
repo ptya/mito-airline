@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { convertDate } from "../utils/convertDate";
+import { convertDate } from "utils/convertDate";
 
 const Flight = props => {
   const { from, to, flight, className } = props;

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 
 import Modal from "components/Modal";
-import Flight from "components/Flight";
+import CartFlight from "./Flight/CartFlight";
 import { CartContext } from "components/CartProvider";
 import { StationsContext } from "components/StationsProvider";
 
@@ -12,7 +12,9 @@ import { formatMoney } from "utils/formatMoney";
 import Price from "./elements/Price";
 
 // local elements
+import CartWrapper from "./elements/CartWrapper";
 import Header from "./elements/Header";
+import Info from "./elements/Info";
 import Total from "./elements/Total";
 
 const Cart = props => {
@@ -40,29 +42,27 @@ const Cart = props => {
 
   return (
     <>
-      <div className={blockClass}>
-        <div className="cart__details">
-          <Header>
-            Flights <Price price={total} />
-          </Header>
-          {!cart.outbound && (
-            <p className="cart__info">Choose an outbound flight</p>
-          )}
-          {cart.outbound && (
-            <Flight flight={cart.outbound} from={origin} to={destination} />
-          )}
-          {cart.inbound && (
-            <Flight
-              className={cart.outbound ? "cart__separator" : ""}
-              flight={cart.inbound}
-              from={destination}
-              to={origin}
-            />
-          )}
-          <Total>
-            Total <Price price={total} />
-          </Total>
-        </div>
+      {/* <div className={blockClass}>
+        <div className="cart__details"> */}
+      <CartWrapper>
+        <Header>
+          Flights <Price price={total} />
+        </Header>
+        {!cart.outbound && <Info>Choose an outbound flight</Info>}
+        {cart.outbound && (
+          <CartFlight flight={cart.outbound} from={origin} to={destination} />
+        )}
+        {cart.inbound && (
+          <CartFlight
+            className={cart.outbound ? "cart__separator" : ""}
+            flight={cart.inbound}
+            from={destination}
+            to={origin}
+          />
+        )}
+        <Total>
+          Total <Price price={total} />
+        </Total>
         <button
           type="button"
           className={
@@ -73,7 +73,7 @@ const Cart = props => {
         >
           Pay Now
         </button>
-      </div>
+      </CartWrapper>
       {payToggle && (
         <Modal setToggle={setPayToggle}>
           <div className="pay-view">
@@ -81,9 +81,17 @@ const Cart = props => {
               Thanks for buying your tickets at mito airlines
             </h1>
             <div className="pay-view__flights">
-              <Flight flight={cart.outbound} from={origin} to={destination} />
+              <CartFlight
+                flight={cart.outbound}
+                from={origin}
+                to={destination}
+              />
               {cart.inbound && (
-                <Flight flight={cart.inbound} from={destination} to={origin} />
+                <CartFlight
+                  flight={cart.inbound}
+                  from={destination}
+                  to={origin}
+                />
               )}
             </div>
             <div className="pay-view__footer">

@@ -13,6 +13,7 @@ import Timetable from "components/Timetable/Timetable";
 import RelativeWrapper from "components/elements/RelativeWrapper";
 
 // local elements
+import Cart from "./elements/Cart";
 import Inbound from "./elements/Inbound";
 import Outbound from "./elements/Outbound";
 
