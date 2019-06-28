@@ -8,11 +8,12 @@ import { StationsContext } from "../StationsProvider";
 // components
 import Cart from "components/Cart/Cart";
 import Timetable from "components/Timetable/Timetable";
+import SelectionHeader from "./Header/SelectionHeader";
 
 // global elements
 import RelativeWrapper from "components/elements/RelativeWrapper";
 
-// local elements
+// local elements./Header/Header
 import GridContainer from "./elements/GridContainer";
 import GridItem from "./elements/GridItem";
 // import Cart from "./elements/Cart";
@@ -43,17 +44,7 @@ const Selection = () => {
 
   return (
     <RelativeWrapper>
-      <header className="header">
-        <Link to="/" className="header__logo" onClick={() => handleReturn()}>
-          <img className="header__logo" src={logo} alt="Mito Airline" />
-        </Link>
-        <p className="header__route">
-          <span className="header__info">Leaving from</span>
-          {origin.shortName}
-        </p>
-        <img className="header__arrows" src={arrows} alt="From - to" />
-        <p className="header__route">{destination.shortName}</p>
-      </header>
+      <SelectionHeader />
       <CartProvider>
         <GridContainer>
           <Title>
