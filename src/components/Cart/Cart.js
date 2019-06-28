@@ -42,22 +42,28 @@ const Cart = props => {
         <Header>
           Flights <Price price={total} />
         </Header>
-        {/* <AnimatedWrapper> */}
-        {!cart.outbound && <Info>Choose an outbound flight</Info>}
-        {cart.outbound && (
-          <AnimatedFlight>
-            <CartFlight flight={cart.outbound} from={origin} to={destination} />
-          </AnimatedFlight>
-        )}
-        {cart.inbound && (
-          <CartFlight
-            className={cart.outbound ? "cart__separator" : ""}
-            flight={cart.inbound}
-            from={destination}
-            to={origin}
-          />
-        )}
-        {/* </AnimatedWrapper> */}
+        <AnimatedWrapper>
+          {!cart.outbound && <Info>Choose an outbound flight</Info>}
+          {cart.outbound && (
+            <AnimatedFlight>
+              <CartFlight
+                flight={cart.outbound}
+                from={origin}
+                to={destination}
+              />
+            </AnimatedFlight>
+          )}
+          {cart.inbound && (
+            <AnimatedFlight>
+              <CartFlight
+                className={cart.outbound ? "cart__separator" : ""}
+                flight={cart.inbound}
+                from={destination}
+                to={origin}
+              />
+            </AnimatedFlight>
+          )}
+        </AnimatedWrapper>
         <Total>
           Total <Price price={total} />
         </Total>
