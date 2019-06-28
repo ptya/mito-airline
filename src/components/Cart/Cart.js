@@ -7,11 +7,12 @@ import { CartContext } from "components/CartProvider";
 import { StationsContext } from "components/StationsProvider";
 
 import { useSticky } from "components/hooks/useSticky";
-import { formatMoney } from "utils/formatMoney";
 
 import Price from "./elements/Price";
 
 // local elements
+import AnimatedWrapper from "./elements/AnimatedWrapper";
+import AnimatedFlight from "./elements/AnimatedFlight";
 import CartWrapper from "./elements/CartWrapper";
 import Header from "./elements/Header";
 import Info from "./elements/Info";
@@ -29,28 +30,24 @@ const Cart = props => {
     });
   };
 
-  const { className, area } = props;
+  const { area } = props;
 
-  // const total = formatMoney(cart.total);
   const { total } = cart;
 
   const isSticky = useSticky(100);
 
-  const blockClass = isSticky
-    ? `${className} cart cart--fixed`.trim()
-    : `${className} cart`.trim();
-
   return (
     <>
-      {/* <div className={blockClass}>
-        <div className="cart__details"> */}
-      <CartWrapper area={area}>
+      <CartWrapper area={area} isSticky={isSticky}>
         <Header>
           Flights <Price price={total} />
         </Header>
+        {/* <AnimatedWrapper> */}
         {!cart.outbound && <Info>Choose an outbound flight</Info>}
         {cart.outbound && (
-          <CartFlight flight={cart.outbound} from={origin} to={destination} />
+          <AnimatedFlight>
+            <CartFlight flight={cart.outbound} from={origin} to={destination} />
+          </AnimatedFlight>
         )}
         {cart.inbound && (
           <CartFlight
@@ -60,6 +57,7 @@ const Cart = props => {
             to={origin}
           />
         )}
+        {/* </AnimatedWrapper> */}
         <Total>
           Total <Price price={total} />
         </Total>
@@ -114,12 +112,10 @@ const Cart = props => {
 };
 
 Cart.propTypes = {
-  className: PropTypes.string,
   area: PropTypes.string
 };
 
 Cart.defaultProps = {
-  className: "",
   area: null
 };
 

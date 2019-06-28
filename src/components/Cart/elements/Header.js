@@ -11,6 +11,8 @@ const Header = styled.h2`
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 
   span {
     color: ${colors.blue3};
