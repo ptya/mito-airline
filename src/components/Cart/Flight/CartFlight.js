@@ -1,41 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// utils
 import { convertDate } from "utils/convertDate";
 
+// local elements
+import Wrapper from "./elements/Wrapper";
+import Calendar from "./elements/Calendar";
+import Airport from "./elements/Airport";
+
 const Flight = props => {
-  const { from, to, flight, className } = props;
+  const { from, to, flight } = props;
   let { departure, arrival } = flight;
   departure = convertDate(departure);
   arrival = convertDate(arrival);
 
-  const wrapperClass = `${className} flight`.trim();
   return (
-    <div className={wrapperClass}>
-      <p className="flight__calendar">
-        <span className="calendar__month">{departure.shortMonth}</span>
+    <Wrapper>
+      <Calendar>
+        <span>{departure.shortMonth}</span>
         <span>{departure.day}</span>
-      </p>
-      <p className="flight__airport">
-        <span className="flight__airport--origin">{from.shortName}</span>
+      </Calendar>
+      <Airport>
+        <span>{from.shortName}</span>
         <span>{to.shortName}</span>
-        <span className="flight__airport--time">
+        <span>
           {departure.weekday} {departure.time} – {arrival.time}
         </span>
-      </p>
-    </div>
+      </Airport>
+    </Wrapper>
   );
 };
 
 Flight.propTypes = {
-  className: PropTypes.string,
   flight: PropTypes.object.isRequired,
   from: PropTypes.object.isRequired,
   to: PropTypes.object.isRequired
-};
-
-Flight.defaultProps = {
-  className: ""
 };
 
 export default Flight;
