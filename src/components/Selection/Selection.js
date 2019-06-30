@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 
 // context
-import CartProvider from "../CartProvider";
-import { StationsContext } from "../StationsProvider";
+import CartProvider from "components/providers/CartProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // components
 import Cart from "components/Cart/Cart";

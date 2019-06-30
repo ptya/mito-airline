@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import CartFlight from "../Flight/CartFlight";
 
 // context
-import { CartContext } from "components/CartProvider";
-import { StationsContext } from "components/StationsProvider";
+import { CartContext } from "components/providers/CartProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // utils
 import { formatMoney } from "utils/formatMoney";

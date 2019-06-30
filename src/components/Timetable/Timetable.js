@@ -7,7 +7,7 @@ import TimetableSelect from "./Select/TimetableSelect";
 import TimetableForm from "./Form/TimetableForm";
 
 // context
-import { StationsContext } from "../StationsProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // local elements
 import ArticleWrapper from "./elements/ArticleWrapper";

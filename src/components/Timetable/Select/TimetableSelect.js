@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 // context
-import { CartContext } from "components/CartProvider";
-import { StationsContext } from "components/StationsProvider";
+import { CartContext } from "components/providers/CartProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // utils
 import { convertDate } from "utils/convertDate";

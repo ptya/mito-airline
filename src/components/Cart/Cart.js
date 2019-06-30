@@ -6,8 +6,8 @@ import CartFlight from "./Flight/CartFlight";
 import CartModal from "./Modal/CartModal";
 
 // context
-import { CartContext } from "components/CartProvider";
-import { StationsContext } from "components/StationsProvider";
+import { CartContext } from "components/providers/CartProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // hooks
 import { useSticky } from "components/hooks/useSticky";

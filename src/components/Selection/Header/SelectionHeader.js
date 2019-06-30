@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
 // context
-import { StationsContext } from "components/StationsProvider";
-import { CartContext } from "components/CartProvider";
+import { StationsContext } from "components/providers/StationsProvider";
+import { CartContext } from "components/providers/CartProvider";
 
 // local elements
 import Header from "./elements/Header";

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 // context
-import { StationsContext } from "components/StationsProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // local elements
 import Header from "./elements/Header";

@@ -6,7 +6,7 @@ import DatePicker from "react-datepicker";
 import { useFloat } from "./hooks/useFloat";
 
 // context
-import { StationsContext } from "./StationsProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // utils
 import { convertDate } from "../utils/convertDate";

@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import CustomDatePicker from "components/CustomDatePicker";
 
 // context
-import { StationsContext } from "components/StationsProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // global elements
 import CalendarIco from "components/elements/CalendarIco";

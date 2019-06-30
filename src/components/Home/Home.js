@@ -17,7 +17,7 @@ import {
   StationsContext,
   originSession,
   destSession
-} from "../StationsProvider";
+} from "components/providers/StationsProvider";
 
 // global elements
 import Button from "../elements/Button";

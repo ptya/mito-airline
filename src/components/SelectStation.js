@@ -6,7 +6,7 @@ import Autosuggest from "react-autosuggest";
 import { useFloat } from "./hooks/useFloat";
 
 // context
-import { StationsContext } from "./StationsProvider";
+import { StationsContext } from "components/providers/StationsProvider";
 
 // global elements
 import FloatingLabel from "./elements/FloatingLabel";

@@ -2,10 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { animated, useTransition, config } from "react-spring";
 
-import { useRouter } from "./hooks/useRouter";
-import StationsProvider from "./StationsProvider";
+// context
+import StationsProvider from "components/providers/StationsProvider";
+
+// components
 import Home from "./Home/Home";
 import Selection from "./Selection/Selection";
+
+// hooks
+import { useRouter } from "./hooks/useRouter";
 
 // global elements
 import RelativeWrapper from "components/elements/RelativeWrapper";
