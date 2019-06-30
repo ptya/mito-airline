@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { colors } from "../styles/variables";
+import { colors, zIndex } from "../styles/variables";
 
 const StyledLabel = styled.div`
   position: relative;
 
   label {
-    z-index: 1;
+    z-index: ${zIndex.high};
     position: absolute;
     top: 0;
     bottom: 0;

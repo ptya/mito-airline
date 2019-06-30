@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { colors } from "components/styles/variables";
+import { colors, zIndex } from "components/styles/variables";
 
 const Header = styled.header`
   background: ${colors.blue3};
   color: ${colors.white};
-  z-index: 1;
+  z-index: ${zIndex.header};
   position: fixed;
   height: 60px;
   top: 0;

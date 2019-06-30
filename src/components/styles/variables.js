@@ -16,3 +16,10 @@ export const colors = {
   blue1: "#3434E0",
   black: "#000000"
 };
+
+export const zIndex = {
+  modal: 999,
+  header: 100,
+  higher: 50,
+  high: 25
+};

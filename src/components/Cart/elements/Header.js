@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colors } from "components/styles/variables";
+import { colors, zIndex } from "components/styles/variables";
 
 const Header = styled.h2`
   background: ${colors.white};
@@ -12,7 +12,7 @@ const Header = styled.h2`
   font-size: 14px;
   text-transform: uppercase;
   position: relative;
-  z-index: 1;
+  z-index: ${zIndex.higher};
 
   span {
     color: ${colors.blue3};
