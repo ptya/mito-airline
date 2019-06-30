@@ -1,16 +1,17 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 
-import Modal from "components/Modal";
 import CartFlight from "./Flight/CartFlight";
 import { CartContext } from "components/CartProvider";
 import { StationsContext } from "components/StationsProvider";
 
 import { useSticky } from "components/hooks/useSticky";
 
-import Price from "./elements/Price";
+// global elements
+import Modal from "components/elements/Modal";
 
 // local elements
+import Price from "./elements/Price";
 import AnimatedWrapper from "./elements/AnimatedWrapper";
 import AnimatedFlight from "./elements/AnimatedFlight";
 import CartWrapper from "./elements/CartWrapper";
@@ -49,6 +50,7 @@ const Cart = props => {
           {cart.outbound && (
             <AnimatedFlight>
               <CartFlight
+                isSeparated={false}
                 flight={cart.outbound}
                 from={origin}
                 to={destination}
@@ -58,7 +60,7 @@ const Cart = props => {
           {cart.inbound && (
             <AnimatedFlight>
               <CartFlight
-                className={cart.outbound ? "cart__separator" : ""}
+                isSeparated={cart.outbound ? true : false}
                 flight={cart.inbound}
                 from={destination}
                 to={origin}

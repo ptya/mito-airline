@@ -10,13 +10,13 @@ import Calendar from "./elements/Calendar";
 import Airport from "./elements/Airport";
 
 const Flight = props => {
-  const { from, to, flight } = props;
+  const { from, to, flight, isSeparated } = props;
   let { departure, arrival } = flight;
   departure = convertDate(departure);
   arrival = convertDate(arrival);
 
   return (
-    <Wrapper>
+    <Wrapper isSeparated={isSeparated}>
       <Calendar>
         <span>{departure.shortMonth}</span>
         <span>{departure.day}</span>
