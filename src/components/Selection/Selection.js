@@ -29,8 +29,8 @@ const Selection = () => {
 
   return (
     <RelativeWrapper>
-      <SelectionHeader />
       <CartProvider>
+        <SelectionHeader />
         <GridContainer>
           <Title>
             <img src={plane} alt="Airplane" />

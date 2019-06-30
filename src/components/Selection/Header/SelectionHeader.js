@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 // context
 import { StationsContext } from "components/StationsProvider";
+import { CartContext } from "components/CartProvider";
 
 // local elements
 import Header from "./elements/Header";
@@ -15,12 +16,15 @@ const SelectionHeader = () => {
     stations: { origin, destination }
   } = useContext(StationsContext);
 
+  const { cartDispatch } = useContext(CartContext);
+
   const handleReturn = () => {
     stationsDispatch({ type: "clearDates" });
   };
 
   const handleSwitch = () => {
     stationsDispatch({ type: "switchStations" });
+    cartDispatch({ type: "purge" });
   };
 
   return (
