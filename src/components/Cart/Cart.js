@@ -1,14 +1,16 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 
+// components
 import CartFlight from "./Flight/CartFlight";
+import CartModal from "./Modal/CartModal";
+
+// context
 import { CartContext } from "components/CartProvider";
 import { StationsContext } from "components/StationsProvider";
 
+// hooks
 import { useSticky } from "components/hooks/useSticky";
-
-// global elements
-import Modal from "components/elements/Modal";
 
 // local elements
 import Price from "./elements/Price";
@@ -22,21 +24,16 @@ import PayBtn from "./elements/PayBtn";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
-  const { cart, cartDispatch } = useContext(CartContext);
+
+  const {
+    cart: { total, outbound, inbound }
+  } = useContext(CartContext);
+
   const {
     stations: { origin, destination }
   } = useContext(StationsContext);
 
-  const handleReset = () => {
-    setPayToggle(false);
-    cartDispatch({
-      type: "purge"
-    });
-  };
-
   const { area } = props;
-
-  const { total } = cart;
 
   const isSticky = useSticky(100);
 
@@ -47,22 +44,22 @@ const Cart = props => {
           Flights <Price price={total} />
         </Header>
         <AnimatedWrapper>
-          {!cart.outbound && <Info>Choose an outbound flight</Info>}
-          {cart.outbound && (
+          {!outbound && <Info>Choose an outbound flight</Info>}
+          {outbound && (
             <AnimatedFlight>
               <CartFlight
                 isSeparated={false}
-                flight={cart.outbound}
+                flight={outbound}
                 from={origin}
                 to={destination}
               />
             </AnimatedFlight>
           )}
-          {cart.inbound && (
+          {inbound && (
             <AnimatedFlight>
               <CartFlight
-                isSeparated={cart.outbound ? true : false}
-                flight={cart.inbound}
+                isSeparated={outbound ? true : false}
+                flight={inbound}
                 from={destination}
                 to={origin}
               />
@@ -74,47 +71,13 @@ const Cart = props => {
         </Total>
         <PayBtn
           type="button"
-          disabled={cart.outbound ? false : true}
+          disabled={outbound ? false : true}
           onClick={() => setPayToggle(true)}
         >
           Pay Now
         </PayBtn>
       </CartWrapper>
-      {payToggle && (
-        <Modal setToggle={setPayToggle}>
-          <div className="pay-view">
-            <h1 className="pay-view__header">
-              Thanks for buying your tickets at Mito Airlines
-            </h1>
-            <div className="pay-view__flights">
-              <CartFlight
-                flight={cart.outbound}
-                from={origin}
-                to={destination}
-              />
-              {cart.inbound && (
-                <CartFlight
-                  flight={cart.inbound}
-                  from={destination}
-                  to={origin}
-                />
-              )}
-            </div>
-            <div className="pay-view__footer">
-              <h2 className="pay-view__total">
-                TOTAL: <span className="pay-view__total--amount">{total}</span>
-              </h2>
-              <button
-                className="pay-view__cancel"
-                type="button"
-                onClick={() => handleReset()}
-              >
-                No, thanks (reset)
-              </button>
-            </div>
-          </div>
-        </Modal>
-      )}
+      {payToggle && <CartModal setToggle={setPayToggle} />}
     </>
   );
 };

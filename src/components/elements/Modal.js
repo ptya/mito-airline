@@ -30,6 +30,7 @@ const Main = styled.main`
   border-radius: 3px;
   margin-top: 205px;
   margin-bottom: auto;
+  min-width: 465px;
 `;
 
 const Modal = props => {
