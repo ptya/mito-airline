@@ -46,9 +46,10 @@ const Timetable = props => {
   const [nextDay, setNextDay] = useState(
     convertDate(new Date(new Date(day.date).setDate(day.day + 1)))
   );
-  const [flights, setFlights] = useState();
+  const [flights, setFlights] = useState(null);
 
   useEffect(() => {
+    setFlights(null);
     async function fetchFlights() {
       const dep = type === "outbound" ? origin.iata : destination.iata;
       const arr = type === "outbound" ? destination.iata : origin.iata;
