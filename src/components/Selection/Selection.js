@@ -22,23 +22,12 @@ import Outbound from "./elements/Outbound";
 import Title from "./elements/Title";
 
 // assets
-import logo from "assets/images/mito-logo.svg";
-import arrows from "assets/images/arrows.svg";
 import plane from "assets/images/plane.svg";
 
 const Selection = () => {
   const {
-    origin,
-    destination,
-    departureDate,
-    setDepartureDate,
-    setReturnDate
+    stations: { origin, destination, departureDate }
   } = useContext(StationsContext);
-
-  const handleReturn = () => {
-    setDepartureDate();
-    setReturnDate();
-  };
 
   if (!origin || !destination) return <Redirect to="/" />;
 

@@ -19,11 +19,8 @@ const SelectStation = props => {
   const [suggestions, setSuggestions] = useState([]);
 
   const {
-    stations,
-    origin,
-    destination,
-    setOrigin,
-    setDestination
+    stationsDispatch,
+    stations: { stations, origin, destination }
   } = useContext(StationsContext);
 
   const getSelection = () => {
@@ -48,7 +45,9 @@ const SelectStation = props => {
     setValue(newValue);
     if (isSet) {
       setIsSet(false);
-      id === "origin" ? setOrigin(null) : setDestination(null);
+      id === "origin"
+        ? stationsDispatch({ type: "setOrigin", origin: null })
+        : stationsDispatch({ type: "setDestination", destination: null });
     }
   };
 
@@ -95,7 +94,9 @@ const SelectStation = props => {
   ) => {
     event.preventDefault();
     setIsSet(true);
-    id === "origin" ? setOrigin(suggestion) : setDestination(suggestion);
+    id === "origin"
+      ? stationsDispatch({ type: "setOrigin", origin: suggestion })
+      : stationsDispatch({ type: "setDestination", destination: suggestion });
   };
 
   const shouldRenderSuggestions = val => {

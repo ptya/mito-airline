@@ -10,13 +10,13 @@ import Route from "./elements/Route";
 import Switch from "./elements/Switch";
 
 const SelectionHeader = () => {
-  const { origin, destination, setDepartureDate, setReturnDate } = useContext(
-    StationsContext
-  );
+  const {
+    stationsDispatch,
+    stations: { origin, destination }
+  } = useContext(StationsContext);
 
   const handleReturn = () => {
-    setDepartureDate();
-    setReturnDate();
+    stationsDispatch({ type: "clearDates" });
   };
 
   return (

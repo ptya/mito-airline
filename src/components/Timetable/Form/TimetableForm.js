@@ -15,12 +15,15 @@ import Form from "./elements/Form";
 import SearchButton from "./elements/SearchButton";
 
 const TimetableForm = () => {
-  const { secondaryReturnDate, setReturnDate } = useContext(StationsContext);
+  const {
+    stationsDispatch,
+    stations: { secondaryReturnDate }
+  } = useContext(StationsContext);
 
   const onSubmit = event => {
     event.preventDefault();
     if (secondaryReturnDate) {
-      setReturnDate(secondaryReturnDate);
+      stationsDispatch({ type: "setReturn", returnDate: secondaryReturnDate });
     }
   };
 

@@ -30,12 +30,8 @@ import chevron from "assets/images/chevron.svg";
 const Timetable = props => {
   const { cartDispatch, cart } = useContext(CartContext);
   const {
-    origin,
-    destination,
-    departureDate,
-    returnDate,
-    setDepartureDate,
-    setReturnDate
+    stationsDispatch,
+    stations: { origin, destination, departureDate, returnDate }
   } = useContext(StationsContext);
 
   const { type } = props;
@@ -74,7 +70,9 @@ const Timetable = props => {
     setNextDay(
       convertDate(new Date(new Date(date.date).setDate(date.day + 1)))
     );
-    type === "outbound" ? setDepartureDate(date) : setReturnDate(date);
+    type === "outbound"
+      ? stationsDispatch({ type: "setDeparture", departureDate: date })
+      : stationsDispatch({ type: "setReturn", returnDate: date });
   };
 
   const today = new Date();

@@ -16,11 +16,8 @@ import FloatingLabel from "./elements/FloatingLabel";
 
 const CustomDatePicker = props => {
   const {
-    departureDate,
-    returnDate,
-    setDepartureDate,
-    setReturnDate,
-    setSecondaryReturnDate
+    stationsDispatch,
+    stations: { departureDate, returnDate }
   } = useContext(StationsContext);
 
   const [startDate, setStartDate] = useState();
@@ -31,13 +28,23 @@ const CustomDatePicker = props => {
 
   const handleChange = date => {
     setStartDate(date);
+    const convertedDate = convertDate(date);
     switch (type) {
       case "departure":
-        return setDepartureDate(convertDate(date));
+        return stationsDispatch({
+          type: "setDeparture",
+          departureDate: convertedDate
+        });
       case "return":
-        return setReturnDate(convertDate(date));
+        return stationsDispatch({
+          type: "setReturn",
+          returnDate: convertedDate
+        });
       case "secondaryReturn":
-        return setSecondaryReturnDate(convertDate(date));
+        return stationsDispatch({
+          type: "setSecondaryReturn",
+          secondaryReturnDate: convertedDate
+        });
       default:
         return;
     }
@@ -85,15 +92,24 @@ const CustomDatePicker = props => {
       setIsActive(false);
       switch (type) {
         case "departure": {
-          setDepartureDate();
+          stationsDispatch({
+            type: "setDeparture",
+            departureDate: null
+          });
           break;
         }
         case "return": {
-          setReturnDate();
+          stationsDispatch({
+            type: "setReturn",
+            returnDate: null
+          });
           break;
         }
         case "secondaryReturn": {
-          setReturnDate();
+          stationsDispatch({
+            type: "setReturn",
+            returnDate: null
+          });
           break;
         }
         default:

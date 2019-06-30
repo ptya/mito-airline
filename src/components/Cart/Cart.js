@@ -21,7 +21,9 @@ import Total from "./elements/Total";
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
   const { cart, cartDispatch } = useContext(CartContext);
-  const { origin, destination } = useContext(StationsContext);
+  const {
+    stations: { origin, destination }
+  } = useContext(StationsContext);
 
   const handleReset = () => {
     setPayToggle(false);
@@ -82,7 +84,7 @@ const Cart = props => {
         <Modal setToggle={setPayToggle}>
           <div className="pay-view">
             <h1 className="pay-view__header">
-              Thanks for buying your tickets at mito airlines
+              Thanks for buying your tickets at Mito Airlines
             </h1>
             <div className="pay-view__flights">
               <CartFlight

@@ -14,7 +14,9 @@ import ArticleWrapper from "./elements/ArticleWrapper";
 import AnimatedWrapper from "./elements/AnimatedWrapper";
 
 const Timetable = props => {
-  const { returnDate } = useContext(StationsContext);
+  const {
+    stations: { returnDate }
+  } = useContext(StationsContext);
 
   const { type } = props;
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { animated, useSpring } from "react-spring";
 
-import { colors } from "components/styles/variables";
+// import { colors } from "components/styles/variables";
 
 // assets
 import arrows from "assets/images/arrows.svg";

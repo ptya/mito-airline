@@ -33,7 +33,9 @@ import Form from "./elements/Form";
 
 const Home = () => {
   const { history } = useRouter();
-  const { origin, destination, departureDate } = useContext(StationsContext);
+  const {
+    stations: { origin, destination, departureDate }
+  } = useContext(StationsContext);
   const [error, setError] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
 

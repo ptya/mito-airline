@@ -11,11 +11,13 @@ import Header from "./elements/Header";
 import mediumArrow from "assets/images/arrow-medium.svg";
 
 const Timetable = props => {
-  const { origin, destination } = useContext(StationsContext);
+  const {
+    stations: { origin, destination }
+  } = useContext(StationsContext);
 
   const { type } = props;
 
-  const status = type === "outbound" ? "Outbund" : "Inbound";
+  const status = type === "outbound" ? "Outbound" : "Inbound";
   const from = type === "outbound" ? origin.shortName : destination.shortName;
   const to = type === "outbound" ? destination.shortName : origin.shortName;
 
