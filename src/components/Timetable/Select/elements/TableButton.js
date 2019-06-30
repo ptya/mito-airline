@@ -24,6 +24,7 @@ const TableButton = styled.button`
       ? colors.white
       : colors.black};
   cursor: ${props => (props.disabled ? "default" : "pointer")};
+  transition: background 0.1s ease;
 
   &:hover,
   &:active,

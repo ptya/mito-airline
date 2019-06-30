@@ -17,6 +17,7 @@ const Button = styled.button`
   height: 50px;
   width: 230px;
   cursor: pointer;
+  transition: background 0.1s ease;
 
   :hover {
     background: ${colors.blue4};
