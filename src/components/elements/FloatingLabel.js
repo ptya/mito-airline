@@ -26,6 +26,10 @@ const StyledLabel = styled.div`
     font-family: Roboto;
     padding: 25px 15px 8px;
   }
+
+  .datepicker__popper {
+    z-index: ${zIndex.higher};
+  }
 `;
 
 const FloatingLabel = props => (

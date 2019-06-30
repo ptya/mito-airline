@@ -127,6 +127,7 @@ const CustomDatePicker = props => {
         maxDate={limits.maxDate}
         onBlur={onBlur}
         className="datepicker"
+        popperClassName="datepicker__popper"
         dateFormat={`EEE d. MMM. yyyy`}
         id={type}
         autocomplete="off"
