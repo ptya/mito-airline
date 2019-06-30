@@ -20,21 +20,28 @@ const StyledLink = styled(Link)`
     height: 29px;
     width: 28px;
     margin: 0;
+    transform: rotateX(0);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  img:hover {
+    transform: rotate(360deg);
   }
 `;
 
 const Logo = props => {
-  const { to, handler } = props;
+  const { to, handler, alt } = props;
   return (
     <StyledLink to={to} onClick={() => handler}>
-      <img src={logo} alt="Mito Airline" />
+      <img src={logo} alt={alt} />
     </StyledLink>
   );
 };
 
 Logo.propTypes = {
   to: PropTypes.string.isRequired,
-  handler: PropTypes.func.isRequired
+  handler: PropTypes.func.isRequired,
+  alt: PropTypes.string.isRequired
 };
 
 export default Logo;
