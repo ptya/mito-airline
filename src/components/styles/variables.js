@@ -15,7 +15,8 @@ export const colors = {
   blue3: "#06038D",
   blue2: "#0A008B",
   blue1: "#3434E0",
-  black: "#000000"
+  black: "#000000",
+  blackOpacity: "#000000cc"
 };
 
 export const zIndex = {
