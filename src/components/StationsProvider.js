@@ -53,7 +53,8 @@ const stationsReducer = (state, action) => {
       return {
         ...state,
         departureDate: null,
-        returnDate: null
+        returnDate: null,
+        secondaryReturnDate: null
       };
     case "switchStations":
       return {

@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
 const Logo = props => {
   const { to, handler, alt } = props;
   return (
-    <StyledLink to={to} onClick={() => handler}>
+    <StyledLink to={to} onClick={() => handler()}>
       <img src={logo} alt={alt} />
     </StyledLink>
   );
