@@ -18,6 +18,7 @@ import CartWrapper from "./elements/CartWrapper";
 import Header from "./elements/Header";
 import Info from "./elements/Info";
 import Total from "./elements/Total";
+import PayBtn from "./elements/PayBtn";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);
@@ -71,16 +72,13 @@ const Cart = props => {
         <Total>
           Total <Price price={total} />
         </Total>
-        <button
+        <PayBtn
           type="button"
-          className={
-            cart.outbound ? "cart__btn" : "cart__btn cart__btn--disabled"
-          }
           disabled={cart.outbound ? false : true}
           onClick={() => setPayToggle(true)}
         >
           Pay Now
-        </button>
+        </PayBtn>
       </CartWrapper>
       {payToggle && (
         <Modal setToggle={setPayToggle}>

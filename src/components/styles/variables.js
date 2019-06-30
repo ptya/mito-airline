@@ -11,6 +11,7 @@ export const colors = {
   white: "#FFF",
   pink: "#C6007E",
   pinkOpacity: "#c6007e59",
+  pinkDark: "#9F0065",
   blue4: "#1F1FC6",
   blue3: "#06038D",
   blue2: "#0A008B",
