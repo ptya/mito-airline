@@ -51,7 +51,7 @@ const InputField = styled(StyledAutosuggest)`
     css`
       box-shadow: 0 0 10px ${colors.pinkOpacity};
       animation: ${buzz} 0.3s ease-in-out;
-    `};
+    `}
 `;
 
 export default InputField;
