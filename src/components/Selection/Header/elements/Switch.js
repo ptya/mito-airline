@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { animated, useSpring } from "react-spring";
-
-// import { colors } from "components/styles/variables";
 
 // assets
 import arrows from "assets/images/arrows.svg";
@@ -18,24 +17,32 @@ const Button = styled(animated.button)`
   }
 `;
 
-const Switch = () => {
+const Switch = props => {
   const [state, toggle] = useState(true);
   const { z } = useSpring({
     to: {
       z: state ? 0 : 180
     }
   });
+  const { handler } = props;
 
   return (
     <Button
       style={{
         transform: z.interpolate(z => `rotateZ(${z}deg)`)
       }}
-      onClick={() => toggle(!state)}
+      onClick={() => {
+        toggle(!state);
+        handler();
+      }}
     >
       <img src={arrows} alt="From - to" />
     </Button>
   );
+};
+
+Switch.propTypes = {
+  handler: PropTypes.func.isRequired
 };
 
 export default Switch;

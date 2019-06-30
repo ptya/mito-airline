@@ -19,6 +19,10 @@ const SelectionHeader = () => {
     stationsDispatch({ type: "clearDates" });
   };
 
+  const handleSwitch = () => {
+    stationsDispatch({ type: "switchStations" });
+  };
+
   return (
     <Header>
       <Logo to="/" handler={handleReturn} alt={"Mito Airline"} />
@@ -26,7 +30,7 @@ const SelectionHeader = () => {
         <span>Leaving from</span>
         {origin.shortName}
       </Route>
-      <Switch />
+      <Switch handler={handleSwitch} />
       <Route>{destination.shortName}</Route>
     </Header>
   );
