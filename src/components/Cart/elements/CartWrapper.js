@@ -17,7 +17,7 @@ const CartWrapper = styled.aside`
     props.isSticky &&
     css`
       position: fixed;
-      top: 85px;
+      top: 80px;
     `}
 `;
 

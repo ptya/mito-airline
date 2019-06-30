@@ -40,7 +40,7 @@ const Selection = () => {
             <img src={plane} alt="Airplane" />
             Select Flight
           </Title>
-          <Cart area="cart" className="main__cart" />
+          <Cart area="cart" />
           {departureDate && <Timetable type="outbound" />}
           {!departureDate && <Redirect to="/" />}
           <Timetable type="inbound" />
