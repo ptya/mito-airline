@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 // context
 import CartProvider from "../CartProvider";
@@ -13,12 +13,8 @@ import SelectionHeader from "./Header/SelectionHeader";
 // global elements
 import RelativeWrapper from "components/elements/RelativeWrapper";
 
-// local elements./Header/Header
+// local elements
 import GridContainer from "./elements/GridContainer";
-import GridItem from "./elements/GridItem";
-// import Cart from "./elements/Cart";
-import Inbound from "./elements/Inbound";
-import Outbound from "./elements/Outbound";
 import Title from "./elements/Title";
 
 // assets
