@@ -1,5 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
 
+import StyledAutosuggest from "./StyledAutosuggest";
+
 import { colors } from "../styles/variables";
 
 const buzz = keyframes`
@@ -20,7 +22,7 @@ const buzz = keyframes`
   }
 `;
 
-const InputField = styled.div`
+const InputField = styled(StyledAutosuggest)`
   position: relative;
 
   input {
@@ -50,10 +52,6 @@ const InputField = styled.div`
       box-shadow: 0 0 10px ${colors.pinkOpacity};
       animation: ${buzz} 0.3s ease-in-out;
     `};
-
-  /* .search__input--selection {
-    margin: 7px;
-  } */
 `;
 
 export default InputField;
