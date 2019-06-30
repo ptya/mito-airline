@@ -12,6 +12,7 @@ const Header = styled.header`
   right: 0;
   display: flex;
 
+  /* gradient bar underneath header */
   ::after {
     content: "";
     width: 100%;
@@ -19,24 +20,6 @@ const Header = styled.header`
     background-image: linear-gradient(${colors.grey2}, ${colors.grey2Opacity});
     position: absolute;
     bottom: -20px;
-  }
-
-  .header__route {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    font-size: 20px;
-    margin: 12px 40px;
-  }
-  .header__info {
-    display: block;
-    text-transform: uppercase;
-    font-size: 10px;
-    flex-grow: 1;
-  }
-  .header__arrows {
-    width: 30px;
-    margin: auto 0;
   }
 `;
 
