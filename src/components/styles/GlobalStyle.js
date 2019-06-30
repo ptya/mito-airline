@@ -1,11 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
+// styles
 import { colors } from "../styles/variables";
+import datepickerStyles from "react-datepicker/dist/react-datepicker.css";
+
+// assets
 import img from "../../assets/images/background.svg";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
+  ${datepickerStyles}
 
   body {
     background: ${colors.grey2};
