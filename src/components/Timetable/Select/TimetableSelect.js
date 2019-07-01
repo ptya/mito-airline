@@ -9,19 +9,21 @@ import { StationsContext } from "components/providers/StationsProvider";
 import { convertDate } from "utils/convertDate";
 import { formatMoney } from "utils/formatMoney";
 
-// global elements
-import RelativeWrapper from "components/elements/RelativeWrapper";
-
 // local elements
-import NavigationWrapper from "./elements/NavigationWrapper";
-import Previous from "./elements/Previous";
-import Day from "./elements/Day";
-import Next from "./elements/Next";
 import Loading from "./elements/Loading";
-import GeneralWrapper from "./elements/GeneralWrapper";
-import TableHeader from "./elements/TableHeader";
-import TableRow from "./elements/TableRow";
-import TableButton from "./elements/TableButton";
+
+// global styles
+import RelativeWrapper from "components/styles/RelativeWrapper";
+
+// local styles
+import NavigationWrapper from "./styles/NavigationWrapper";
+import Previous from "./styles/Previous";
+import Day from "./styles/Day";
+import Next from "./styles/Next";
+import GeneralWrapper from "./styles/GeneralWrapper";
+import TableHeader from "./styles/TableHeader";
+import TableRow from "./styles/TableRow";
+import TableButton from "./styles/TableButton";
 
 // assets
 import smallArrow from "assets/images/arrow-small.svg";

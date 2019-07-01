@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 // utils
 import { convertDate } from "utils/convertDate";
 
-// local elements
-import Wrapper from "./elements/Wrapper";
-import Calendar from "./elements/Calendar";
-import Airport from "./elements/Airport";
+// local styles
+import Wrapper from "./styles/Wrapper";
+import Calendar from "./styles/Calendar";
+import Airport from "./styles/Airport";
 
 const Flight = props => {
   const { from, to, flight, isSeparated } = props;

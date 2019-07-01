@@ -6,13 +6,13 @@ import CustomDatePicker from "components/CustomDatePicker";
 // context
 import { StationsContext } from "components/providers/StationsProvider";
 
-// global elements
-import CalendarIco from "components/elements/CalendarIco";
-import InputField from "components/elements/InputField";
+// global styles
+import CalendarIco from "components/styles/CalendarIco";
+import InputField from "components/styles/InputField";
 
-// local elements
-import Form from "./elements/Form";
-import SearchButton from "./elements/SearchButton";
+// local styles
+import Form from "./styles/Form";
+import SearchButton from "./styles/SearchButton";
 
 const TimetableForm = () => {
   const {

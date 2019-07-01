@@ -12,8 +12,8 @@ import Selection from "./Selection/Selection";
 // hooks
 import { useRouter } from "./hooks/useRouter";
 
-// global elements
-import RelativeWrapper from "components/elements/RelativeWrapper";
+// global styles
+import RelativeWrapper from "components/styles/RelativeWrapper";
 
 const Routes = () => {
   return (

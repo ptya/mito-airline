@@ -3,8 +3,8 @@ import React from "react";
 // global elements
 import { Spinner } from "components/elements/Spinner";
 
-// local elements
-import GeneralWrapper from "./GeneralWrapper";
+// local styles
+import GeneralWrapper from "../styles/GeneralWrapper";
 
 const Loading = () => (
   <GeneralWrapper>

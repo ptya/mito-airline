@@ -19,17 +19,19 @@ import {
   destSession
 } from "components/providers/StationsProvider";
 
-// global elements
-import Button from "../elements/Button";
-import InputField from "../elements/InputField";
-import CalendarIco from "../elements/CalendarIco";
-
 // local elements
-import Wrapper from "./elements/Wrapper";
-import Main from "./elements/Main";
 import Header from "./elements/Header";
 import Error from "./elements/Error";
-import Form from "./elements/Form";
+
+// global styles
+import Button from "components/styles/Button";
+import CalendarIco from "components/styles/CalendarIco";
+import InputField from "components/styles/InputField";
+
+// local styles
+import Wrapper from "./styles/Wrapper";
+import Form from "./styles/Form";
+import Main from "./styles/Main";
 
 const Home = () => {
   const { history } = useRouter();

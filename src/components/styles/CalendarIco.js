@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import calendar from "../../assets/images/calendar.svg";
+import calendar from "assets/images/calendar.svg";
 
 const CalendarIco = styled.i`
   display: inline-block;

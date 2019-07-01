@@ -14,11 +14,11 @@ import { formatMoney } from "utils/formatMoney";
 // global elements
 import Modal from "components/elements/Modal";
 
-// local elements
-import Header from "./elements/Header";
-import FlightsWrapper from "./elements/FlightsWrapper";
-import Footer from "./elements/Footer";
-import CancelBtn from "./elements/CancelBtn";
+// local styles
+import Header from "./styles/Header";
+import FlightsWrapper from "./styles/FlightsWrapper";
+import Footer from "./styles/Footer";
+import CancelBtn from "./styles/CancelBtn";
 
 const CartModal = props => {
   const { setToggle, animation } = props;

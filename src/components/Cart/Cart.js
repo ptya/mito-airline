@@ -17,11 +17,13 @@ import { useSticky } from "components/hooks/useSticky";
 import Price from "./elements/Price";
 import AnimatedWrapper from "./elements/AnimatedWrapper";
 import AnimatedFlight from "./elements/AnimatedFlight";
-import CartWrapper from "./elements/CartWrapper";
-import Header from "./elements/Header";
-import Info from "./elements/Info";
-import Total from "./elements/Total";
-import PayBtn from "./elements/PayBtn";
+
+// local styles
+import CartWrapper from "./styles/CartWrapper";
+import Header from "./styles/Header";
+import Info from "./styles/Info";
+import PayBtn from "./styles/PayBtn";
+import Total from "./styles/Total";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);

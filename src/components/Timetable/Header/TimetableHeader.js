@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 // context
 import { StationsContext } from "components/providers/StationsProvider";
 
-// local elements
-import Header from "./elements/Header";
+// local styles
+import Header from "./styles/Header";
 
 // assets
 import mediumArrow from "assets/images/arrow-medium.svg";

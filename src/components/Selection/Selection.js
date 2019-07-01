@@ -10,12 +10,12 @@ import Cart from "components/Cart/Cart";
 import Timetable from "components/Timetable/Timetable";
 import SelectionHeader from "./Header/SelectionHeader";
 
-// global elements
-import RelativeWrapper from "components/elements/RelativeWrapper";
+// global styles
+import RelativeWrapper from "components/styles/RelativeWrapper";
 
-// local elements
-import GridContainer from "./elements/GridContainer";
-import Title from "./elements/Title";
+// local styles
+import GridContainer from "./styles/GridContainer";
+import Title from "./styles/Title";
 
 // assets
 import plane from "assets/images/plane.svg";

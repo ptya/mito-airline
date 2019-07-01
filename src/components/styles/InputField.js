@@ -2,7 +2,7 @@ import styled, { keyframes, css } from "styled-components";
 
 import StyledAutosuggest from "./StyledAutosuggest";
 
-import { colors } from "../styles/variables";
+import { colors } from "components/styles/variables";
 
 const buzz = keyframes`
   0% {

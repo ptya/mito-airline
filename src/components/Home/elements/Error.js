@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { colors } from "../../styles/variables";
-import { buzz } from "../../elements/InputField";
+import { colors } from "components/styles/variables";
+import { buzz } from "components/styles/InputField";
 
-import warning from "../../../assets/images/error.svg";
+import warning from "assets/images/error.svg";
 
 const StyledError = styled.div`
   position: absolute;

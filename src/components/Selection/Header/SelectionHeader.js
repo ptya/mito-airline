@@ -5,10 +5,12 @@ import { StationsContext } from "components/providers/StationsProvider";
 import { CartContext } from "components/providers/CartProvider";
 
 // local elements
-import Header from "./elements/Header";
 import Logo from "./elements/Logo";
-import Route from "./elements/Route";
 import Switch from "./elements/Switch";
+
+// local styles
+import Header from "./styles/Header";
+import Route from "./styles/Route";
 
 const SelectionHeader = () => {
   const {
