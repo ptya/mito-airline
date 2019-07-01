@@ -21,7 +21,7 @@ import Footer from "./elements/Footer";
 import CancelBtn from "./elements/CancelBtn";
 
 const CartModal = props => {
-  const { setToggle } = props;
+  const { setToggle, animation } = props;
   const { cart, cartDispatch } = useContext(CartContext);
   const {
     stations: { origin, destination }
@@ -37,7 +37,7 @@ const CartModal = props => {
   const { total } = cart;
 
   return (
-    <Modal setToggle={setToggle}>
+    <Modal setToggle={setToggle} animation={animation}>
       <Header>Thanks for buying your tickets at Mito Airlines</Header>
       <FlightsWrapper>
         <CartFlight flight={cart.outbound} from={origin} to={destination} />
@@ -58,7 +58,8 @@ const CartModal = props => {
 };
 
 CartModal.propTypes = {
-  setToggle: PropTypes.func.isRequired
+  setToggle: PropTypes.func.isRequired,
+  animation: PropTypes.object.isRequired
 };
 
 export default CartModal;

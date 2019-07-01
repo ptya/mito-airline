@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { animated } from "react-spring";
 
 // hooks
 import { useOnClickOutside } from "components/hooks/useOnClickOutside";
@@ -12,7 +13,7 @@ import { colors, zIndex } from "components/styles/variables";
 // global elements
 import Portal from "./Portal";
 
-const Wrapper = styled.div`
+const Wrapper = styled(animated.div)`
   position: absolute;
   top: ${props => `${props.y + 0}px`};
   left: 0;
@@ -25,7 +26,7 @@ const Wrapper = styled.div`
   z-index: ${zIndex.modal};
 `;
 
-const Main = styled.main`
+const Main = styled(animated.main)`
   background: ${colors.white};
   border-radius: 3px;
   margin-top: 205px;
@@ -34,8 +35,8 @@ const Main = styled.main`
 `;
 
 const Modal = props => {
-  const { children, setToggle } = props;
-
+  const { children, setToggle, animation } = props;
+  const { opacity } = animation;
   // to keep track of DOM element
   const ref = useRef();
 
@@ -49,8 +50,15 @@ const Modal = props => {
 
   return (
     <Portal>
-      <Wrapper y={y}>
-        <Main ref={ref}>{children}</Main>
+      <Wrapper
+        y={y}
+        style={{
+          opacity: opacity && opacity.interpolate(o => o)
+        }}
+      >
+        <Main ref={ref} style={animation}>
+          {children}
+        </Main>
       </Wrapper>
     </Portal>
   );
@@ -58,7 +66,12 @@ const Modal = props => {
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
-  setToggle: PropTypes.func.isRequired
+  setToggle: PropTypes.func.isRequired,
+  animation: PropTypes.object
+};
+
+Modal.defaultProps = {
+  animation: null
 };
 
 export default Modal;

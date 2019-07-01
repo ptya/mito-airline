@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { useTransition, config } from "react-spring";
 
 // components
 import CartFlight from "./Flight/CartFlight";
@@ -36,6 +37,14 @@ const Cart = props => {
   const { area } = props;
 
   const isSticky = useSticky(100);
+
+  // modal animation
+  const transition = useTransition(payToggle, null, {
+    from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
+    enter: { opacity: 1, transform: "translate3d(0,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(0,-40px,0)" },
+    config: { config: config.stiff }
+  });
 
   return (
     <>
@@ -77,7 +86,16 @@ const Cart = props => {
           Pay Now
         </PayBtn>
       </CartWrapper>
-      {payToggle && <CartModal setToggle={setPayToggle} />}
+      {transition.map(
+        ({ item: toggle, key, props: animation }) =>
+          toggle && (
+            <CartModal
+              key={key}
+              setToggle={setPayToggle}
+              animation={animation}
+            />
+          )
+      )}
     </>
   );
 };
