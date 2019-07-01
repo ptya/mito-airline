@@ -10,9 +10,16 @@ const CancelBtn = styled.button`
   font-weight: bold;
   font-size: 12px;
   text-decoration-line: underline;
+  text-decoration-style: solid;
   text-transform: uppercase;
   color: ${colors.pink};
   cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration-style: double;
+  }
 `;
 
 export default CancelBtn;
