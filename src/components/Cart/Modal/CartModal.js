@@ -34,15 +34,17 @@ const CartModal = props => {
     });
   };
 
-  const { total } = cart;
+  const { total, inbound, outbound } = cart;
 
   return (
     <Modal setToggle={setToggle} animation={animation}>
       <Header>Thanks for buying your tickets at Mito Airlines</Header>
       <FlightsWrapper>
-        <CartFlight flight={cart.outbound} from={origin} to={destination} />
-        {cart.inbound && (
-          <CartFlight flight={cart.inbound} from={destination} to={origin} />
+        {outbound && (
+          <CartFlight flight={outbound} from={origin} to={destination} />
+        )}
+        {inbound && (
+          <CartFlight flight={inbound} from={destination} to={origin} />
         )}
       </FlightsWrapper>
       <Footer>
