@@ -44,10 +44,14 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@testing-library/react": "^8.0.4",
+    "@testing-library/react-hooks": "^1.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "husky": "^3.0.0",
-    "prettier": "^1.16.4"
+    "jest-fetch-mock": "^2.1.2",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.6"
   },
   "resolutions": {
     "react-scripts/**/js-yaml": "^3.13.1"
