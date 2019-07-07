@@ -27,10 +27,7 @@
     "lint": "eslint src"
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "test:staged",
-      "git add"
-    ]
+    "src/**/*.js": "test:staged"
   },
   "husky": {
     "hooks": {
