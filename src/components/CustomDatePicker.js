@@ -107,7 +107,7 @@ const CustomDatePicker = props => {
         }
         case "secondaryReturn": {
           stationsDispatch({
-            type: "setReturn",
+            type: "setSecondaryReturn",
             returnDate: null
           });
           break;
