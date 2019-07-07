@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimetableHeader /> renders without error and matches snapshot 1`] = `
+<div>
+  <form
+    autocomplete="off"
+    class="sc-gzVnrw jDaHzc"
+    data-testid="tf-form"
+  >
+    <fieldset>
+      <div
+        class="sc-bxivhb sc-ifAKCX cDeBvR"
+      >
+        <div
+          class="sc-htpNat hlaEpc"
+          placeholder="Return"
+        >
+          <label
+            for="secondaryReturn"
+          >
+            Return
+          </label>
+          <div
+            class="react-datepicker-wrapper"
+          >
+            <div
+              class="react-datepicker__input-container"
+            >
+              <input
+                class="datepicker"
+                id="secondaryReturn"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <i
+          class="sc-bZQynM kulpyt"
+        />
+      </div>
+      <button
+        class="sc-htoDjs sc-dnqmqq cgnJCp"
+        type="submit"
+      >
+        Search
+      </button>
+    </fieldset>
+  </form>
+</div>
+`;

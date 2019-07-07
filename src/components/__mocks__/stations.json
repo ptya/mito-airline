@@ -1,0 +1,56 @@
+[
+    {
+        "iata": "BCN",
+        "latitude": 41.3,
+        "longitude": 2.0833,
+        "shortName": "Barcelona",
+        "connections": [
+            {
+                "iata": "BUD",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            },
+            {
+                "iata": "WAW",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            }
+        ]
+    },
+    {
+        "iata": "BUD",
+        "latitude": 47.4367,
+        "longitude": 19.2556,
+        "shortName": "Budapest",
+        "connections": [
+            {
+                "iata": "BCN",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            },
+            {
+                "iata": "WAW",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            }
+        ]
+    },
+    {
+        "iata": "WAW",
+        "latitude": 52.1667,
+        "longitude": 21.9667,
+        "shortName": "Warsaw Chopin",
+        "connections": [
+            {
+                "iata": "BCN",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            },
+            {
+                "iata": "BUD",
+                "operationStartDate": "2019-07-03T19:55:01+0000",
+                "rescueEndDate": "2019-07-03T19:55:01+0000"
+            }
+        ]
+    }
+]

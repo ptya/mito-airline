@@ -57,7 +57,7 @@ const TimetableForm = () => {
   }, [secondaryReturnDate, isSubmitted, validate]);
 
   return (
-    <Form autoComplete="off" onSubmit={onSubmit}>
+    <Form data-testid="tf-form" autoComplete="off" onSubmit={onSubmit}>
       <fieldset>
         <InputField isError={error && error.secondaryReturnDate}>
           <CustomDatePicker placeholder="Return" type="secondaryReturn" />

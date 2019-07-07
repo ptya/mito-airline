@@ -28,7 +28,7 @@ const CustomDatePicker = props => {
 
   const handleChange = date => {
     setStartDate(date);
-    const convertedDate = convertDate(date);
+    const convertedDate = date ? convertDate(date) : null;
     switch (type) {
       case "departure":
         return stationsDispatch({

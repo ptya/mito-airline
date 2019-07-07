@@ -26,7 +26,7 @@ const StyledError = styled.div`
 `;
 
 const Error = props => (
-  <StyledError>
+  <StyledError data-testid="error">
     <img src={warning} alt="error" />
     <span>{props.message}</span>
   </StyledError>
