@@ -21,14 +21,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:staged": "react-scripts tests --bail --findRelatedTests",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
     "lint": "eslint src"
   },
+  "lint-staged": {
+    "src/**/*.js": [
+      "test:staged",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && set CI=true && react-scripts test",
-      "pre-push": "yarn test && yarn lint"
+      "pre-commit": "yarn lint && lint-staged",
+      "pre-push": "yarn lint"
     }
   },
   "eslintConfig": {
@@ -50,6 +57,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "husky": "^3.0.0",
     "jest-fetch-mock": "^2.1.2",
+    "lint-staged": "^9.1.0",
     "prettier": "^1.16.4",
     "react-test-renderer": "^16.8.6"
   },
