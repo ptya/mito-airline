@@ -21,17 +21,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:staged": "react-scripts tests --bail --findRelatedTests",
+    "test:staged": "react-scripts test --bail --findRelatedTests",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
     "lint": "eslint src"
   },
   "lint-staged": {
-    "src/**/*.js": "test:staged"
+    "src/**/*.js": "yarn test:staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && lint-staged",
+      "pre-commit": "yarn lint",
       "pre-push": "yarn lint"
     }
   },

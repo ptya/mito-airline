@@ -104,4 +104,10 @@ StationsProvider.propTypes = {
 };
 
 export default StationsProvider;
-export { StationsContext, originSession, destSession };
+export {
+  StationsContext,
+  stationsReducer,
+  initialStations,
+  originSession,
+  destSession
+};
