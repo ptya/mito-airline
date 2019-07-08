@@ -2,7 +2,6 @@ import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
 import TimetableHeader from "../TimetableHeader";
-import { StationsContext } from "components/providers/StationsProvider";
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
 
 afterEach(() => {
