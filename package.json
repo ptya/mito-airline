@@ -31,7 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
+      "pre-commit": "yarn lint && set CI=true && yarn test --bail",
       "pre-push": "yarn lint"
     }
   },
