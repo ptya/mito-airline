@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TimetableHeader /> renders without error and matches snapshot 1`] = `
+exports[`<TimetableForm /> renders without error and matches snapshot 1`] = `
 <div>
   <form
     autocomplete="off"
