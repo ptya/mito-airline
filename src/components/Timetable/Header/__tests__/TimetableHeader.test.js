@@ -3,6 +3,7 @@ import { render, cleanup } from "@testing-library/react";
 
 import TimetableHeader from "../TimetableHeader";
 import { StationsContext } from "components/providers/StationsProvider";
+import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
 
 afterEach(() => {
   cleanup();
@@ -19,16 +20,14 @@ const destinationName = "Destination Name";
 
 test("<TimetableHeader /> rendered in outbound type", async () => {
   const { getByTestId } = render(
-    <StationsContext.Provider
-      value={{
-        stations: {
-          origin: { shortName: originName },
-          destination: { shortName: destinationName }
-        }
+    <TestStationsProvider
+      state={{
+        origin: { shortName: originName },
+        destination: { shortName: destinationName }
       }}
     >
       <TimetableHeader type={outboundType} />
-    </StationsContext.Provider>
+    </TestStationsProvider>
   );
 
   expect(console.error).not.toHaveBeenCalled();
@@ -43,16 +42,14 @@ test("<TimetableHeader /> rendered in outbound type", async () => {
 
 test("<TimetableHeader /> rendered in inbound type", async () => {
   const { getByTestId } = render(
-    <StationsContext.Provider
-      value={{
-        stations: {
-          origin: { shortName: originName },
-          destination: { shortName: destinationName }
-        }
+    <TestStationsProvider
+      state={{
+        origin: { shortName: originName },
+        destination: { shortName: destinationName }
       }}
     >
       <TimetableHeader type={inboundType} />
-    </StationsContext.Provider>
+    </TestStationsProvider>
   );
 
   expect(console.error).not.toHaveBeenCalled();
