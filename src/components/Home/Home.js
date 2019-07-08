@@ -20,18 +20,18 @@ import {
 } from "components/providers/StationsProvider";
 
 // local elements
-import Header from "./elements/Header";
-import Error from "./elements/Error";
+import Header from "./_elements/Header";
+import Error from "./_elements/Error";
 
 // global styles
-import Button from "components/styles/Button";
-import CalendarIco from "components/styles/CalendarIco";
-import InputField from "components/styles/InputField";
+import Button from "components/_styles/Button";
+import CalendarIco from "components/_styles/CalendarIco";
+import InputField from "components/_styles/InputField";
 
 // local styles
-import Wrapper from "./styles/Wrapper";
-import Form from "./styles/Form";
-import Main from "./styles/Main";
+import Wrapper from "./_styles/Wrapper";
+import Form from "./_styles/Form";
+import Main from "./_styles/Main";
 
 const Home = () => {
   const { history } = useRouter();

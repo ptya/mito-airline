@@ -14,16 +14,16 @@ import { StationsContext } from "components/providers/StationsProvider";
 import { useSticky } from "components/hooks/useSticky";
 
 // local elements
-import Price from "./elements/Price";
-import AnimatedWrapper from "./elements/AnimatedWrapper";
-import AnimatedFlight from "./elements/AnimatedFlight";
+import Price from "./_elements/Price";
+import AnimatedWrapper from "./_elements/AnimatedWrapper";
+import AnimatedFlight from "./_elements/AnimatedFlight";
 
 // local styles
-import CartWrapper from "./styles/CartWrapper";
-import Header from "./styles/Header";
-import Info from "./styles/Info";
-import PayBtn from "./styles/PayBtn";
-import Total from "./styles/Total";
+import CartWrapper from "./_styles/CartWrapper";
+import Header from "./_styles/Header";
+import Info from "./_styles/Info";
+import PayBtn from "./_styles/PayBtn";
+import Total from "./_styles/Total";
 
 const Cart = props => {
   const [payToggle, setPayToggle] = useState(false);

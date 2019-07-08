@@ -12,7 +12,7 @@ import { StationsContext } from "components/providers/StationsProvider";
 import { convertDate } from "../utils/convertDate";
 
 // global elements
-import FloatingLabel from "./elements/FloatingLabel";
+import FloatingLabel from "./_elements/FloatingLabel";
 
 const CustomDatePicker = props => {
   const {

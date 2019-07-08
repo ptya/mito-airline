@@ -9,7 +9,7 @@ import { useFloat } from "./hooks/useFloat";
 import { StationsContext } from "components/providers/StationsProvider";
 
 // global elements
-import FloatingLabel from "./elements/FloatingLabel";
+import FloatingLabel from "./_elements/FloatingLabel";
 
 const SelectStation = props => {
   const { placeholder, id, stored } = props;

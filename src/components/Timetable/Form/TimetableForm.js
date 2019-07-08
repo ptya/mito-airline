@@ -12,15 +12,15 @@ import CustomDatePicker from "components/CustomDatePicker";
 import { StationsContext } from "components/providers/StationsProvider";
 
 // foreign elements
-import Error from "components/Home/elements/Error";
+import Error from "components/Home/_elements/Error";
 
 // global styles
-import CalendarIco from "components/styles/CalendarIco";
-import InputField from "components/styles/InputField";
+import CalendarIco from "components/_styles/CalendarIco";
+import InputField from "components/_styles/InputField";
 
 // local styles
-import Form from "./styles/Form";
-import SearchButton from "./styles/SearchButton";
+import Form from "./_styles/Form";
+import SearchButton from "./_styles/SearchButton";
 
 const TimetableForm = () => {
   const {

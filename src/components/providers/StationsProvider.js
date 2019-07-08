@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useReducer } from "react";
 import PropTypes from "prop-types";
 
-import Spinner from "components/elements/Spinner";
+import Spinner from "components/_elements/Spinner";
 
 const StationsContext = createContext();
 

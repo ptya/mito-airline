@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 import { convertDate } from "utils/convertDate";
 
 // local styles
-import Wrapper from "./styles/Wrapper";
-import Calendar from "./styles/Calendar";
-import Airport from "./styles/Airport";
+import Wrapper from "./_styles/Wrapper";
+import Calendar from "./_styles/Calendar";
+import Airport from "./_styles/Airport";
 
 const Flight = props => {
   const { from, to, flight, isSeparated } = props;

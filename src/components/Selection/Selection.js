@@ -11,11 +11,11 @@ import Timetable from "components/Timetable/Timetable";
 import SelectionHeader from "./Header/SelectionHeader";
 
 // global styles
-import RelativeWrapper from "components/styles/RelativeWrapper";
+import RelativeWrapper from "components/_styles/RelativeWrapper";
 
 // local styles
-import GridContainer from "./styles/GridContainer";
-import Title from "./styles/Title";
+import GridContainer from "./_styles/GridContainer";
+import Title from "./_styles/Title";
 
 // assets
 import plane from "assets/images/plane.svg";

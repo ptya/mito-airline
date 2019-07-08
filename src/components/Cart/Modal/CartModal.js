@@ -12,13 +12,13 @@ import { StationsContext } from "components/providers/StationsProvider";
 import { formatMoney } from "utils/formatMoney";
 
 // global elements
-import Modal from "components/elements/Modal";
+import Modal from "components/_elements/Modal";
 
 // local styles
-import Header from "./styles/Header";
-import FlightsWrapper from "./styles/FlightsWrapper";
-import Footer from "./styles/Footer";
-import CancelBtn from "./styles/CancelBtn";
+import Header from "./_styles/Header";
+import FlightsWrapper from "./_styles/FlightsWrapper";
+import Footer from "./_styles/Footer";
+import CancelBtn from "./_styles/CancelBtn";
 
 const CartModal = props => {
   const { setToggle, animation } = props;

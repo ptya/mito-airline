@@ -10,20 +10,20 @@ import { convertDate } from "utils/convertDate";
 import { formatMoney } from "utils/formatMoney";
 
 // local elements
-import Loading from "./elements/Loading";
+import Loading from "./_elements/Loading";
 
 // global styles
-import RelativeWrapper from "components/styles/RelativeWrapper";
+import RelativeWrapper from "components/_styles/RelativeWrapper";
 
 // local styles
-import NavigationWrapper from "./styles/NavigationWrapper";
-import Previous from "./styles/Previous";
-import Day from "./styles/Day";
-import Next from "./styles/Next";
-import GeneralWrapper from "./styles/GeneralWrapper";
-import TableHeader from "./styles/TableHeader";
-import TableRow from "./styles/TableRow";
-import TableButton from "./styles/TableButton";
+import NavigationWrapper from "./_styles/NavigationWrapper";
+import Previous from "./_styles/Previous";
+import Day from "./_styles/Day";
+import Next from "./_styles/Next";
+import GeneralWrapper from "./_styles/GeneralWrapper";
+import TableHeader from "./_styles/TableHeader";
+import TableRow from "./_styles/TableRow";
+import TableButton from "./_styles/TableButton";
 
 // assets
 import smallArrow from "assets/images/arrow-small.svg";

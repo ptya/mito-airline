@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { StationsContext } from "components/providers/StationsProvider";
 
 // local styles
-import Header from "./styles/Header";
+import Header from "./_styles/Header";
 
 // assets
 import mediumArrow from "assets/images/arrow-medium.svg";

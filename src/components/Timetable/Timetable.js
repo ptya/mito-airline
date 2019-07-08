@@ -10,10 +10,10 @@ import TimetableForm from "./Form/TimetableForm";
 import { StationsContext } from "components/providers/StationsProvider";
 
 // local elements
-import AnimatedWrapper from "./elements/AnimatedWrapper";
+import AnimatedWrapper from "./_elements/AnimatedWrapper";
 
 // local styles
-import ArticleWrapper from "./styles/ArticleWrapper";
+import ArticleWrapper from "./_styles/ArticleWrapper";
 
 const Timetable = props => {
   const {
