@@ -100,16 +100,24 @@ const Timetable = props => {
       <NavigationWrapper>
         <Previous>
           {isPrevAvailable && (
-            <button type="button" onClick={() => handleDayChange(prevDay)}>
+            <button
+              data-testid="ts-prev-day"
+              type="button"
+              onClick={() => handleDayChange(prevDay)}
+            >
               <img src={chevron} alt="Previous day" />
               <span>{`${prevDay.shortMonth} ${prevDay.day} ${prevDay.fullMonth}`}</span>
             </button>
           )}
         </Previous>
-        <Day>{`${day.fullWeekday}, ${day.day} ${day.fullMonth} ${day.year}`}</Day>
+        <Day data-testid="ts-curr-day">{`${day.fullWeekday}, ${day.day} ${day.fullMonth} ${day.year}`}</Day>
         <Next>
           {isNextAvailable && (
-            <button type="button" onClick={() => handleDayChange(nextDay)}>
+            <button
+              data-testid="ts-next-day"
+              type="button"
+              onClick={() => handleDayChange(nextDay)}
+            >
               <img src={chevron} alt="Next day" />
               <span>{`${nextDay.shortMonth} ${nextDay.day} ${nextDay.fullMonth}`}</span>
             </button>
@@ -124,7 +132,7 @@ const Timetable = props => {
       )}
       {flights && flights.length > 0 && (
         <RelativeWrapper>
-          <TableHeader>
+          <TableHeader data-testid="ts-table-header">
             <span className="basic">Basic</span>
             <span className="standard">Standard</span>
             <span className="plus">Plus</span>
@@ -143,6 +151,7 @@ const Timetable = props => {
                 </div>
                 <div className="basic">
                   <TableButton
+                    data-testid="ts-basic-btn"
                     isActive={selectedFare === flight.fares[0].fareSellKey}
                     type="button"
                     disabled={isDisabled}
@@ -160,6 +169,7 @@ const Timetable = props => {
                 </div>
                 <div className="standard">
                   <TableButton
+                    data-testid="ts-standard-btn"
                     isActive={selectedFare === flight.fares[1].fareSellKey}
                     type="button"
                     disabled={isDisabled}
@@ -177,6 +187,7 @@ const Timetable = props => {
                 </div>
                 <div className="plus">
                   <TableButton
+                    data-testid="ts-plus-btn"
                     isActive={selectedFare === flight.fares[2].fareSellKey}
                     type="button"
                     disabled={isDisabled}

@@ -44,6 +44,7 @@ const Spinner = props => {
 
   return (
     <AnimatedSpinner
+      data-testid="spinner"
       style={fadeIn}
       width={props.width ? `${props.width}px` : "75px"}
       height={props.width ? `${props.width + 1}px` : "76px"}
