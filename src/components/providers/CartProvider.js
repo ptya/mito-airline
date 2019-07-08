@@ -58,4 +58,4 @@ CartProvider.propTypes = {
 };
 
 export default CartProvider;
-export { CartContext };
+export { CartContext, cartReducer, initialCart };
