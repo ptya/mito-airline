@@ -144,7 +144,7 @@ const Timetable = props => {
             const arrTime = convertDate(flight.arrival);
             return (
               <TableRow isDisabled={isDisabled} key={flight.flightNumber}>
-                <div className="time" data-testid="ts-time">
+                <div className="time">
                   <span>{depTime.time}</span>
                   <img src={smallArrow} alt="to" />
                   <span>{arrTime.time}</span>

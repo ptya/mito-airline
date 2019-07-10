@@ -17,6 +17,8 @@ import {
   flightsTwoToOne
 } from "components/providers/__mocks__/mockValues";
 
+import { convertDate } from "utils/convertDate";
+
 global.fetch = require("jest-fetch-mock");
 
 afterEach(() => {
@@ -148,22 +150,24 @@ test("Only one flight can be selected", async () => {
 });
 
 test("Past flights are disabled", async () => {
-  // NOTE: this will only fail if tests are run exactly on 00:00:00
-  fetch.mockResponseOnce(JSON.stringify(flightsOneToTwo(dateToday)));
+  const data = flightsOneToTwo(dateToday);
+  fetch.mockResponseOnce(JSON.stringify(data));
 
   const state = {
     departureDate: dateToday,
     origin: stationOne,
     destination: stationTwo
   };
-  const { debug, getAllByTestId } = RTLrender(state);
+  const { getAllByTestId } = RTLrender(state);
 
   await wait();
   const btns = getAllByTestId("ts-btn");
   const disabled = btns.filter(btn => btn.disabled);
-  expect(disabled.length).toBeGreaterThanOrEqual(3);
+  const inPast = data.filter(
+    item => convertDate(item.departure).date.getTime() < Date.now()
+  ).length;
 
-  // figure out a way to look at each time row and see if it should be disabled or not
+  expect(disabled.length).toBe(inPast * 3); // 3 buttons in a row
 });
 
 test.skip("Form can be submitted", async () => {
