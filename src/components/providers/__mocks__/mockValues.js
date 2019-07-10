@@ -15,10 +15,8 @@ export const dateToday = {
   year: today.getFullYear(),
   time: "00:00",
   isoDate: `${today.getFullYear()}-${
-    (today.getMonth() + 1).length > 1 ? "" : "0"
-  }${today.getMonth() + 1}-${
-    today.getDate().length > 1 ? "" : "0"
-  }${today.getDate()}`
+    today.getMonth() + 1 < 10 ? "0" : ""
+  }${today.getMonth() + 1}-${today.getDate() < 10 ? "0" : ""}${today.getDate()}`
 };
 
 export const dateTomorrow = {
@@ -32,9 +30,9 @@ export const dateTomorrow = {
   year: tomorrow.getFullYear(),
   time: "00:00",
   isoDate: `${tomorrow.getFullYear()}-${
-    (tomorrow.getMonth() + 1).length > 1 ? "" : "0"
+    tomorrow.getMonth() + 1 < 10 ? "0" : ""
   }${tomorrow.getMonth() + 1}-${
-    tomorrow.getDate().length > 1 ? "" : "0"
+    tomorrow.getDate() < 10 ? "0" : ""
   }${tomorrow.getDate()}`
 };
 
@@ -49,10 +47,8 @@ export const dateLater = {
   year: later.getFullYear(),
   time: "00:00",
   isoDate: `${later.getFullYear()}-${
-    (later.getMonth() + 1).length > 1 ? "" : "0"
-  }${later.getMonth() + 1}-${
-    later.getDate().length > 1 ? "" : "0"
-  }${later.getDate()}`
+    later.getMonth() + 1 < 10 ? "0" : ""
+  }${later.getMonth() + 1}-${later.getDate() < 10 ? "0" : ""}${later.getDate()}`
 };
 
 export const stationOne = {
@@ -88,8 +84,8 @@ export const flightsOneToTwo = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e4b990d5c859c4c49",
     remainingTickets: 21,
-    departure: `${mockDate.isoDate}T07:10:00+2000`,
-    arrival: `${mockDate.isoDate}T10:10:00+2000`,
+    departure: `${mockDate.isoDate}T00:00:00+0200`,
+    arrival: `${mockDate.isoDate}T10:10:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e5490dbf23c142993",
@@ -112,8 +108,8 @@ export const flightsOneToTwo = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e1f0a3c099d7b3e26",
     remainingTickets: 39,
-    departure: `${mockDate.isoDate}T10:30:00+2000`,
-    arrival: `${mockDate.isoDate}T13:30:00+2000`,
+    departure: `${mockDate.isoDate}T10:30:00+0200`,
+    arrival: `${mockDate.isoDate}T13:30:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e4fb998c79f11ed2c",
@@ -136,8 +132,8 @@ export const flightsOneToTwo = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38eb1c12aa3525a4192",
     remainingTickets: 20,
-    departure: `${mockDate.isoDate}T13:00:00+2000`,
-    arrival: `${mockDate.isoDate}T16:00:00+2000`,
+    departure: `${mockDate.isoDate}T13:00:00+0200`,
+    arrival: `${mockDate.isoDate}T16:00:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38efda96e33a72fb349",
@@ -160,8 +156,8 @@ export const flightsOneToTwo = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38ef23c797a552a8cc2",
     remainingTickets: 36,
-    departure: `${mockDate.isoDate}T16:10:00+2000`,
-    arrival: `${mockDate.isoDate}T19:10:00+2000`,
+    departure: `${mockDate.isoDate}T16:10:00+0200`,
+    arrival: `${mockDate.isoDate}T19:10:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e24a3e24372acb5ed",
@@ -184,8 +180,8 @@ export const flightsOneToTwo = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e7dcfc3ee939b7717",
     remainingTickets: 30,
-    departure: `${mockDate.isoDate}T19:40:00+2000`,
-    arrival: `${mockDate.isoDate}T22:40:00+2000`,
+    departure: `${mockDate.isoDate}T19:40:00+0200`,
+    arrival: `${mockDate.isoDate}T22:40:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e214e9939a94f3832",
@@ -211,8 +207,8 @@ export const flightsTwoToOne = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38ed7447af6678d5d8f",
     remainingTickets: 31,
-    departure: `${mockDate.isoDate}T06:10:00+2000`,
-    arrival: `${mockDate.isoDate}T09:10:00+2000`,
+    departure: `${mockDate.isoDate}T06:10:00+0200`,
+    arrival: `${mockDate.isoDate}T09:10:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e8c3e32cc422832aa",
@@ -235,8 +231,8 @@ export const flightsTwoToOne = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e1e5c0ba47d506cd9",
     remainingTickets: 37,
-    departure: `${mockDate.isoDate}T09:40:00+2000`,
-    arrival: `${mockDate.isoDate}T12:40:00+2000`,
+    departure: `${mockDate.isoDate}T09:40:00+0200`,
+    arrival: `${mockDate.isoDate}T12:40:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38ebc065310800ba86e",
@@ -259,8 +255,8 @@ export const flightsTwoToOne = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e083a10cb11b6d57e",
     remainingTickets: 43,
-    departure: `${mockDate.isoDate}T13:00:00+2000`,
-    arrival: `${mockDate.isoDate}T16:00:00+2000`,
+    departure: `${mockDate.isoDate}T13:00:00+0200`,
+    arrival: `${mockDate.isoDate}T16:00:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38e99069d63b9596bb4",
@@ -283,8 +279,8 @@ export const flightsTwoToOne = mockDate => [
     carrierCode: "W6",
     flightNumber: "5cffb38e21ef1a80eb22c2ab",
     remainingTickets: 49,
-    departure: `${mockDate.isoDate}T16:50:00+2000`,
-    arrival: `${mockDate.isoDate}T19:50:00+2000`,
+    departure: `${mockDate.isoDate}T16:50:00+0200`,
+    arrival: `${mockDate.isoDate}T19:50:00+0200`,
     fares: [
       {
         fareSellKey: "5cffb38ece4229670922383a",

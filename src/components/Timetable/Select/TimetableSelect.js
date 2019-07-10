@@ -144,14 +144,14 @@ const Timetable = props => {
             const arrTime = convertDate(flight.arrival);
             return (
               <TableRow isDisabled={isDisabled} key={flight.flightNumber}>
-                <div className="time">
+                <div className="time" data-testid="ts-time">
                   <span>{depTime.time}</span>
                   <img src={smallArrow} alt="to" />
                   <span>{arrTime.time}</span>
                 </div>
                 <div className="basic">
                   <TableButton
-                    data-testid="ts-basic-btn"
+                    data-testid="ts-btn"
                     isActive={selectedFare === flight.fares[0].fareSellKey}
                     type="button"
                     disabled={isDisabled}
@@ -169,7 +169,7 @@ const Timetable = props => {
                 </div>
                 <div className="standard">
                   <TableButton
-                    data-testid="ts-standard-btn"
+                    data-testid="ts-btn"
                     isActive={selectedFare === flight.fares[1].fareSellKey}
                     type="button"
                     disabled={isDisabled}
@@ -187,7 +187,7 @@ const Timetable = props => {
                 </div>
                 <div className="plus">
                   <TableButton
-                    data-testid="ts-plus-btn"
+                    data-testid="ts-btn"
                     isActive={selectedFare === flight.fares[2].fareSellKey}
                     type="button"
                     disabled={isDisabled}
