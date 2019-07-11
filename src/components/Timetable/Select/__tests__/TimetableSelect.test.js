@@ -1,34 +1,34 @@
 import React from "react";
 import { render, cleanup, fireEvent, wait } from "@testing-library/react";
 
+// components
 import TimetableSelect from "../TimetableSelect";
-import { stationsReducer } from "components/providers/StationsProvider";
+
+// context
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
-import TestCartProvider from "components/providers/__mocks__/TestCartProvider";
 import CartProvider from "components/providers/CartProvider";
 
+// utils
+import { convertDate } from "utils/convertDate";
+
+// mocks
 import {
   dateToday,
   dateTomorrow,
   dateLater,
   stationOne,
   stationTwo,
-  flightsOneToTwo,
-  flightsTwoToOne
+  flightsOneToTwo
 } from "components/providers/__mocks__/mockValues";
-
-import { convertDate } from "utils/convertDate";
 
 global.fetch = require("jest-fetch-mock");
 
 afterEach(() => {
   cleanup();
   console.error.mockClear();
-  mockStationsReducer.mockClear();
 });
 
 console.error = jest.fn();
-const mockStationsReducer = jest.fn(stationsReducer);
 
 // initials
 const type = "outbound";
@@ -170,38 +170,32 @@ test("Past flights are disabled", async () => {
   expect(disabled.length).toBe(inPast * 3); // 3 buttons in a row
 });
 
-test.skip("Form can be submitted", async () => {
-  const { getByTestId, queryByTestId, getByLabelText } = render(
-    <TestStationsProvider reducer={mockStationsReducer}>
-      <TimetableSelect />
-    </TestStationsProvider>
-  );
+test("Changing day changes the output", async () => {
+  fetch.mockResponseOnce(JSON.stringify(flightsOneToTwo(dateToday)));
+  fetch.mockResponseOnce(JSON.stringify(flightsOneToTwo(dateTomorrow)));
 
-  const form = getByTestId("tf-form");
-  const input = getByLabelText("Return");
+  const state = {
+    departureDate: dateToday,
+    origin: stationOne,
+    destination: stationTwo
+  };
 
-  // set value
-  fireEvent.change(input, {
-    target: {
-      value: "2019.07.07"
-    }
-  });
+  const { getByTestId, queryByTestId, getAllByTestId } = RTLrender(state);
 
-  expect(mockStationsReducer).toHaveBeenCalledWith(
-    expect.any(Object),
-    expect.objectContaining({
-      type: "setSecondaryReturn"
-    })
-  );
-  expect(input.value).toBe("Sun 7. Jul. 2019");
+  await wait();
 
-  fireEvent.submit(form);
-  expect(mockStationsReducer).toHaveBeenLastCalledWith(
-    expect.any(Object),
-    expect.objectContaining({
-      type: "setReturn"
-    })
-  );
-  expect(queryByTestId("error")).toBeFalsy();
-  expect(console.error).not.toHaveBeenCalled();
+  expect(getByTestId("ts-curr-day")).toBeTruthy();
+  const day1 = getByTestId("ts-curr-day").textContent;
+  expect(getByTestId("ts-next-day")).toBeTruthy();
+
+  fireEvent.click(getByTestId("ts-next-day"));
+
+  expect(getByTestId("spinner")).toBeTruthy();
+
+  await wait();
+
+  expect(queryByTestId("spinner")).toBeFalsy();
+  expect(getByTestId("ts-curr-day")).toBeTruthy();
+  expect(getByTestId("ts-curr-day").textContent).not.toEqual(day1);
+  expect(getAllByTestId("ts-btn")).toBeTruthy();
 });
