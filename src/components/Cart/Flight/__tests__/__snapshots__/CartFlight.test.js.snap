@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without errors with isSeparated=false and matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa jmlIJf"
+  >
+    <p
+      class="sc-bwzfXH cWAdWB"
+    >
+      <span>
+        Jul
+      </span>
+      <span>
+        12
+      </span>
+    </p>
+    <p
+      class="sc-htpNat hPUCVW"
+    >
+      <span>
+        Barcelona
+      </span>
+      <span>
+        Budapest
+      </span>
+      <span>
+        Fri
+         
+        10:30
+         – 
+        13:30
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Renders without errors with isSeparated=true and matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa eKdzhd"
+  >
+    <p
+      class="sc-bwzfXH cWAdWB"
+    >
+      <span>
+        Jul
+      </span>
+      <span>
+        12
+      </span>
+    </p>
+    <p
+      class="sc-htpNat hPUCVW"
+    >
+      <span>
+        Barcelona
+      </span>
+      <span>
+        Budapest
+      </span>
+      <span>
+        Fri
+         
+        10:30
+         – 
+        13:30
+      </span>
+    </p>
+  </div>
+</div>
+`;

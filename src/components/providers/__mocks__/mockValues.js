@@ -79,6 +79,31 @@ export const stationTwo = {
   ]
 };
 
+export const flight = {
+  carrierCode: "W6",
+  flightNumber: "5cffb38e1f0a3c099d7b3e26",
+  remainingTickets: 39,
+  departure: `2019-07-12T10:30:00+0200`,
+  arrival: `2019-07-12T13:30:00+0200`,
+  fares: [
+    {
+      fareSellKey: "5cffb38e4fb998c79f11ed2c",
+      price: 70,
+      bundle: "basic"
+    },
+    {
+      fareSellKey: "5cffb38eb28cf9b1e34ca701",
+      price: 76,
+      bundle: "standard"
+    },
+    {
+      fareSellKey: "5cffb38e0f6af61b3d01f764",
+      price: 101,
+      bundle: "plus"
+    }
+  ]
+};
+
 export const flightsOneToTwo = mockDate => [
   {
     carrierCode: "W6",
