@@ -36,7 +36,7 @@ const Main = styled(animated.main)`
 
 const Modal = props => {
   const { children, setToggle, animation } = props;
-  const { opacity } = animation;
+  const opacity = (animation && animation.opacity) || null;
   // to keep track of DOM element
   const ref = useRef();
 
