@@ -1,5 +1,5 @@
 function convertDate(dateString) {
-  const date = new Date(dateString);
+  const date = dateString ? new Date(dateString) : new Date();
 
   return {
     date: date,
