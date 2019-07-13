@@ -51,7 +51,11 @@ const CartModal = props => {
         <h2>
           TOTAL: <span>{formatMoney(total)}</span>
         </h2>
-        <CancelBtn type="button" onClick={() => handleReset()}>
+        <CancelBtn
+          data-testid="cm-btn"
+          type="button"
+          onClick={() => handleReset()}
+        >
           No, thanks (reset)
         </CancelBtn>
       </Footer>

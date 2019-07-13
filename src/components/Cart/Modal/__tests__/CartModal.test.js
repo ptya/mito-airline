@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup, fireEvent } from "@testing-library/react";
 
 // components
 import CartModal from "../CartModal";
@@ -18,31 +18,41 @@ import {
 afterEach(() => {
   cleanup();
   console.error.mockClear();
+  setToggle.mockClear();
 });
 
 console.error = jest.fn();
+const setToggle = jest.fn();
 
-/*
-
-  const { setToggle, animation } = props;
-  const { cart, cartDispatch } = useContext(CartContext);
-  const {
-    stations: { origin, destination }
-  } = useContext(StationsContext);
-
-*/
-
-test.skip("Renders without errors with isSeparated=false and matches snapshot", () => {
-  const { container, debug } = render(
-    <>
-      <div id="portal"></div>
-      <TestStationsProvider>
-        <TestCartProvider>
-          <CartModal />
-        </TestCartProvider>
-      </TestStationsProvider>
-    </>
+function renderModal() {
+  const stationsState = {
+    origin: stationOne,
+    destination: stationTwo
+  };
+  const cartState = {
+    inbound: flight,
+    outbound: flight,
+    total: 100
+  };
+  const context = render(
+    <TestStationsProvider state={stationsState}>
+      <TestCartProvider state={cartState}>
+        <CartModal setToggle={setToggle} animation={{}} />
+      </TestCartProvider>
+    </TestStationsProvider>
   );
-  debug();
+  return context;
+}
+
+test("Renders without errors and matches snapshot", () => {
+  renderModal();
+  expect(document.body).toMatchSnapshot();
   expect(console.error).not.toHaveBeenCalled();
+});
+
+test("Clicking on link toggles modal", () => {
+  const { getByTestId } = renderModal();
+  expect(setToggle).not.toHaveBeenCalled();
+  fireEvent.click(getByTestId("cm-btn"));
+  expect(setToggle).toHaveBeenCalled();
 });
