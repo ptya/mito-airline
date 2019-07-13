@@ -2,8 +2,6 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
-const modalRoot = document.getElementById("portal");
-
 class Portal extends Component {
   static propTypes = {
     children: PropTypes.node
@@ -16,14 +14,15 @@ class Portal extends Component {
   constructor(props) {
     super(props);
     this.element = document.createElement("div");
+    this.element.dataset.testid = "my-portal";
   }
 
   componentDidMount() {
-    modalRoot.appendChild(this.element);
+    document.body.appendChild(this.element);
   }
 
   componentWillUnmount() {
-    modalRoot.removeChild(this.element);
+    this.element.parentNode.removeChild(this.element);
   }
 
   render() {
