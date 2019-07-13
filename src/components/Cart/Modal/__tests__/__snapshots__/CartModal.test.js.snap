@@ -1,6 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders without errors and matches snapshot 1`] = `
+exports[`Renders with 1 station without errors and matches snapshot 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div />
+  <div
+    data-testid="my-portal"
+  >
+    <div
+      class="sc-EHOje bDDmvD"
+      y="0"
+    >
+      <main
+        class="sc-bZQynM koBpX"
+      >
+        <h1
+          class="sc-gzVnrw dtbiwe"
+        >
+          Thanks for buying your tickets at Mito Airlines
+        </h1>
+        <section
+          class="sc-htoDjs eDcOzR"
+        >
+          <div
+            class="sc-bdVaJa jmlIJf"
+          >
+            <p
+              class="sc-bwzfXH cWAdWB"
+            >
+              <span>
+                Jul
+              </span>
+              <span>
+                12
+              </span>
+            </p>
+            <p
+              class="sc-htpNat hPUCVW"
+            >
+              <span>
+                Barcelona
+              </span>
+              <span>
+                Budapest
+              </span>
+              <span>
+                Fri
+                 
+                10:30
+                 – 
+                13:30
+              </span>
+            </p>
+          </div>
+        </section>
+        <section
+          class="sc-dnqmqq hqaXBR"
+        >
+          <h2>
+            TOTAL: 
+            <span>
+              $1
+            </span>
+          </h2>
+          <button
+            class="sc-iwsKbI lguKDE"
+            data-testid="cm-btn"
+            type="button"
+          >
+            No, thanks (reset)
+          </button>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Renders with 2 stations without errors and matches snapshot 1`] = `
 <body
   style="overflow: hidden;"
 >

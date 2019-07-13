@@ -24,15 +24,10 @@ afterEach(() => {
 console.error = jest.fn();
 const setToggle = jest.fn();
 
-function renderModal() {
+function renderModal(cartState) {
   const stationsState = {
     origin: stationOne,
     destination: stationTwo
-  };
-  const cartState = {
-    inbound: flight,
-    outbound: flight,
-    total: 100
   };
   const context = render(
     <TestStationsProvider state={stationsState}>
@@ -44,14 +39,32 @@ function renderModal() {
   return context;
 }
 
-test("Renders without errors and matches snapshot", () => {
-  renderModal();
+test("Renders with 2 stations without errors and matches snapshot", () => {
+  renderModal({
+    inbound: flight,
+    outbound: flight,
+    total: 100
+  });
+  expect(document.body).toMatchSnapshot();
+  expect(console.error).not.toHaveBeenCalled();
+});
+
+test("Renders with 1 station without errors and matches snapshot", () => {
+  renderModal({
+    inbound: null,
+    outbound: flight,
+    total: 100
+  });
   expect(document.body).toMatchSnapshot();
   expect(console.error).not.toHaveBeenCalled();
 });
 
 test("Clicking on link toggles modal", () => {
-  const { getByTestId } = renderModal();
+  const { getByTestId } = renderModal({
+    inbound: flight,
+    outbound: flight,
+    total: 100
+  });
   expect(setToggle).not.toHaveBeenCalled();
   fireEvent.click(getByTestId("cm-btn"));
   expect(setToggle).toHaveBeenCalled();
