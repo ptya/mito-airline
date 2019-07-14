@@ -16,7 +16,7 @@ const Flight = props => {
   arrival = convertDate(arrival);
 
   return (
-    <Wrapper isSeparated={isSeparated}>
+    <Wrapper data-testid="cart-flight" isSeparated={isSeparated}>
       <Calendar>
         <span>{departure.shortMonth}</span>
         <span>{departure.day}</span>

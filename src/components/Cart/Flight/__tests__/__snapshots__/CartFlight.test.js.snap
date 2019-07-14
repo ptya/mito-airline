@@ -4,6 +4,7 @@ exports[`Renders without errors with isSeparated=false and matches snapshot 1`] 
 <div>
   <div
     class="sc-bdVaJa jmlIJf"
+    data-testid="cart-flight"
   >
     <p
       class="sc-bwzfXH cWAdWB"
@@ -40,6 +41,7 @@ exports[`Renders without errors with isSeparated=true and matches snapshot 1`] =
 <div>
   <div
     class="sc-bdVaJa eKdzhd"
+    data-testid="cart-flight"
   >
     <p
       class="sc-bwzfXH cWAdWB"
