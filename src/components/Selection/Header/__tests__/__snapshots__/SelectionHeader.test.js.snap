@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without errors and matches snapshot 1`] = `
+<div>
+  <header
+    class="sc-ifAKCX eNqdxx"
+  >
+    <a
+      class="sc-htpNat eJDFAA"
+      data-testid="sh-logo"
+      href="/"
+    >
+      <img
+        alt="Mito Airline"
+        src="mito-logo.svg"
+      />
+    </a>
+    <p
+      class="sc-EHOje eXyDeS"
+      data-testid="sh-origin"
+    >
+      <span>
+        Leaving from
+      </span>
+      Barcelona
+    </p>
+    <button
+      class="sc-bxivhb cjQfcv"
+      data-testid="sh-switch"
+      style="transform: rotateZ(0deg);"
+    >
+      <img
+        alt="From - to"
+        src="arrows.svg"
+      />
+    </button>
+    <p
+      class="sc-EHOje eXyDeS"
+      data-testid="sh-dest"
+    >
+      Budapest
+    </p>
+  </header>
+</div>
+`;

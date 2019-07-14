@@ -28,6 +28,7 @@ const Switch = props => {
 
   return (
     <Button
+      data-testid="sh-switch"
       style={{
         transform: z.interpolate(z => `rotateZ(${z}deg)`)
       }}

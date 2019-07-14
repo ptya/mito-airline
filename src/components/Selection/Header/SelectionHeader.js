@@ -32,12 +32,12 @@ const SelectionHeader = () => {
   return (
     <Header>
       <Logo to="/" handler={handleReturn} alt={"Mito Airline"} />
-      <Route>
+      <Route data-testid="sh-origin">
         <span>Leaving from</span>
         {origin.shortName}
       </Route>
       <Switch handler={handleSwitch} />
-      <Route>{destination.shortName}</Route>
+      <Route data-testid="sh-dest">{destination.shortName}</Route>
     </Header>
   );
 };
