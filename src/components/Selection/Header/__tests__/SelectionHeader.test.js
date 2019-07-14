@@ -13,8 +13,7 @@ import { stationsReducer } from "components/providers/StationsProvider";
 // mocks
 import {
   stationOne,
-  stationTwo,
-  flight
+  stationTwo
 } from "components/providers/__mocks__/mockValues";
 
 afterEach(() => {
