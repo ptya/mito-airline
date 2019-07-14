@@ -81,6 +81,7 @@ const Cart = props => {
           Total <Price price={total} />
         </Total>
         <PayBtn
+          data-testid="pay-btn"
           type="button"
           disabled={outbound ? false : true}
           onClick={() => setPayToggle(true)}

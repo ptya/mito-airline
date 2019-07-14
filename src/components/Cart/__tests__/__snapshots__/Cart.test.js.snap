@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with all flights and matches snapshot 1`] = `
+<div>
+  <aside
+    class="sc-VigVT ebyAXx"
+  >
+    <h2
+      class="sc-jTzLTM hRaYVe"
+    >
+      Flights 
+      <span>
+        $1
+      </span>
+    </h2>
+    <div
+      class="sc-gZMcBi gzvzg"
+      style="height: 0px; overflow: hidden;"
+    >
+      <div>
+        <div
+          class="sc-gqjmRU VqbEQ"
+          style="transform: translateY(-38px) rotateX(-90deg);"
+        >
+          <div
+            class="sc-bdVaJa jmlIJf"
+            data-testid="cart-flight"
+          >
+            <p
+              class="sc-bwzfXH cWAdWB"
+            >
+              <span>
+                Jul
+              </span>
+              <span>
+                12
+              </span>
+            </p>
+            <p
+              class="sc-htpNat hPUCVW"
+            >
+              <span>
+                Barcelona
+              </span>
+              <span>
+                Budapest
+              </span>
+              <span>
+                Fri
+                 
+                10:30
+                 – 
+                13:30
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="sc-gqjmRU VqbEQ"
+          style="transform: translateY(-38px) rotateX(-90deg);"
+        >
+          <div
+            class="sc-bdVaJa eKdzhd"
+            data-testid="cart-flight"
+          >
+            <p
+              class="sc-bwzfXH cWAdWB"
+            >
+              <span>
+                Jul
+              </span>
+              <span>
+                12
+              </span>
+            </p>
+            <p
+              class="sc-htpNat hPUCVW"
+            >
+              <span>
+                Budapest
+              </span>
+              <span>
+                Barcelona
+              </span>
+              <span>
+                Fri
+                 
+                10:30
+                 – 
+                13:30
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2
+      class="sc-jTzLTM sc-cSHVUG guEnyY"
+    >
+      Total 
+      <span>
+        $1
+      </span>
+    </h2>
+    <button
+      class="sc-jzJRlG bHvPj"
+      data-testid="pay-btn"
+      type="button"
+    >
+      Pay Now
+    </button>
+  </aside>
+</div>
+`;
+
+exports[`Renders with inbound flight and matches snapshot 1`] = `
+<div>
+  <aside
+    class="sc-VigVT ebyAXx"
+  >
+    <h2
+      class="sc-jTzLTM hRaYVe"
+    >
+      Flights 
+      <span>
+        $1
+      </span>
+    </h2>
+    <div
+      class="sc-gZMcBi gzvzg"
+      style="height: 0px; overflow: hidden;"
+    >
+      <div>
+        <p
+          class="sc-fjdhpX fUOfry"
+        >
+          Choose an outbound flight
+        </p>
+        <div
+          class="sc-gqjmRU VqbEQ"
+          style="transform: translateY(-38px) rotateX(-90deg);"
+        >
+          <div
+            class="sc-bdVaJa jmlIJf"
+            data-testid="cart-flight"
+          >
+            <p
+              class="sc-bwzfXH cWAdWB"
+            >
+              <span>
+                Jul
+              </span>
+              <span>
+                12
+              </span>
+            </p>
+            <p
+              class="sc-htpNat hPUCVW"
+            >
+              <span>
+                Budapest
+              </span>
+              <span>
+                Barcelona
+              </span>
+              <span>
+                Fri
+                 
+                10:30
+                 – 
+                13:30
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2
+      class="sc-jTzLTM sc-cSHVUG guEnyY"
+    >
+      Total 
+      <span>
+        $1
+      </span>
+    </h2>
+    <button
+      class="sc-jzJRlG iJfsJF"
+      data-testid="pay-btn"
+      disabled=""
+      type="button"
+    >
+      Pay Now
+    </button>
+  </aside>
+</div>
+`;
+
+exports[`Renders with outbound flight and matches snapshot 1`] = `
+<div>
+  <aside
+    class="sc-VigVT ebyAXx"
+  >
+    <h2
+      class="sc-jTzLTM hRaYVe"
+    >
+      Flights 
+      <span>
+        $10
+      </span>
+    </h2>
+    <div
+      class="sc-gZMcBi gzvzg"
+      style="height: 0px; overflow: hidden;"
+    >
+      <div>
+        <div
+          class="sc-gqjmRU VqbEQ"
+          style="transform: translateY(-38px) rotateX(-90deg);"
+        >
+          <div
+            class="sc-bdVaJa jmlIJf"
+            data-testid="cart-flight"
+          >
+            <p
+              class="sc-bwzfXH cWAdWB"
+            >
+              <span>
+                Jul
+              </span>
+              <span>
+                12
+              </span>
+            </p>
+            <p
+              class="sc-htpNat hPUCVW"
+            >
+              <span>
+                Barcelona
+              </span>
+              <span>
+                Budapest
+              </span>
+              <span>
+                Fri
+                 
+                10:30
+                 – 
+                13:30
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2
+      class="sc-jTzLTM sc-cSHVUG guEnyY"
+    >
+      Total 
+      <span>
+        $10
+      </span>
+    </h2>
+    <button
+      class="sc-jzJRlG bHvPj"
+      data-testid="pay-btn"
+      type="button"
+    >
+      Pay Now
+    </button>
+  </aside>
+</div>
+`;
+
+exports[`Renders without stations and matches snapshot 1`] = `
+<div>
+  <aside
+    class="sc-VigVT ebyAXx"
+  >
+    <h2
+      class="sc-jTzLTM hRaYVe"
+    >
+      Flights 
+      <span>
+        $0
+      </span>
+    </h2>
+    <div
+      class="sc-gZMcBi gzvzg"
+      style="height: 0px; overflow: hidden;"
+    >
+      <div>
+        <p
+          class="sc-fjdhpX fUOfry"
+        >
+          Choose an outbound flight
+        </p>
+      </div>
+    </div>
+    <h2
+      class="sc-jTzLTM sc-cSHVUG guEnyY"
+    >
+      Total 
+      <span>
+        $0
+      </span>
+    </h2>
+    <button
+      class="sc-jzJRlG iJfsJF"
+      data-testid="pay-btn"
+      disabled=""
+      type="button"
+    >
+      Pay Now
+    </button>
+  </aside>
+</div>
+`;
