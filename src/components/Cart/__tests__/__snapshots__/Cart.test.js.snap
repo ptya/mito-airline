@@ -96,6 +96,7 @@ exports[`Renders with all flights and matches snapshot 1`] = `
     </div>
     <h2
       class="sc-jTzLTM sc-cSHVUG guEnyY"
+      data-testid="c-total"
     >
       Total 
       <span>
@@ -177,6 +178,7 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
     </div>
     <h2
       class="sc-jTzLTM sc-cSHVUG guEnyY"
+      data-testid="c-total"
     >
       Total 
       <span>
@@ -254,6 +256,7 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
     </div>
     <h2
       class="sc-jTzLTM sc-cSHVUG guEnyY"
+      data-testid="c-total"
     >
       Total 
       <span>
@@ -298,6 +301,7 @@ exports[`Renders without stations and matches snapshot 1`] = `
     </div>
     <h2
       class="sc-jTzLTM sc-cSHVUG guEnyY"
+      data-testid="c-total"
     >
       Total 
       <span>

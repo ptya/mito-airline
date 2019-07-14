@@ -77,7 +77,7 @@ const Cart = props => {
             </AnimatedFlight>
           )}
         </AnimatedWrapper>
-        <Total>
+        <Total data-testid="c-total">
           Total <Price price={total} />
         </Total>
         <PayBtn
