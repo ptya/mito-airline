@@ -73,9 +73,14 @@ const Home = () => {
 
   return (
     <Wrapper>
-      <Main style={{}}>
+      <Main>
         <Header />
-        <Form autoComplete="off" onSubmit={onSubmit}>
+        <Form
+          data-testid="h-form"
+          method="post"
+          autoComplete="off"
+          onSubmit={onSubmit}
+        >
           <fieldset>
             <InputField isError={error && error.origin}>
               <SelectStation id="origin" placeholder="Origin" stored={origin} />
@@ -100,7 +105,9 @@ const Home = () => {
               <CustomDatePicker placeholder="Return" type="return" />
               <CalendarIco />
             </InputField>
-            <Button type="submit">Search</Button>
+            <Button data-testid="h-btn" type="submit">
+              Search
+            </Button>
           </fieldset>
         </Form>
       </Main>

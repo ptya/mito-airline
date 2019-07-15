@@ -35,7 +35,7 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => (
-  <StyledHeader>
+  <StyledHeader data-testid="h-head">
     <img src={logo} alt="Mito Airline" />
     <h1>Mito Airline</h1>
   </StyledHeader>

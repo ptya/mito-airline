@@ -73,7 +73,7 @@ const SelectStation = props => {
 
   // Use your imagination to render suggestions.
   const renderSuggestion = suggestion => {
-    return <div>{suggestion.shortName}</div>;
+    return <div data-testid="suggestion">{suggestion.shortName}</div>;
   };
 
   // Autosuggest will call this function every time you need to update suggestions.

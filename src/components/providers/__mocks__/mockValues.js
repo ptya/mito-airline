@@ -79,6 +79,8 @@ export const stationTwo = {
   ]
 };
 
+export const stations = [stationOne, stationTwo];
+
 export const flight = {
   carrierCode: "W6",
   flightNumber: "5cffb38e1f0a3c099d7b3e26",
