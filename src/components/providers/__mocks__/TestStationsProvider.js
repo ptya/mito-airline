@@ -30,7 +30,7 @@ TestStationsProvider.propTypes = {
 };
 
 TestStationsProvider.defaultProps = {
-  state: initialStations,
+  state: { ...initialStations() },
   reducer: stationsReducer
 };
 
