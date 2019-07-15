@@ -7,7 +7,6 @@ import Selection from "../Selection";
 
 // context
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
-import { stationsReducer } from "components/providers/StationsProvider";
 
 // mocks
 import {
@@ -25,11 +24,9 @@ global.fetch = require("jest-fetch-mock");
 afterEach(() => {
   cleanup();
   console.error.mockClear();
-  reducer.mockClear();
 });
 
 console.error = jest.fn();
-const reducer = jest.fn(stationsReducer);
 
 function RTLrender(state) {
   const context = render(
