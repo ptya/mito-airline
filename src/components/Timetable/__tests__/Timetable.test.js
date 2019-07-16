@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent, wait } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 
 // components
 import Timetable from "../Timetable";
@@ -23,7 +23,6 @@ import {
 global.fetch = require("jest-fetch-mock");
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
 });
 

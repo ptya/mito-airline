@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent, wait } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // components
@@ -22,7 +22,6 @@ import {
 global.fetch = require("jest-fetch-mock");
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
 });
 

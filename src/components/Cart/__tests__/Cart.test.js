@@ -1,7 +1,6 @@
 import React from "react";
 import {
   render,
-  cleanup,
   fireEvent,
   waitForElementToBeRemoved
 } from "@testing-library/react";
@@ -21,7 +20,6 @@ import {
 } from "components/providers/__mocks__/mockValues";
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
 });
 

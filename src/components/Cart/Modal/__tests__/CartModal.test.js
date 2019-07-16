@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 // components
 import CartModal from "../CartModal";
@@ -16,7 +16,6 @@ import {
 } from "components/providers/__mocks__/mockValues";
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
   setToggle.mockClear();
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent, wait } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // components
@@ -20,7 +20,6 @@ import {
 } from "components/providers/__mocks__/mockValues";
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
   sessionStorage.clear();
   sessionStorage.setItem.mockClear();

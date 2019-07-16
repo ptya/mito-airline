@@ -1,11 +1,10 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import TimetableHeader from "../TimetableHeader";
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
 });
 

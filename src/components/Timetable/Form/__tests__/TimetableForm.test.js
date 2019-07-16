@@ -1,12 +1,11 @@
 import React from "react";
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 import TimetableForm from "../TimetableForm";
 import { stationsReducer } from "components/providers/StationsProvider";
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
 
 afterEach(() => {
-  cleanup();
   console.error.mockClear();
   mockStationsReducer.mockClear();
 });
