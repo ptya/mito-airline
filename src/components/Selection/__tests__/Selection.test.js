@@ -21,12 +21,6 @@ import {
 
 global.fetch = require("jest-fetch-mock");
 
-afterEach(() => {
-  console.error.mockClear();
-});
-
-console.error = jest.fn();
-
 function RTLrender(state) {
   const context = render(
     <Router>

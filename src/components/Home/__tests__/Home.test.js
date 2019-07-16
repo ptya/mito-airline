@@ -20,12 +20,9 @@ import {
 } from "components/providers/__mocks__/mockValues";
 
 afterEach(() => {
-  console.error.mockClear();
   sessionStorage.clear();
   sessionStorage.setItem.mockClear();
 });
-
-console.error = jest.fn();
 
 function RTLrender() {
   const context = render(
