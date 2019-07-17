@@ -21,6 +21,9 @@ import {
   flightsOneToTwo
 } from "components/providers/__mocks__/mockValues";
 
+// styles
+import { colors } from "components/_styles/variables";
+
 // ! mute console.error until React 16.9 as fetching causes trouble
 console.error = jest.fn();
 
@@ -127,19 +130,20 @@ test("Only one flight can be selected", async () => {
   const activeClass = btns[1].className;
   let active = btns.filter(btn => btn.className === activeClass);
   expect(active).toHaveLength(1);
+  expect(btns[1]).toHaveStyleRule("background", colors.pink);
 
   fireEvent.click(btns[5]);
   active = btns.filter(btn => btn.className === activeClass);
   expect(active).toHaveLength(1);
-  expect(btns[1].className === activeClass).toBeFalsy();
-  expect(btns[5].className === activeClass).toBeTruthy();
+  expect(btns[1]).not.toHaveStyleRule("background", colors.pink);
+  expect(btns[5]).toHaveStyleRule("background", colors.pink);
 
   fireEvent.click(btns[10]);
   active = btns.filter(btn => btn.className === activeClass);
   expect(active).toHaveLength(1);
-  expect(btns[1].className === activeClass).toBeFalsy();
-  expect(btns[5].className === activeClass).toBeFalsy();
-  expect(btns[10].className === activeClass).toBeTruthy();
+  expect(btns[1]).not.toHaveStyleRule("background", colors.pink);
+  expect(btns[5]).not.toHaveStyleRule("background", colors.pink);
+  expect(btns[10]).toHaveStyleRule("background", colors.pink);
 });
 
 test("Past flights are disabled", async () => {
