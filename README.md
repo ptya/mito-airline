@@ -8,10 +8,21 @@ Once you set it up you will face an intuitive interface for all devices.
 
 For best experience, use Google Chrome.
 
+#### It features:
+- Inputs with autosuggest
+- Spring-physics based animations
+- 90%+ code coverage with tests
+- Git hooks
+
+
 #### 3rd party modules used:
 - [Create React App](https://github.com/facebook/create-react-app)
 - [React Datepicker](https://reactdatepicker.com/)
 - [React Autosuggest](https://react-autosuggest.js.org/)
+- [Styled-components](https://www.styled-components.com)
+- [React-spring](https://www.react-spring.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [Husky](https://github.com/typicode/husky)
 
 ## Available Scripts
 
