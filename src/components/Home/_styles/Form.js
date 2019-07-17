@@ -15,8 +15,10 @@ const Form = styled.form`
 
   fieldset > div,
   fieldset > button {
-    margin: 10px;
     width: 100%;
+  }
+  fieldset > div {
+    margin-bottom: 30px;
   }
 
   .react-datepicker-wrapper,
