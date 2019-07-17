@@ -6,12 +6,11 @@ import CustomDatePicker from "../CustomDatePicker";
 import TestStationsProvider from "components/providers/__mocks__/TestStationsProvider";
 
 function RTLrender(type) {
-  const context = render(
+  return render(
     <TestStationsProvider>
       <CustomDatePicker placeholder={"Placeholder"} type={type} />
     </TestStationsProvider>
   );
-  return context;
 }
 
 test("Renders in default state with empty value", () => {

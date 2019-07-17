@@ -21,20 +21,20 @@ import {
   flightsOneToTwo
 } from "components/providers/__mocks__/mockValues";
 
-global.fetch = require("jest-fetch-mock");
+// ! mute console.error until React 16.9 as fetching causes trouble
+console.error = jest.fn();
 
 // initials
 const type = "outbound";
 
 const RTLrender = stationsState => {
-  const context = render(
+  return render(
     <TestStationsProvider state={stationsState}>
       <CartProvider>
         <TimetableSelect type={type} />
       </CartProvider>
     </TestStationsProvider>
   );
-  return context;
 };
 
 test("Renders with no restrictions", async () => {

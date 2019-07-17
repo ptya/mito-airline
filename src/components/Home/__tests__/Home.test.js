@@ -19,20 +19,22 @@ import {
   stations
 } from "components/providers/__mocks__/mockValues";
 
+// ! mute console.error until React 16.9 as fetching causes trouble
+console.error = jest.fn();
+
 afterEach(() => {
   sessionStorage.clear();
   sessionStorage.setItem.mockClear();
 });
 
 function RTLrender() {
-  const context = render(
+  return render(
     <Router>
       <StationsProvider>
         <Home />
       </StationsProvider>
     </Router>
   );
-  return context;
 }
 
 test("Renders in first time mode", async () => {

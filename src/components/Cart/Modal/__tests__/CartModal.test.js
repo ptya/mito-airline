@@ -28,14 +28,13 @@ function renderModal(cartState) {
     origin: stationOne,
     destination: stationTwo
   };
-  const context = render(
+  return render(
     <TestStationsProvider state={stationsState}>
       <TestCartProvider state={cartState}>
         <CartModal setToggle={setToggle} animation={{}} />
       </TestCartProvider>
     </TestStationsProvider>
   );
-  return context;
 }
 
 test("Renders with 2 stations without errors and matches snapshot", () => {

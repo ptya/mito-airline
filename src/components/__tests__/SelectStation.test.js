@@ -7,12 +7,11 @@ import TestStationsProvider from "components/providers/__mocks__/TestStationsPro
 import { stations } from "components/providers/__mocks__/mockValues";
 
 function RTLrender() {
-  const context = render(
+  return render(
     <TestStationsProvider state={{ stations }}>
       <SelectStation placeholder={"Origin"} id={"origin"} stored={null} />
     </TestStationsProvider>
   );
-  return context;
 }
 
 test("Renders without value and suggestions", () => {

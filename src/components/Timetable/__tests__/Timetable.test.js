@@ -20,8 +20,6 @@ import {
   flightsOneToTwo
 } from "components/providers/__mocks__/mockValues";
 
-global.fetch = require("jest-fetch-mock");
-
 afterEach(() => {
   console.error.mockClear();
 });
@@ -33,14 +31,13 @@ const outType = "outbound";
 const inType = "inbound";
 
 const RTLrender = (stationsState, type) => {
-  const context = render(
+  return render(
     <TestStationsProvider state={stationsState}>
       <CartProvider>
         <Timetable type={type} />
       </CartProvider>
     </TestStationsProvider>
   );
-  return context;
 };
 
 test("Renders with selected date selected", async () => {

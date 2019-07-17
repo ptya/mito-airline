@@ -19,17 +19,17 @@ import {
   dateLater
 } from "components/providers/__mocks__/mockValues";
 
-global.fetch = require("jest-fetch-mock");
+// ! mute console.error until React 16.9 as fetching causes trouble
+console.error = jest.fn();
 
 function RTLrender(state) {
-  const context = render(
+  return render(
     <Router>
       <TestStationsProvider state={state}>
         <Selection />
       </TestStationsProvider>
     </Router>
   );
-  return context;
 }
 
 test("Renders in one way mode", async () => {

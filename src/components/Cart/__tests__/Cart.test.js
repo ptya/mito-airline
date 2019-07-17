@@ -30,14 +30,13 @@ function renderCart(cartState) {
     origin: stationOne,
     destination: stationTwo
   };
-  const context = render(
+  return render(
     <TestStationsProvider state={stationsState}>
       <TestCartProvider state={cartState}>
         <Cart />
       </TestCartProvider>
     </TestStationsProvider>
   );
-  return context;
 }
 
 test("Renders without stations and matches snapshot", () => {

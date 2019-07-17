@@ -29,7 +29,7 @@ function RTLrender() {
     origin: stationOne,
     destination: stationTwo
   };
-  const context = render(
+  return render(
     <Router>
       <TestStationsProvider state={state} reducer={reducer}>
         <CartProvider>
@@ -38,7 +38,6 @@ function RTLrender() {
       </TestStationsProvider>
     </Router>
   );
-  return context;
 }
 
 test("Renders without errors and matches snapshot", () => {
