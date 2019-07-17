@@ -29,6 +29,7 @@ const StyledError = styled.div`
     bottom: -32px;
     font-size: 13px;
     line-height: 13px;
+    left: 0;
 
     img {
       width: 17px;
