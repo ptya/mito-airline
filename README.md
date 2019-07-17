@@ -24,6 +24,15 @@ For best experience, use Google Chrome.
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Husky](https://github.com/typicode/husky)
 
+## Screens
+### Home screen
+
+<img src="public/images/home.png" alt="Home screen" width="800"/>
+
+### Selection screen
+
+<img src="public/images/selection.png" alt="Selection screen" width="800"/>
+
 ## Available Scripts
 
 In the project directory, you can run:
