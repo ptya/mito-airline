@@ -2,7 +2,7 @@ import styled, { keyframes, css } from "styled-components";
 
 import StyledAutosuggest from "./StyledAutosuggest";
 
-import { colors } from "components/_styles/variables";
+import { colors, breakPoints } from "components/_styles/variables";
 
 const buzz = keyframes`
   0% {
@@ -32,7 +32,7 @@ const InputField = styled(StyledAutosuggest)`
     border-radius: 3px;
     display: block;
     font-size: 1rem;
-    width: 250px;
+    width: 100%;
     height: 50px;
   }
 
@@ -43,6 +43,12 @@ const InputField = styled(StyledAutosuggest)`
     bottom: 0;
     right: 15px;
     pointer-events: none;
+  }
+
+  @media (min-width: ${breakPoints[0]}) {
+    input {
+      width: 250px;
+    }
   }
 
   /* ERROR STYLES */

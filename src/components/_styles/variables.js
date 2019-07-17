@@ -26,3 +26,5 @@ export const zIndex = {
   higher: 50,
   high: 25
 };
+
+export const breakPoints = ["600px"];
