@@ -7,6 +7,7 @@ const NavigationWrapper = styled.nav`
   height: 58px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export default NavigationWrapper;

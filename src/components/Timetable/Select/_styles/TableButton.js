@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import { colors } from "components/_styles/variables";
+import { colors, breakPoints } from "components/_styles/variables";
 
 const TableButton = styled.button`
-  margin: 20px auto;
+  margin: 10px 5px;
   padding: 0;
-  width: 160px;
+  width: 100%;
   height: 48px;
   background: ${props =>
     props.disabled
@@ -16,7 +16,7 @@ const TableButton = styled.button`
   border: 2px solid ${props => (props.disabled ? colors.grey5 : colors.pink)};
   border-radius: 2px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   color: ${props =>
     props.disabled
       ? colors.grey5
@@ -39,6 +39,12 @@ const TableButton = styled.button`
 
   :active {
     transform: translate3d(1px, 1px, 0);
+  }
+
+  @media (min-width: ${breakPoints[0]}) {
+    width: 160px;
+    margin: 20px auto;
+    font-size: 20px;
   }
 `;
 

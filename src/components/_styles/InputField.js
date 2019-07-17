@@ -25,6 +25,11 @@ const buzz = keyframes`
 const InputField = styled(StyledAutosuggest)`
   position: relative;
 
+  .react-datepicker-wrapper,
+  .react-datepicker__input-container {
+    width: 100%;
+  }
+
   input {
     background: ${props => (props.isError ? colors.grey1 : "initial")};
     border: ${props =>

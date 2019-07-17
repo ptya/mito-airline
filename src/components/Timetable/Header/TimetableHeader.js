@@ -25,9 +25,9 @@ const Timetable = props => {
     <Header>
       <h2 data-testid="tt-header">{status}</h2>
       <p data-testid="tt-info">
-        {from}
+        <span>{from}</span>
         <img src={mediumArrow} alt="to" />
-        {to}
+        <span>{to}</span>
       </p>
     </Header>
   );

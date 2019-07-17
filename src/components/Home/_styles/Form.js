@@ -21,11 +21,6 @@ const Form = styled.form`
     margin-bottom: 30px;
   }
 
-  .react-datepicker-wrapper,
-  .react-datepicker__input-container {
-    width: 100%;
-  }
-
   @media (min-width: ${breakPoints[0]}) {
     display: grid;
     grid-template-columns: 1fr 1fr;

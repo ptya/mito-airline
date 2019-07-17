@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import { colors } from "components/_styles/variables";
+import { colors, breakPoints } from "components/_styles/variables";
 
 const Previous = styled.div`
   flex-basis: 25%;
-  margin: auto 12px;
+  margin: 0;
   cursor: pointer;
 
   button {
@@ -27,6 +27,10 @@ const Previous = styled.div`
   span {
     margin: auto 0;
     cursor: pointer;
+  }
+
+  @media (min-width: ${breakPoints[0]}) {
+    margin: auto 12px;
   }
 `;
 

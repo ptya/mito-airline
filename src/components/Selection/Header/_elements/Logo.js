@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import { colors } from "components/_styles/variables";
+import { colors, breakPoints } from "components/_styles/variables";
 
 // assets
 import logo from "assets/images/mito-logo.svg";
@@ -13,7 +13,7 @@ const StyledLink = styled(Link)`
   vertical-align: middle;
   border: 0;
   background: ${colors.blue3};
-  margin: auto 80px auto 20px;
+  margin: auto 0 auto 15px;
   cursor: pointer;
 
   img {
@@ -26,6 +26,10 @@ const StyledLink = styled(Link)`
 
   img:hover {
     transform: rotate(360deg);
+  }
+
+  @media (min-width: ${breakPoints[0]}) {
+    margin: auto 80px auto 20px;
   }
 `;
 

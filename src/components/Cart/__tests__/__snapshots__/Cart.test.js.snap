@@ -1,12 +1,198 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders with all flights and matches snapshot 1`] = `
+.c4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+}
+
+.c7 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+  border-top: 1px dotted #c1c1c1;
+}
+
+.c7:before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-top: 10px solid #FFF;
+  border-left: 10px solid #FFF;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 1px 1px #c1c1c1;
+  width: 0;
+}
+
+.c5 {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.c5 span:first-child {
+  background: #f2f2f2;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c6 span:first-child:after {
+  content: " –";
+}
+
+.c6 span:last-child {
+  font-size: 10px;
+}
+
+.c2 {
+  background: #FFF;
+}
+
+.c3 {
+  background: #FFF;
+}
+
+.c0 {
+  color: #343434;
+  border-top: 1px solid #c4c4c4;
+}
+
+.c1 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+}
+
+.c1 span {
+  color: #06038D;
+}
+
+.c9 {
+  background: #C6007E;
+  border-radius: 3px;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  color: #FFF;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+}
+
+.c9:hover,
+.c9:active,
+.c9:focus {
+  background: #9F0065;
+}
+
+.c9:active {
+  -webkit-transform: translate3d(1px,1px,0);
+  -ms-transform: translate3d(1px,1px,0);
+  transform: translate3d(1px,1px,0);
+}
+
+.c8 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+  font-family: "Source Sans Pro";
+  padding: 15px;
+  font-size: 16px;
+  background: #06038D;
+  color: #FFF;
+}
+
+.c8 span {
+  color: #06038D;
+}
+
+.c8 span {
+  color: #FFF;
+}
+
+@media (min-width:960px) {
+  .c0 {
+    width: 230px;
+  }
+}
+
 <div>
   <aside
-    class="sc-VigVT ebyAXx"
+    class="c0"
   >
     <h2
-      class="sc-jTzLTM hRaYVe"
+      class="c1"
     >
       Flights 
       <span>
@@ -14,20 +200,20 @@ exports[`Renders with all flights and matches snapshot 1`] = `
       </span>
     </h2>
     <div
-      class="sc-gZMcBi gzvzg"
+      class="c2"
       style="height: 0px; overflow: hidden;"
     >
       <div>
         <div
-          class="sc-gqjmRU VqbEQ"
+          class="c3"
           style="transform: translateY(-38px) rotateX(-90deg);"
         >
           <div
-            class="sc-bdVaJa jmlIJf"
+            class="c4"
             data-testid="cart-flight"
           >
             <p
-              class="sc-bwzfXH cWAdWB"
+              class="c5"
             >
               <span>
                 Jul
@@ -37,7 +223,7 @@ exports[`Renders with all flights and matches snapshot 1`] = `
               </span>
             </p>
             <p
-              class="sc-htpNat hPUCVW"
+              class="c6"
             >
               <span>
                 Barcelona
@@ -56,15 +242,15 @@ exports[`Renders with all flights and matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-gqjmRU VqbEQ"
+          class="c3"
           style="transform: translateY(-38px) rotateX(-90deg);"
         >
           <div
-            class="sc-bdVaJa eKdzhd"
+            class="c7"
             data-testid="cart-flight"
           >
             <p
-              class="sc-bwzfXH cWAdWB"
+              class="c5"
             >
               <span>
                 Jul
@@ -74,7 +260,7 @@ exports[`Renders with all flights and matches snapshot 1`] = `
               </span>
             </p>
             <p
-              class="sc-htpNat hPUCVW"
+              class="c6"
             >
               <span>
                 Budapest
@@ -95,7 +281,7 @@ exports[`Renders with all flights and matches snapshot 1`] = `
       </div>
     </div>
     <h2
-      class="sc-jTzLTM sc-cSHVUG guEnyY"
+      class="c8"
       data-testid="c-total"
     >
       Total 
@@ -104,7 +290,7 @@ exports[`Renders with all flights and matches snapshot 1`] = `
       </span>
     </h2>
     <button
-      class="sc-jzJRlG bHvPj"
+      class="c9"
       data-testid="pay-btn"
       type="button"
     >
@@ -115,12 +301,181 @@ exports[`Renders with all flights and matches snapshot 1`] = `
 `;
 
 exports[`Renders with inbound flight and matches snapshot 1`] = `
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+}
+
+.c6 {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.c6 span:first-child {
+  background: #f2f2f2;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c7 span:first-child:after {
+  content: " –";
+}
+
+.c7 span:last-child {
+  font-size: 10px;
+}
+
+.c2 {
+  background: #FFF;
+}
+
+.c4 {
+  background: #FFF;
+}
+
+.c0 {
+  color: #343434;
+  border-top: 1px solid #c4c4c4;
+}
+
+.c1 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+}
+
+.c1 span {
+  color: #06038D;
+}
+
+.c3 {
+  padding: 15px;
+  background: #FFF;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  font-size: 16px;
+  color: #919191;
+  margin: 0;
+}
+
+.c9 {
+  background: #c1c1c1;
+  border-radius: 3px;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  color: #FFF;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: initial;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+}
+
+.c9:hover,
+.c9:active,
+.c9:focus {
+  background: #c1c1c1;
+}
+
+.c9:active {
+  -webkit-transform: translate3d(1px,1px,0);
+  -ms-transform: translate3d(1px,1px,0);
+  transform: translate3d(1px,1px,0);
+}
+
+.c8 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+  font-family: "Source Sans Pro";
+  padding: 15px;
+  font-size: 16px;
+  background: #06038D;
+  color: #FFF;
+}
+
+.c8 span {
+  color: #06038D;
+}
+
+.c8 span {
+  color: #FFF;
+}
+
+@media (min-width:960px) {
+  .c0 {
+    width: 230px;
+  }
+}
+
 <div>
   <aside
-    class="sc-VigVT ebyAXx"
+    class="c0"
   >
     <h2
-      class="sc-jTzLTM hRaYVe"
+      class="c1"
     >
       Flights 
       <span>
@@ -128,25 +483,25 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
       </span>
     </h2>
     <div
-      class="sc-gZMcBi gzvzg"
+      class="c2"
       style="height: 0px; overflow: hidden;"
     >
       <div>
         <p
-          class="sc-fjdhpX fUOfry"
+          class="c3"
         >
           Choose an outbound flight
         </p>
         <div
-          class="sc-gqjmRU VqbEQ"
+          class="c4"
           style="transform: translateY(-38px) rotateX(-90deg);"
         >
           <div
-            class="sc-bdVaJa jmlIJf"
+            class="c5"
             data-testid="cart-flight"
           >
             <p
-              class="sc-bwzfXH cWAdWB"
+              class="c6"
             >
               <span>
                 Jul
@@ -156,7 +511,7 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
               </span>
             </p>
             <p
-              class="sc-htpNat hPUCVW"
+              class="c7"
             >
               <span>
                 Budapest
@@ -177,7 +532,7 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
       </div>
     </div>
     <h2
-      class="sc-jTzLTM sc-cSHVUG guEnyY"
+      class="c8"
       data-testid="c-total"
     >
       Total 
@@ -186,7 +541,7 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
       </span>
     </h2>
     <button
-      class="sc-jzJRlG iJfsJF"
+      class="c9"
       data-testid="pay-btn"
       disabled=""
       type="button"
@@ -198,12 +553,171 @@ exports[`Renders with inbound flight and matches snapshot 1`] = `
 `;
 
 exports[`Renders with outbound flight and matches snapshot 1`] = `
+.c4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+}
+
+.c5 {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.c5 span:first-child {
+  background: #f2f2f2;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c6 span:first-child:after {
+  content: " –";
+}
+
+.c6 span:last-child {
+  font-size: 10px;
+}
+
+.c2 {
+  background: #FFF;
+}
+
+.c3 {
+  background: #FFF;
+}
+
+.c0 {
+  color: #343434;
+  border-top: 1px solid #c4c4c4;
+}
+
+.c1 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+}
+
+.c1 span {
+  color: #06038D;
+}
+
+.c8 {
+  background: #C6007E;
+  border-radius: 3px;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  color: #FFF;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+}
+
+.c8:hover,
+.c8:active,
+.c8:focus {
+  background: #9F0065;
+}
+
+.c8:active {
+  -webkit-transform: translate3d(1px,1px,0);
+  -ms-transform: translate3d(1px,1px,0);
+  transform: translate3d(1px,1px,0);
+}
+
+.c7 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+  font-family: "Source Sans Pro";
+  padding: 15px;
+  font-size: 16px;
+  background: #06038D;
+  color: #FFF;
+}
+
+.c7 span {
+  color: #06038D;
+}
+
+.c7 span {
+  color: #FFF;
+}
+
+@media (min-width:960px) {
+  .c0 {
+    width: 230px;
+  }
+}
+
 <div>
   <aside
-    class="sc-VigVT ebyAXx"
+    class="c0"
   >
     <h2
-      class="sc-jTzLTM hRaYVe"
+      class="c1"
     >
       Flights 
       <span>
@@ -211,20 +725,20 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
       </span>
     </h2>
     <div
-      class="sc-gZMcBi gzvzg"
+      class="c2"
       style="height: 0px; overflow: hidden;"
     >
       <div>
         <div
-          class="sc-gqjmRU VqbEQ"
+          class="c3"
           style="transform: translateY(-38px) rotateX(-90deg);"
         >
           <div
-            class="sc-bdVaJa jmlIJf"
+            class="c4"
             data-testid="cart-flight"
           >
             <p
-              class="sc-bwzfXH cWAdWB"
+              class="c5"
             >
               <span>
                 Jul
@@ -234,7 +748,7 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
               </span>
             </p>
             <p
-              class="sc-htpNat hPUCVW"
+              class="c6"
             >
               <span>
                 Barcelona
@@ -255,7 +769,7 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
       </div>
     </div>
     <h2
-      class="sc-jTzLTM sc-cSHVUG guEnyY"
+      class="c7"
       data-testid="c-total"
     >
       Total 
@@ -264,7 +778,7 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
       </span>
     </h2>
     <button
-      class="sc-jzJRlG bHvPj"
+      class="c8"
       data-testid="pay-btn"
       type="button"
     >
@@ -275,12 +789,121 @@ exports[`Renders with outbound flight and matches snapshot 1`] = `
 `;
 
 exports[`Renders without stations and matches snapshot 1`] = `
+.c2 {
+  background: #FFF;
+}
+
+.c0 {
+  color: #343434;
+  border-top: 1px solid #c4c4c4;
+}
+
+.c1 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+}
+
+.c1 span {
+  color: #06038D;
+}
+
+.c3 {
+  padding: 15px;
+  background: #FFF;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  font-size: 16px;
+  color: #919191;
+  margin: 0;
+}
+
+.c5 {
+  background: #c1c1c1;
+  border-radius: 3px;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  color: #FFF;
+  font-family: "Roboto";
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: initial;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+}
+
+.c5:hover,
+.c5:active,
+.c5:focus {
+  background: #c1c1c1;
+}
+
+.c5:active {
+  -webkit-transform: translate3d(1px,1px,0);
+  -ms-transform: translate3d(1px,1px,0);
+  transform: translate3d(1px,1px,0);
+}
+
+.c4 {
+  background: #FFF;
+  padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+  font-family: "Source Sans Pro";
+  padding: 15px;
+  font-size: 16px;
+  background: #06038D;
+  color: #FFF;
+}
+
+.c4 span {
+  color: #06038D;
+}
+
+.c4 span {
+  color: #FFF;
+}
+
+@media (min-width:960px) {
+  .c0 {
+    width: 230px;
+  }
+}
+
 <div>
   <aside
-    class="sc-VigVT ebyAXx"
+    class="c0"
   >
     <h2
-      class="sc-jTzLTM hRaYVe"
+      class="c1"
     >
       Flights 
       <span>
@@ -288,19 +911,19 @@ exports[`Renders without stations and matches snapshot 1`] = `
       </span>
     </h2>
     <div
-      class="sc-gZMcBi gzvzg"
+      class="c2"
       style="height: 0px; overflow: hidden;"
     >
       <div>
         <p
-          class="sc-fjdhpX fUOfry"
+          class="c3"
         >
           Choose an outbound flight
         </p>
       </div>
     </div>
     <h2
-      class="sc-jTzLTM sc-cSHVUG guEnyY"
+      class="c4"
       data-testid="c-total"
     >
       Total 
@@ -309,7 +932,7 @@ exports[`Renders without stations and matches snapshot 1`] = `
       </span>
     </h2>
     <button
-      class="sc-jzJRlG iJfsJF"
+      class="c5"
       data-testid="pay-btn"
       disabled=""
       type="button"

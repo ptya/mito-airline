@@ -1,18 +1,198 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TimetableForm /> renders without error and matches snapshot 1`] = `
+.c2 {
+  position: relative;
+}
+
+.c2 label {
+  z-index: 25;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  line-height: 50px;
+  font-weight: normal;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #c4c4c4;
+  padding: 0 15px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: text;
+}
+
+.c2 .datepicker {
+  font-family: Roboto;
+  padding: 25px 15px 8px;
+}
+
+.c2 .datepicker__popper {
+  z-index: 50;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c1 .react-autosuggest__input {
+  padding: 25px 15px 8px;
+}
+
+.c1 .react-autosuggest__suggestions-container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 50;
+  background: #FFF;
+  width: 90%;
+  border-radius: 3px;
+}
+
+.c1 .react-autosuggest__suggestions-container--open {
+  border: 1px solid #919191;
+  box-shadow: 1px 1px 2px #c4c4c4;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.c1 .react-autosuggest__suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.c1 .react-autosuggest__suggestion {
+  padding: 10px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.c1 .react-autosuggest__suggestion--highlighted {
+  background: #C6007E;
+  color: #FFF;
+}
+
+.c1 .react-datepicker-wrapper,
+.c1 .react-datepicker__input-container {
+  width: 100%;
+}
+
+.c1 input {
+  background: initial;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  height: 50px;
+}
+
+.c1 i {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  pointer-events: none;
+}
+
+.c3 {
+  display: inline-block;
+  background-image: url(calendar.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #FFF;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.c0 fieldset {
+  display: contents;
+}
+
+.c4 {
+  background: #3434E0;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #e4e4e4;
+  font-family: Roboto;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  grid-column: 1 / 3;
+  justify-self: center;
+  text-transform: uppercase;
+  height: 50px;
+  width: 230px;
+  cursor: pointer;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+  margin: 10px 0 0;
+  width: unset;
+}
+
+.c4:hover {
+  background: #1F1FC6;
+}
+
+.c4:active {
+  background: #0A008B;
+  -webkit-transform: translate3d(1px,1px,0);
+  -ms-transform: translate3d(1px,1px,0);
+  transform: translate3d(1px,1px,0);
+  box-shadow: initial;
+}
+
+@media (min-width:600px) {
+  .c1 input {
+    width: 250px;
+  }
+}
+
+@media (min-width:600px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 33px 0 53px;
+  }
+}
+
+@media (min-width:600px) {
+  .c4 {
+    margin: 0 7px;
+    width: 230px;
+  }
+}
+
 <div>
   <form
     autocomplete="off"
-    class="sc-gzVnrw jDaHzc"
+    class="c0"
     data-testid="tf-form"
   >
     <fieldset>
       <div
-        class="sc-bxivhb sc-ifAKCX bqmOzw"
+        class="c1"
       >
         <div
-          class="sc-htpNat hlaEpc"
+          class="c2"
           placeholder="Return"
         >
           <label
@@ -36,11 +216,11 @@ exports[`<TimetableForm /> renders without error and matches snapshot 1`] = `
           </div>
         </div>
         <i
-          class="sc-bZQynM kulpyt"
+          class="c3"
         />
       </div>
       <button
-        class="sc-htoDjs sc-dnqmqq cgnJCp"
+        class="c4"
         type="submit"
       >
         Search

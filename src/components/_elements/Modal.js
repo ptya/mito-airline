@@ -8,7 +8,7 @@ import { useOnClickOutside } from "components/hooks/useOnClickOutside";
 import { useLockBodyScroll } from "components/hooks/useLockBodyScroll";
 
 // global styles
-import { colors, zIndex } from "components/_styles/variables";
+import { colors, zIndex, breakPoints } from "components/_styles/variables";
 
 // global elements
 import Portal from "./Portal";
@@ -31,7 +31,9 @@ const Main = styled(animated.main)`
   border-radius: 3px;
   margin-top: 205px;
   margin-bottom: auto;
-  min-width: 465px;
+  @media (min-width: ${breakPoints[0]}) {
+    min-width: 465px;
+  }
 `;
 
 const Modal = props => {

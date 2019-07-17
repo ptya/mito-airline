@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colors } from "components/_styles/variables";
+import { colors, breakPoints } from "components/_styles/variables";
 
 import TableGrid from "./TableGrid";
 
@@ -11,17 +11,33 @@ const TableRow = styled(TableGrid)`
   .time {
     color: ${colors.grey6};
     font-weight: 300;
-    font-size: 15px;
+    font-size: 12px;
     margin: auto 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     img {
-      width: 16px;
-      margin: auto 6px;
+      width: 12px;
+      margin: 5px 6px;
     }
   }
 
   .standard {
     background: ${props => (props.isDisabled ? colors.grey4 : colors.grey2)};
+  }
+
+  @media (min-width: ${breakPoints[0]}) {
+    .time {
+      font-size: 15px;
+      display: unset;
+    }
+    img {
+      width: 16px;
+      margin: auto 6px;
+    }
   }
 `;
 

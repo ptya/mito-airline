@@ -106,7 +106,7 @@ const Timetable = props => {
               onClick={() => handleDayChange(prevDay)}
             >
               <img src={chevron} alt="Previous day" />
-              <span>{`${prevDay.shortMonth} ${prevDay.day} ${prevDay.fullMonth}`}</span>
+              <span>{`${prevDay.day} ${prevDay.fullMonth}`}</span>
             </button>
           )}
         </Previous>
@@ -119,7 +119,7 @@ const Timetable = props => {
               onClick={() => handleDayChange(nextDay)}
             >
               <img src={chevron} alt="Next day" />
-              <span>{`${nextDay.shortMonth} ${nextDay.day} ${nextDay.fullMonth}`}</span>
+              <span>{`${nextDay.day} ${nextDay.fullMonth}`}</span>
             </button>
           )}
         </Next>

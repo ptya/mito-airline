@@ -33,11 +33,13 @@ const SelectionHeader = () => {
     <Header>
       <Logo to="/" handler={handleReturn} alt={"Mito Airline"} />
       <Route data-testid="sh-origin">
-        <span>Leaving from</span>
-        {origin.shortName}
+        <span className="route-leaving">Leaving from</span>
+        <span>{origin.shortName}</span>
       </Route>
       <Switch handler={handleSwitch} />
-      <Route data-testid="sh-dest">{destination.shortName}</Route>
+      <Route data-testid="sh-dest">
+        <span>{destination.shortName}</span>
+      </Route>
     </Header>
   );
 };

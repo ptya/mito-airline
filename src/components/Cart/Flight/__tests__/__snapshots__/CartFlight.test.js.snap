@@ -1,13 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders without errors with isSeparated=false and matches snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+}
+
+.c1 {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.c1 span:first-child {
+  background: #f2f2f2;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c2 span:first-child:after {
+  content: " –";
+}
+
+.c2 span:last-child {
+  font-size: 10px;
+}
+
 <div>
   <div
-    class="sc-bdVaJa jmlIJf"
+    class="c0"
     data-testid="cart-flight"
   >
     <p
-      class="sc-bwzfXH cWAdWB"
+      class="c1"
     >
       <span>
         Jul
@@ -17,7 +73,7 @@ exports[`Renders without errors with isSeparated=false and matches snapshot 1`] 
       </span>
     </p>
     <p
-      class="sc-htpNat hPUCVW"
+      class="c2"
     >
       <span>
         Barcelona
@@ -38,13 +94,86 @@ exports[`Renders without errors with isSeparated=false and matches snapshot 1`] 
 `;
 
 exports[`Renders without errors with isSeparated=true and matches snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  background: #FFF;
+  border-top: 1px dotted #c1c1c1;
+}
+
+.c0:before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-top: 10px solid #FFF;
+  border-left: 10px solid #FFF;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 1px 1px #c1c1c1;
+  width: 0;
+}
+
+.c1 {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40px;
+  height: 46px;
+  border: 2px solid #e1e1e1;
+  border-radius: 3px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.c1 span:first-child {
+  background: #f2f2f2;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.c2 span:first-child:after {
+  content: " –";
+}
+
+.c2 span:last-child {
+  font-size: 10px;
+}
+
 <div>
   <div
-    class="sc-bdVaJa eKdzhd"
+    class="c0"
     data-testid="cart-flight"
   >
     <p
-      class="sc-bwzfXH cWAdWB"
+      class="c1"
     >
       <span>
         Jul
@@ -54,7 +183,7 @@ exports[`Renders without errors with isSeparated=true and matches snapshot 1`] =
       </span>
     </p>
     <p
-      class="sc-htpNat hPUCVW"
+      class="c2"
     >
       <span>
         Barcelona
