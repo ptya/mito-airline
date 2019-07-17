@@ -187,19 +187,19 @@ exports[`Renders with 1 station without errors and matches snapshot 1`] = `
   text-decoration-style: double;
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c1 {
     min-width: 465px;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c2 {
     text-align: unset;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -474,19 +474,19 @@ exports[`Renders with 2 stations without errors and matches snapshot 1`] = `
   text-decoration-style: double;
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c1 {
     min-width: 465px;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c2 {
     text-align: unset;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c3 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;

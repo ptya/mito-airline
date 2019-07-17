@@ -159,13 +159,13 @@ exports[`<TimetableForm /> renders without error and matches snapshot 1`] = `
   box-shadow: initial;
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c1 input {
     width: 250px;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c0 {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -174,7 +174,7 @@ exports[`<TimetableForm /> renders without error and matches snapshot 1`] = `
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c4 {
     margin: 0 7px;
     width: 230px;

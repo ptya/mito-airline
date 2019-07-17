@@ -96,13 +96,13 @@ exports[`Renders without errors and matches snapshot 1`] = `
   overflow: hidden;
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c1 {
     margin: auto 80px auto 20px;
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:650px) {
   .c2 {
     margin: 12px 40px;
     font-size: 20px;

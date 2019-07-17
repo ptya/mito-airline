@@ -7,7 +7,6 @@ const Header = styled.header`
   background: ${colors.grey2};
   display: flex;
   align-items: start;
-  max-width: 340px;
   flex-direction: column;
   justify-content: center;
 
@@ -45,7 +44,6 @@ const Header = styled.header`
   @media (min-width: ${breakPoints[0]}) {
     align-items: center;
     flex-direction: row;
-    max-width: unset;
     h2 {
       font-size: 18px;
       margin: auto 20px;

@@ -32,7 +32,7 @@ const TableRow = styled(TableGrid)`
   @media (min-width: ${breakPoints[0]}) {
     .time {
       font-size: 15px;
-      display: unset;
+      flex-direction: row;
     }
     img {
       width: 16px;

@@ -5,15 +5,10 @@ import { useSpring, animated } from "react-spring";
 
 import { useMeasure } from "../../hooks/useMeasure";
 
-import { colors, breakPoints } from "components/_styles/variables";
+import { colors } from "components/_styles/variables";
 
 const Wrapper = styled(animated.div)`
   background: ${colors.white};
-  max-width: 340px;
-
-  @media (min-width: ${breakPoints[0]}) {
-    max-width: unset;
-  }
 `;
 
 const AnimatedWrapper = props => {

@@ -14,6 +14,7 @@ const ArticleWrapper = styled.article.attrs(props => ({
   flex-direction: column;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
+  max-width: 100%;
 
   @media (min-width: ${breakPoints[1]}) {
     margin: ${props => props.size};
